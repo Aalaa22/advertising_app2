@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,7 +31,7 @@ class VerifyEmailCode extends StatelessWidget {
                     },
                   ),
                   Text(
-                    'Back',
+                    S.of(context).back,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -45,7 +46,7 @@ class VerifyEmailCode extends StatelessWidget {
                 width: 150,
               ),
               Text(
-                'Verify Your Number',
+               S.of(context).verifemil,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -54,7 +55,7 @@ class VerifyEmailCode extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                "We've sent an Email with an activation code to your Email $Email",
+                S.of(context).emilverify,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -83,7 +84,7 @@ class VerifyEmailCode extends StatelessWidget {
                 ontap: () {
                   context.go('/resetpass');
                 },
-                text: "Verify",
+                text: S.of(context).verify,
               ),
             ],
           ),

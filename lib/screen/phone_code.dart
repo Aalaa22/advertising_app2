@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -26,7 +27,7 @@ class VerifyPhoneCode extends StatelessWidget {
                     },
                   ),
                   Text(
-                    'Back',
+                    S.of(context).back,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -42,7 +43,7 @@ class VerifyPhoneCode extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Verify Your Number',
+               S.of(context).verifnum ,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -51,7 +52,7 @@ class VerifyPhoneCode extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                "We've sent an SMS with an activation code to your phone $phoneNumber",
+              S.of(context).phoneverify,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -80,7 +81,7 @@ class VerifyPhoneCode extends StatelessWidget {
                 ontap: () {
                   context.go('/resetpass');
                 },
-                text: "Verify",
+                text: S.of(context).verify,
               ),
             
             ],

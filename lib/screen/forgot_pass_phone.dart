@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_phone_field.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class ForgotPassPhone extends StatefulWidget {
 }
 
 class _ForgotPassPhoneState extends State<ForgotPassPhone> {
+  bool showEmailField = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +31,11 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                   IconButton(
                     icon: Icon(Icons.arrow_back_ios, color: KTextColor),
                     onPressed: () {
-                      context.go('/login');
+                      context.go('/');
                     },
                   ),
                   Text(
-                    'Back',
+                    S.of(context).back,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -49,7 +51,7 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
               ),
               SizedBox(height: 10),
               Text(
-                'Forgot Your Password?',
+                S.of(context).forgetyourpass,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -58,14 +60,30 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
               ),
               SizedBox(height: 15),
               Text(
-                'Enter Your Phone',
+                S.of(context).enterphone,
                 style: TextStyle(
                     color: KTextColor,
                     // height: 36,
                     fontWeight: FontWeight.w500,
                     fontSize: 20),
               ),
-              CustomPhoneField(),
+             CustomPhoneField(
+              onCountryChanged: (code) {
+                setState(() {
+                  showEmailField = code != 'AE'; 
+                });
+              },
+            ),
+            if (showEmailField)
+              TextField(
+                decoration: InputDecoration(
+                  labelText: S.of(context).email,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color.fromRGBO(8, 194, 201, 1)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -73,7 +91,7 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                 ontap: () {
                   context.go('/phonecode');
                 },
-                text: "Send Code",
+                text: S.of(context).sendcode,
               ),
             
             ],

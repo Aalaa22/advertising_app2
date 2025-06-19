@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class ResetPassword extends StatelessWidget {
                   },
                 ),
                 Text(
-                  'Back',
+                  S.of(context).back,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
@@ -40,7 +41,7 @@ class ResetPassword extends StatelessWidget {
               width: 150,
             ),
             Text(
-              'Reset Password?',
+              S.of(context).resetpass,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: KTextColor,
@@ -50,7 +51,7 @@ class ResetPassword extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'New Password',
+              S.of(context).newpass,
               style: TextStyle(
                 color: KTextColor,
                 fontWeight: FontWeight.w500,
@@ -68,7 +69,7 @@ class ResetPassword extends StatelessWidget {
                 )),
             SizedBox(height: 10),
             Text(
-              'Confirm Password',
+              S.of(context).confirmpass,
               style: TextStyle(
                 color: KTextColor,
                 fontWeight: FontWeight.w500,
@@ -89,7 +90,7 @@ class ResetPassword extends StatelessWidget {
               ontap: () {
                 context.go('/login');
               },
-              text: "Confirm",
+              text: S.of(context).confirm,
             ),
       
           ],

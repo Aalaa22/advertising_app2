@@ -1,89 +1,49 @@
-import 'package:advertising_app/screen/email_code.dart';
-import 'package:advertising_app/screen/email_login_screen.dart';
-import 'package:advertising_app/screen/email_signup.dart';
-import 'package:advertising_app/screen/forgot_pass_email.dart';
-import 'package:advertising_app/screen/forgot_pass_phone.dart';
-import 'package:advertising_app/screen/login_screen.dart';
-import 'package:advertising_app/screen/phone_code.dart';
-import 'package:advertising_app/screen/reset_pass.dart';
-import 'package:advertising_app/screen/sinup_screen.dart';
-import 'package:advertising_app/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:advertising_app/generated/l10n.dart';
+import 'router/go_router_app.dart';
+import 'router/local_notifier.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(AdvertisingApp());
+  runApp(const RootApp());
 }
 
-class AdvertisingApp extends StatelessWidget {
-  AdvertisingApp({super.key});
+class RootApp extends StatefulWidget {
+  const RootApp({super.key});
+
+  @override
+  State<RootApp> createState() => _RootAppState();
+}
+
+class _RootAppState extends State<RootApp> {
+  final LocaleChangeNotifier _localeNotifier = LocaleChangeNotifier();
+  late final GoRouter _router;
+
+  @override
+  void initState() {
+    super.initState();
+    _router = createRouter(notifier: _localeNotifier);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _router,
-      debugShowCheckedModeBanner: false,
+    return AnimatedBuilder(
+      animation: _localeNotifier,
+      builder: (context, _) {
+        return MaterialApp.router(
+          locale: _localeNotifier.locale,
+          routerConfig: _router,
+          supportedLocales: S.delegate.supportedLocales,
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
-
-  final GoRouter _router = GoRouter(routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => SplashGridScreen(),
-    ),
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => LoginScreen(),
-    ),
-    GoRoute(
-      path: '/signup',
-      builder: (context, state) {
-        return SignUpScreen();
-      },
-    ),
-    GoRoute(
-      path: '/emaillogin',
-      builder: (context, state) {
-        return EmailLoginScreen();
-      },
-    ),
-    GoRoute(
-      path: '/passphonelogin',
-      builder: (context, state) {
-        return ForgotPassPhone();
-      },
-    ),
-    GoRoute(
-      path: '/passemaillogin',
-      builder: (context, state) {
-        return ForgotPassEmail();
-      },
-    ),
-    GoRoute(
-      path: '/phonecode',
-      builder: (context, state) {
-        return VerifyPhoneCode();
-      },
-    ),
-    
-    GoRoute(
-      path: '/emailcode',
-      builder: (context, state) {
-        return VerifyEmailCode();
-      },
-    ),
-    GoRoute(
-      path: '/resetpass',
-      builder: (context, state) {
-        return ResetPassword();
-      },
-    ),
-    GoRoute(
-      path: '/emailsignup',
-      builder: (context, state) {
-        return EmailSignup();
-      },
-    ),
-    
-  ]);
 }

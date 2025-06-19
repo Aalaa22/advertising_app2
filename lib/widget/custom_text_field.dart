@@ -5,12 +5,12 @@ class CustomTextField extends StatelessWidget {
   CustomTextField({this.hintText,this.suffixicon, bool? isPassword});
 
   String? hintText;
- // final bool? obscureText;
+  
   final Widget? suffixicon;
   @override
   Widget build(BuildContext context) {
     return TextField(
-     // obscureText:obscureText!,
+    
       decoration: InputDecoration(
         suffixIcon: suffixicon,
         hintText: hintText,

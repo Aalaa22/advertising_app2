@@ -33,14 +33,14 @@ class _SplashGridScreenState extends State<SplashGridScreen> {
   }
 
   void _startRevealing() {
-    _timer = Timer.periodic(Duration(seconds: 4), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_visibleCount < items.length) {
         setState(() {
           _visibleCount++;
         });
       } else {
         _timer.cancel();
-        Future.delayed(Duration(seconds: 2), () {
+        Future.delayed(Duration(seconds: 1), () {
           context.go('/signup');
         });
       }

@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class ForgotPassEmail extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18),
+          padding: EdgeInsets.symmetric(horizontal: 18),
           child: ListView(
             //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -28,7 +29,7 @@ class ForgotPassEmail extends StatelessWidget {
                     },
                   ),
                   Text(
-                    'Back',
+                    S.of(context).back,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -43,7 +44,7 @@ class ForgotPassEmail extends StatelessWidget {
                 width: 150,
               ),
               Text(
-                'Forgot Your Password?',
+                S.of(context).forgotPassword,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: KTextColor,
@@ -52,7 +53,7 @@ class ForgotPassEmail extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Enter Your Email',
+                S.of(context).enteremail,
                 style: TextStyle(
                     color: KTextColor,
                     // height: 36,
@@ -69,7 +70,7 @@ class ForgotPassEmail extends StatelessWidget {
                 ontap: () {
                   context.go('/emailcode');
                 },
-                text: "Send code",
+                text: S.of(context).sendcode,
               ),
             ],
           ),
