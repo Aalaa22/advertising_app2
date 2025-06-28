@@ -109,8 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
               onCategoryPressed: (selectedCategory) {
                 final route = categoryRoutes[selectedCategory];
                 if (route != null) {
-                  context.push(route); // ← ده لازم يشتغل لو كل شيء تمام
-                } else {
+                  context.push(route);   }
+                   else {
                   print('Route not found for $selectedCategory');
                 }
               },
@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: List.generate(3, (sectionIndex) {
                       return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      //  crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           
                           Padding(
@@ -215,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const Text(
                                   "Al Manara Motors",
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w700,
                                       color: KTextColor),
                                 ),
@@ -224,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: const Text(
                                     "See All Ads",
                                     style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       decoration: TextDecoration.underline,
                                       decorationColor:
                                           Color.fromRGBO(8, 194, 201, 1),
@@ -239,8 +239,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
                           // Scroll أفقي للكروت
                           SizedBox(
-                            height: 94,
-                            width: 128,
+                            height: 200,
+                            width: double.infinity,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: topPremiumDealerCars.length,
