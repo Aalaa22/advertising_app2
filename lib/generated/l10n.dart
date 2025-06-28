@@ -70,10 +70,10 @@ class S {
     return Intl.message('Phone', name: 'phone', desc: '', args: []);
   }
 
-  /// `Phone Number`
+  /// `508236561`
   String get phoneNumberHint {
     return Intl.message(
-      'Phone Number',
+      '508236561',
       name: 'phoneNumberHint',
       desc: '',
       args: [],
@@ -175,6 +175,16 @@ class S {
     return Intl.message(
       'Create Account',
       name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `phone sign Up`
+  String get phonesignup {
+    return Intl.message(
+      'phone sign Up',
+      name: 'phonesignup',
       desc: '',
       args: [],
     );
@@ -400,10 +410,10 @@ class S {
     return Intl.message('Back', name: 'back', desc: '', args: []);
   }
 
-  /// `Forgot Your Password`
+  /// `Forgot Your Password?`
   String get forgetyourpass {
     return Intl.message(
-      'Forgot Your Password',
+      'Forgot Your Password?',
       name: 'forgetyourpass',
       desc: '',
       args: [],
@@ -445,21 +455,11 @@ class S {
     );
   }
 
-  /// `We've sent an SMS with an activation code to your phone +971 5753658129`
+  /// `We've sent an SMS with an activation code to your phone`
   String get phoneverify {
     return Intl.message(
-      'We\'ve sent an SMS with an activation code to your phone +971 5753658129',
+      'We\'ve sent an SMS with an activation code to your phone',
       name: 'phoneverify',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Verify Your Number`
-  String get verifemil {
-    return Intl.message(
-      'Verify Your Number',
-      name: 'verifemil',
       desc: '',
       args: [],
     );
@@ -508,6 +508,86 @@ class S {
   /// `Confirm`
   String get confirm {
     return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Favorites`
+  String get favorites {
+    return Intl.message('Favorites', name: 'favorites', desc: '', args: []);
+  }
+
+  /// `Car Sales`
+  String get carsales {
+    return Intl.message('Car Sales', name: 'carsales', desc: '', args: []);
+  }
+
+  /// `Real Estate`
+  String get realestate {
+    return Intl.message('Real Estate', name: 'realestate', desc: '', args: []);
+  }
+
+  /// `Electronics & Home \n Appliances`
+  String get electronics {
+    return Intl.message(
+      'Electronics & Home \n Appliances',
+      name: 'electronics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jobs`
+  String get jobs {
+    return Intl.message('Jobs', name: 'jobs', desc: '', args: []);
+  }
+
+  /// `Car Rent`
+  String get carrent {
+    return Intl.message('Car Rent', name: 'carrent', desc: '', args: []);
+  }
+
+  /// `Car Services`
+  String get carservices {
+    return Intl.message(
+      'Car Services',
+      name: 'carservices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurants`
+  String get restaurants {
+    return Intl.message('Restaurants', name: 'restaurants', desc: '', args: []);
+  }
+
+  /// `Other Services`
+  String get otherservices {
+    return Intl.message(
+      'Other Services',
+      name: 'otherservices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get srtting {
+    return Intl.message('Settings', name: 'srtting', desc: '', args: []);
+  }
+
+  /// `Manage`
+  String get manage {
+    return Intl.message('Manage', name: 'manage', desc: '', args: []);
+  }
+
+  /// `Post Ads`
+  String get post {
+    return Intl.message('Post Ads', name: 'post', desc: '', args: []);
   }
 }
 

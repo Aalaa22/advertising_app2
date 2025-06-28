@@ -1,3 +1,4 @@
+import 'package:advertising_app/widget/custom_bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class ManageScreen extends StatelessWidget {
@@ -5,6 +6,12 @@ class ManageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+       backgroundColor: Colors.white,
+      bottomNavigationBar: CustomBottomNav(currentIndex: 0),
+      
+      body: Center(child: Text("تحت الإنشاء",style: TextStyle(fontSize: 50),)),
+    );
+     
   }
 }

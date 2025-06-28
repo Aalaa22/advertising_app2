@@ -25,12 +25,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = widget.notifier.locale;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return AnimatedBuilder(
       animation: widget.notifier,
       builder: (context, _) {
-        final locale = widget.notifier.locale;
-        final isArabic = locale.languageCode == 'ar';
-
         return Scaffold(
           backgroundColor: Colors.white,
           body: Padding(
@@ -38,61 +38,51 @@ class _LoginScreenState extends State<LoginScreen> {
             child: ListView(
               children: [
                 const SizedBox(height: 24),
-
-                // ✅ زر تغيير اللغة
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: locale.languageCode != 'en'
-                          ? widget.notifier.toggleLocale
-                          : null,
-                      child: Text(
-                        S.of(context).engilsh,
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: KTextColor,
-                        ),
+                Align(
+                  alignment: locale.languageCode == 'ar'
+                      ? Alignment.topLeft
+                      : Alignment.topRight,
+                  child: GestureDetector(
+                    onTap: widget.notifier.toggleLocale,
+                    child: Text(
+                      locale.languageCode == 'ar'
+                          ? S.of(context).engilsh
+                          : S.of(context).arabic,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: KTextColor,
                       ),
                     ),
-                    GestureDetector(
-                      onTap: locale.languageCode != 'ar'
-                          ? widget.notifier.toggleLocale
-                          : null,
-                      child: Text(
-                        S.of(context).arabic,
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: KTextColor,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-
-                Image.asset('images/logo.png', height: 150, width: 150),
-
+               Image.asset(
+                      'images/logo.png',
+                      fit: BoxFit.contain,
+                      height: 98,
+                      width: 125,
+                    
+                  ),
+                  SizedBox(height: 10),
+                  
                 Text(
                   S.of(context).login,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: KTextColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-
+                const SizedBox(height: 10),
                 Text(
                   S.of(context).phone,
                   style: const TextStyle(
                     color: KTextColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 16,
                   ),
                 ),
-
                 CustomPhoneField(
                   onCountryChanged: (code) {
                     setState(() {
@@ -100,88 +90,63 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   },
                 ),
-
                 if (showEmailField)
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text(
-                          S.of(context).emailLogin,
-                          style: const TextStyle(
-                            color: KTextColor,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                          ),
+                      Text(
+                        S.of(context).emailLogin,
+                        style: const TextStyle(
+                          color: KTextColor,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Yourname@example.com',
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color.fromRGBO(8, 194, 201, 1)),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color.fromRGBO(8, 194, 201, 1)),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
+                    //  const SizedBox(height: 5),
+                      CustomTextField(hintText: 'Yourname@example.com',)
                     ],
                   ),
-
+                const SizedBox(height: 5),
                 Text(
                   S.of(context).password,
                   style: const TextStyle(
                     color: KTextColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 16,
                   ),
                 ),
-
+               
+              
                 CustomTextField(
-                  hintText: '652454465',
-                  suffixicon: IconButton(
-                    icon: const Icon(Icons.visibility_off, color: KTextColor),
-                    onPressed: () {},
-                  ),
-                ),
-
+              hintText: '1234567',
+              isPassword: true,
+              
+            ),
                 const SizedBox(height: 20),
-
                 CustomButton(
                   ontap: () {
-                    context.go('/setting');
+                    context.push('/home');
                   },
                   text: S.of(context).login,
                 ),
-
                 const SizedBox(height: 8),
-
                 GestureDetector(
                   onTap: () {
-                    context.go('/passphonelogin');
+                    context.push('/passphonelogin');
                   },
                   child: Text(
                     S.of(context).forgotPassword,
                     textAlign: TextAlign.end,
                     style: const TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 17,
+                      fontSize: 14,
                       decoration: TextDecoration.underline,
                       decorationThickness: 1.5,
                       color: KTextColor,
                     ),
                   ),
                 ),
-
                 const SizedBox(height: 8),
-
                 Row(
                   children: [
                     const Expanded(
@@ -194,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: const TextStyle(
                           color: KTextColor,
                           fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -203,30 +168,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 16),
-
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomElevatedButton(
-                      onpress: () {
-                        context.go('/emaillogin');
-                      },
-                      text: S.of(context).emailLogin,
+                    Expanded(
+                      child: CustomElevatedButton(
+                        onpress: () {
+                          context.push('/emaillogin');
+                        },
+                        text: S.of(context).emailLogin,
+                      ),
                     ),
-                    const SizedBox(width: 22),
-                    CustomElevatedButton(
-                      onpress: () {
-                        context.go('/setting');
-                      },
-                      text: S.of(context).guestLogin,
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: CustomElevatedButton(
+                        onpress: () {
+                          context.push('/home');
+                        },
+                        text: S.of(context).guestLogin,
+                      ),
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 16),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -234,13 +198,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       S.of(context).dontHaveAccount,
                       style: const TextStyle(
                         color: KTextColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                       // fontWeight: FontWeight.w500,
+                        fontSize: 11,
                       ),
                     ),
+                    const SizedBox(width: 4),
                     GestureDetector(
                       onTap: () {
-                        context.go('/signup');
+                        context.push('/');
                       },
                       child: Text(
                         S.of(context).createAccount,
@@ -249,15 +214,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           decorationColor: KTextColor,
                           decorationThickness: 1.5,
                           color: KTextColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 11,
                         ),
                       ),
                     ),
                   ],
                 ),
-
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
               ],
             ),
           ),

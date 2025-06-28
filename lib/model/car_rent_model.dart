@@ -1,3 +1,4 @@
+import 'package:advertising_app/model/ad_priority.dart';
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
 
 class CarRentModel implements FavoriteItemInterface {
@@ -10,6 +11,7 @@ class CarRentModel implements FavoriteItemInterface {
   final String contact;
   final bool isPremium;
   final List<String> _images;
+  final AdPriority priority;
 
   CarRentModel({
     required this.title,
@@ -19,8 +21,8 @@ class CarRentModel implements FavoriteItemInterface {
     required this.location,
     required this.date,
     required this.details,
-    
     required this.isPremium,
+    required this.priority,
     required List<String> images,
   }) : _images = images;
 
@@ -33,3 +35,5 @@ class CarRentModel implements FavoriteItemInterface {
   @override
   List<String> get images => _images;
 }
+
+

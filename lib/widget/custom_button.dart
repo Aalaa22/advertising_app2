@@ -13,15 +13,15 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: Color.fromRGBO(1, 84, 126, 1),
             borderRadius: BorderRadius.circular(8)),
-        height: 60,
+        height: 48,
         width: double.infinity,
         child: Center(
             child: Text(
           text!,
           style: TextStyle(
               color: Colors.white,
-               fontWeight: FontWeight.bold,
-                fontSize: 18),
+               //fontWeight: FontWeight.w500,
+                fontSize: 16),
         )),
       ),
     );

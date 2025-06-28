@@ -1,3 +1,5 @@
+import 'ad_priority.dart';
+
 abstract class FavoriteItemInterface {
   String get title;
   String get location;
@@ -9,4 +11,6 @@ abstract class FavoriteItemInterface {
   String get contact;
   bool get isPremium;
   List<String> get images;
+
+  AdPriority get priority;
 }

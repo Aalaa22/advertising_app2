@@ -2,7 +2,7 @@
   "signUp": "Sign Up",
   "userName": "User Name",
   "phone": "Phone",
-  "phoneNumberHint": "Phone Number",
+  "phoneNumberHint": "508236561",
   "password": "Password",
   "referralCode": "Referral Code",
   "agreeTerms": "I agree terms & conditions",
@@ -12,12 +12,15 @@
   "emailSignUp": "Email Sign Up",
   "login": "Log In",
   "haveAccount": "Already Have An Account?",
-    "forgotPassword": "Forgot Password?",
+  "forgotPassword": "Forgot Password?",
   "emailLogin": "Email Login",
   "dontHaveAccount": "Don't Have An Account?",
   "createAccount": "Create Account",
+   "phonesignup":"phone sign Up",
+   
   "engilsh":"Engilsh",
   "arabic":"Arabic",
+  
   "phoneLogin":"Phone Login",
   "myProfile": "My Profile",
   "createAgentCode": "Create Agent Code",
@@ -51,19 +54,36 @@
 
   "back":"Back",
 
-  "forgetyourpass":"Forgot Your Password",
+  "forgetyourpass":"Forgot Your Password?",
   "enterphone":"Enter Your phone",
   "sendcode":"Send Code",
   "enteremail":"Enter Your Email",
 
   "verifnum":"Verify Your Number",
-  "phoneverify":"We've sent an SMS with an activation code to your phone +971 5753658129",
-   "verifemil":"Verify Your Number",
+  "phoneverify":"We've sent an SMS with an activation code to your phone",
   "emilverify":"We've sent an Email with an activation code to your Email yourname@example.Com ",
+  
   "verify":"Verify",
 
   "resetpass":"Reset Password",
   "newpass":"New password",
   "confirmpass":"Confirm Password",
-  "confirm":"Confirm"
+  "confirm":"Confirm",
+
+   "favorites":"Favorites",
+
+
+  "carsales":"Car Sales",
+  "realestate": "Real Estate",
+  "electronics": "Electronics & Home \n Appliances",
+  "jobs": "Jobs",
+  "carrent": "Car Rent",
+  "carservices": "Car Services",
+  "restaurants": "Restaurants",
+  "otherservices": "Other Services",
+
+  "home":"Home",
+  "srtting":"Settings",
+  "manage":"Manage",
+  "post":"Post Ads"
 }

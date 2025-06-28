@@ -28,6 +28,7 @@ class _RootAppState extends State<RootApp> {
 
   @override
   Widget build(BuildContext context) {
+    
     return AnimatedBuilder(
       animation: _localeNotifier,
       builder: (context, _) {
@@ -42,6 +43,9 @@ class _RootAppState extends State<RootApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+    fontFamily: 'Montserrat',
+  ),
         );
       },
     );

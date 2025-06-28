@@ -7,7 +7,7 @@ import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class EmailLoginScreen extends StatelessWidget {
+class EmailLoginScreen extends StatefulWidget {
   final LocaleChangeNotifier notifier;
 
   const EmailLoginScreen({
@@ -16,169 +16,206 @@ class EmailLoginScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: notifier,
-      builder: (context, _) {
-        final locale = notifier.locale;
+  State<EmailLoginScreen> createState() => _EmailLoginScreenState();
+}
 
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18),
-            child: ListView(
-              children: [
-                const SizedBox(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: locale.languageCode != 'en'
-                          ? notifier.toggleLocale
-                          : null,
-                      child: Text(
-                        S.of(context).engilsh,
-                        style: const TextStyle(
-                          color: KTextColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22,
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: locale.languageCode != 'ar'
-                          ? notifier.toggleLocale
-                          : null,
-                      child: Text(
-                        S.of(context).arabic,
-                        style: const TextStyle(
-                          color: KTextColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Image.asset('images/logo.png', height: 150, width: 150),
-                Text(
-                  S.of(context).login,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: KTextColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  S.of(context).emailLogin,
-                  style: const TextStyle(
-                    color: KTextColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                ),
-                CustomTextField(hintText: 'yourName@example.com'),
-                const SizedBox(height: 8),
-                Text(
-                  S.of(context).password,
-                  style: const TextStyle(
-                    color: KTextColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                ),
-                CustomTextField(hintText: '••••••••'),
-                const SizedBox(height: 20),
-                CustomButton(text: S.of(context).login),
-                const SizedBox(height: 8),
-                GestureDetector(
-                  onTap: () {
-                    context.go('/passemaillogin');
-                  },
+class _EmailLoginScreenState extends State<EmailLoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final locale = widget.notifier.locale;
+    final isArabic = locale.languageCode == 'ar';
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Directionality(
+      textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18),
+          child: ListView(
+            children: [
+              const SizedBox(height: 24),
+
+              /// لغة التبديل
+              Align(
+                alignment: isArabic ? Alignment.topLeft : Alignment.topRight,
+                child: GestureDetector(
+                  onTap: widget.notifier.toggleLocale,
                   child: Text(
-                    S.of(context).forgotPassword,
-                    textAlign: TextAlign.end,
+                    isArabic ? S.of(context).engilsh : S.of(context).arabic,
                     style: const TextStyle(
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
-                      fontSize: 17,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 1.5,
                       color: KTextColor,
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    const Expanded(child: Divider(color: KTextColor, thickness: 2)),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        S.of(context).or,
-                        style: const TextStyle(
-                          color: KTextColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        ),
+              ),
+
+              const SizedBox(height: 12),
+
+              /// اللوجو
+              Center(
+                child: Image.asset(
+                  'images/logo.png',
+                  height:98,
+                  width: 125,
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              /// العنوان الرئيسي
+              Text(
+                S.of(context).login,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: KTextColor,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+
+              const SizedBox(height: 18),
+
+              /// الإيميل
+              Text(
+                S.of(context).emailLogin,
+                style: const TextStyle(
+                  color: KTextColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize:16,
+                ),
+              ),
+              CustomTextField(hintText:'YourName@Example.Com'),
+
+              const SizedBox(height: 8),
+
+              /// الباسورد
+              Text(
+                S.of(context).password,
+                style: const TextStyle(
+                  color: KTextColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize:16,
+                ),
+              ),
+              CustomTextField(hintText: '1234567',isPassword: true,),
+
+              const SizedBox(height: 20),
+
+              /// زرار الدخول
+              CustomButton(
+                text: S.of(context).login,
+                ontap: () {
+                  context.push('/home');
+                },
+              ),
+
+              const SizedBox(height: 8),
+
+              /// نسيان الباسورد
+              GestureDetector(
+                onTap: () {
+                  context.push('/forgetpassemail');
+                },
+                child: Text(
+                  S.of(context).forgotPassword,
+                  textAlign: TextAlign.end,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 1.5,
+                    color: KTextColor,
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              /// خط فاصل + كلمة OR
+              Row(
+                children: [
+                  const Expanded(
+                      child: Divider(color: KTextColor, thickness: 2)),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      S.of(context).or,
+                      style: const TextStyle(
+                        color: KTextColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                       ),
                     ),
-                    const Expanded(child: Divider(color: KTextColor, thickness: 2)),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomElevatedButton(
+                  ),
+                  const Expanded(
+                      child: Divider(color: KTextColor, thickness: 2)),
+                ],
+              ),
+
+              const SizedBox(height: 16),
+
+              /// زرارين: الدخول برقم الهاتف و الدخول كزائر
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomElevatedButton(
                       onpress: () {
-                        context.go('/');
+                        context.push('/login');
                       },
                       text: S.of(context).phoneLogin,
                     ),
-                    const SizedBox(width: 22),
-                    CustomElevatedButton(
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: CustomElevatedButton(
                       onpress: () {},
                       text: S.of(context).guestLogin,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      S.of(context).dontHaveAccount,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 16),
+
+              /// إنشاء حساب
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    S.of(context).dontHaveAccount,
+                    style: const TextStyle(
+                      color: KTextColor,
+                      fontSize: 12,
+                     // fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      context.push('/');
+                    },
+                    child: Text(
+                      S.of(context).createAccount,
                       style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        decorationColor: KTextColor,
+                        decorationThickness: 1.5,
                         color: KTextColor,
-                        fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        fontSize: 11,
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        context.go('/signup');
-                      },
-                      child: Text(
-                        S.of(context).createAccount,
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: KTextColor,
-                          decorationThickness: 1.5,
-                          color: KTextColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 30),
-              ],
-            ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 30),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

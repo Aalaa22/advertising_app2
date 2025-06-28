@@ -1,4 +1,5 @@
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
+import 'ad_priority.dart';
 
 class RealEstateModel implements FavoriteItemInterface {
   final String title;
@@ -10,6 +11,7 @@ class RealEstateModel implements FavoriteItemInterface {
   final String date;
   final bool isPremium;
   final List<String> _images;
+  final AdPriority priority;
 
 
   RealEstateModel({
@@ -21,7 +23,8 @@ class RealEstateModel implements FavoriteItemInterface {
     required this.date,
     required this.details,
     required this.isPremium,
-  required List<String> images, 
+    required List<String> images, 
+    required this.priority,
   }) : _images = images;
 
 

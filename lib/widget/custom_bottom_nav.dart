@@ -1,4 +1,9 @@
+import 'dart:ui';
+
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBottomNav extends StatelessWidget {
@@ -13,35 +18,86 @@ class CustomBottomNav extends StatelessWidget {
       
 
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor:Colors.white, 
       currentIndex: currentIndex,
       showUnselectedLabels: true, 
       selectedItemColor: Color(0xFF01547E),
-      unselectedItemColor:Color.fromRGBO( 0, 195, 188,1),
+      unselectedItemColor:Color.fromRGBO( 5, 194, 201,1),
       onTap: (index) {
         switch (index) {
           case 0:
-            context.go('/home');
+            context.push('/home');
             break;
           case 1:
-            context.go('/favorite');
+            context.push('/favorite');
             break;
           case 2:
-            context.go('/postad');
+            context.push('/postad');
             break;
           case 3:
-            context.go('/manage');
+            context.push('/manage');
             break;
           case 4:
-            context.go('/setting');
+            context.push('/setting');
             break;
         }
       },
-      items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: 'Favorite'),
-        BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'Post Ads'),
-        BottomNavigationBarItem(icon: Icon(Icons.folder_open), label: 'Manage'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+       items: [
+        BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            "assets/icons/home.svg",
+               width: 26,
+              height: 26,
+                 ),
+        label:S.of(context).home,
+        ),
+         BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.heart),
+          label:S.of(context).favorites,
+        ),
+
+        // 👇 Post Ads – شكل خاص زي الصورة
+        BottomNavigationBarItem(
+          icon: Center(
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                 gradient: LinearGradient(
+            colors: [
+              const Color(0xFFC9F8FE),
+              const Color(0xFF08C2C9),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+                    ),
+              ),
+              child: const Center(
+                child: FaIcon(
+                  FontAwesomeIcons.plus,
+                  color: Colors.red, // لون الزائد
+                  size: 18,
+                ),
+              ),
+            ),
+          ),
+          label: S.of(context).post,
+        ),
+
+         BottomNavigationBarItem(
+          icon: SvgPicture.asset(
+            "assets/icons/manage.svg",
+               width: 26,
+              height: 26,
+                 ),
+                 label:S.of(context).manage,
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.gear),
+          label:S.of(context).srtting,
+        ),
       ],
     );
   }

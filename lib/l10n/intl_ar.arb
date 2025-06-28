@@ -2,7 +2,7 @@
   "signUp": "انشاء حساب",
   "userName": "اسم المستخدم",
   "phone": "رقم الهاتف",
-  "phoneNumberHint": "رقم الهاتف",
+  "phoneNumberHint": "508236561",
   "password": "كلمة المرور",
   "referralCode": "كودالخصم",
   "agreeTerms": "أوافق على الشروط والأحكام",
@@ -41,7 +41,7 @@
   "save": "حفظ",
   "cancel":"الغاء",
    "optional":"اختياري",
-
+  "phonesignup":"دخول برقم الهاتف",
   "premium": "مميز",
   "price": "{price}",
   "location": "{location}",
@@ -57,7 +57,7 @@
   "enteremail":"ادخل البريد الالكتروني",
   
   "verifnum": "تحقّق من رقمك",
-"phoneverify": "+973 2541375698 أرسلنا رسالة نصية تحتوي على رمز التفعيل إلى رقم هاتفك",
+"phoneverify": " أرسلنا رسالة نصية تحتوي على رمز التفعيل إلى رقم هاتفك",
 "verifemil": "تحقّق من بريدك الإلكتروني",
 "emilverify": " yourname@example.Com أرسلنا بريدًا إلكترونيًا يحتوي على رمز التفعيل إلى بريدك",
 "verify": "تحقّق",
@@ -65,6 +65,24 @@
 "resetpass": "إعادة تعيين كلمة المرور",
 "newpass": "كلمة المرور الجديدة",
 "confirmpass": "تأكيد كلمة المرور",
-"confirm": "تأكيد"
+"confirm": "تأكيد",
+ 
+
+"favorites":"المفضلة",
+
+"carsales": "بيع السيارات",
+"realestate": "العقارات",
+"electronics": "الإلكترونيات و \nالأجهزة المنزلية",
+  "jobs": "وظائف",
+  "carrent": "تأجير السيارات",
+  "carservices": "خدمات السيارات",
+  "restaurants": "مطاعم",
+  "otherservices": "خدمات أخرى",
+
+  "home":"الرئيسية",
+  "srtting":"الإعدادات",
+  "manage":"الإدارة",
+  "post":"إضافةإعلان"
+  
   
 }
