@@ -74,14 +74,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         ),
         body: Column(
           children: [
-            CustomCategory(
-              categories: categories,
-              selectedIndex: selectedCategory,
-              onCategorySelected: (index) {
-                setState(() {
-                  selectedCategory = index;
-                });
-              },
+            Expanded(
+              child: CustomCategory(
+                categories: categories,
+                selectedIndex: selectedCategory,
+                onCategorySelected: (index) {
+                  setState(() {
+                    selectedCategory = index;
+                  });
+                },
+              ),
             ),
             Expanded(
               child: selectedItems.isEmpty

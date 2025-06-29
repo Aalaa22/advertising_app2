@@ -5,6 +5,7 @@ import 'package:advertising_app/widget/custom_bottom_nav.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_category.dart';
 import 'package:advertising_app/widget/custom_dealer_card.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -129,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text("Discover Best Cars Deals",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 14,
+                              fontSize: 16.sp,
                               color: KTextColor)),
                     ],
                   ),

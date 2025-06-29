@@ -10,7 +10,7 @@ class DealerCarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 100,
+      // width: 129,
       height: 148,
       padding: const EdgeInsets.symmetric(horizontal: 0),
       decoration: BoxDecoration(

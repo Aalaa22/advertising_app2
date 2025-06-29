@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:advertising_app/generated/l10n.dart';
 import 'router/go_router_app.dart';
 import 'router/local_notifier.dart';
@@ -28,24 +29,33 @@ class _RootAppState extends State<RootApp> {
 
   @override
   Widget build(BuildContext context) {
-    
     return AnimatedBuilder(
       animation: _localeNotifier,
       builder: (context, _) {
-        return MaterialApp.router(
-          locale: _localeNotifier.locale,
-          routerConfig: _router,
-          supportedLocales: S.delegate.supportedLocales,
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-    fontFamily: 'Montserrat',
-  ),
+        return ScreenUtilInit(
+          designSize: const Size(360, 690),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, child) {
+            return MaterialApp.router(
+              locale: _localeNotifier.locale,
+              routerConfig: _router,
+              supportedLocales: S.delegate.supportedLocales,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                fontFamily: 'Montserrat',
+                textTheme: Typography.englishLike2018.apply(
+                  fontSizeFactor: 1.sp,
+                ),
+              ),
+            );
+          },
         );
       },
     );
