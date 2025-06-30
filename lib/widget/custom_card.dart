@@ -2,6 +2,7 @@ import 'package:advertising_app/constants.dart';
 import 'package:advertising_app/model/ad_priority.dart';
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -83,7 +84,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                     ),
                     child: Text(
                       "${_currentPage + 1}/${item.images.length}",
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                      style: TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ),
                 ),
@@ -171,33 +172,33 @@ class _FavoriteCardState extends State<FavoriteCard> {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/priceicon.svg',
-                        width: 22,
-                        height: 22,
+                        width: 24.w,
+                        height: 19.h,
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Text(
                         item.price,
-                        style: const TextStyle(
+                        style:  TextStyle(
                           color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16.sp,
                         ),
                       ),
                       const Spacer(),
                       Text(
                         item.date,
                         style:
-                            const TextStyle(color: Colors.grey, fontSize: 10),
+                            TextStyle(color: Colors.grey, fontSize: 12.sp,fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Text(
                     item.title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w600,
-                      fontSize: 14,
+                      fontSize: 16.sp,
                     ),
                   ),
                   const SizedBox(height: 6),
@@ -208,18 +209,18 @@ class _FavoriteCardState extends State<FavoriteCard> {
                         if (parts.length == 2) {
                           return TextSpan(
                             text: '${parts[0]}:',
-                            style: const TextStyle(
+                            style:  TextStyle(
                               fontWeight: FontWeight.w600,
                               color: KTextColor,
-                              fontSize: 16,
+                              fontSize: 14.sp,
                             ),
                             children: [
                               TextSpan(
                                 text: '${parts[1]}  ',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w500,
+                                style:  TextStyle(
+                                  fontWeight: FontWeight.w600,
                                   color: KTextColor,
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                 ),
                               ),
                             ],
@@ -239,8 +240,8 @@ class _FavoriteCardState extends State<FavoriteCard> {
                   const SizedBox(height: 10),
                   Text(
                     item.line2,
-                    style: const TextStyle(
-                      fontSize: 14,
+                    style:  TextStyle(
+                      fontSize: 14.sp,
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
                     ),
@@ -250,15 +251,15 @@ class _FavoriteCardState extends State<FavoriteCard> {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/locationicon.svg',
-                        width: 22,
-                        height: 22,
+                        width: 16.w,
+                        height: 20.h,
                       ),
                       SizedBox(width: 10,),
                       Expanded(
                         child: Text(
                           item.location,
-                          style: const TextStyle(
-                              fontSize: 14,
+                          style:  TextStyle(
+                              fontSize: 14.sp,
                               color: KTextColor,
                               fontWeight: FontWeight.w500),
                           overflow: TextOverflow.ellipsis,
@@ -268,18 +269,20 @@ class _FavoriteCardState extends State<FavoriteCard> {
                      widget.showDelete
   ? IconButton(
       onPressed: widget.onDelete,
-      icon: Image.asset('images/delet.png', width: 30),
+      icon: Image.asset('images/delet.png', width: 32.w,height: 32.h,),
     )
   : const SizedBox.shrink(),
                     ],
                   ),
+                   SizedBox(height:  15.h,),
+                      
                   Row(
                     children: [
                       Text(
                         item.contact,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 13,
+                          fontSize: 14.sp,
                           color: KTextColor,
                         ),
                       ),

@@ -5,6 +5,7 @@ import 'package:advertising_app/model/ad_priority.dart';
 import 'package:advertising_app/screen/car_details_screen.dart';
 import 'package:advertising_app/widget/custom_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,151 +17,228 @@ class CarSalesScreen extends StatefulWidget {
 }
 
 class _CarSalesScreenState extends State<CarSalesScreen> {
-  @override
-  Widget build(BuildContext context) {
-   final sortedCars = [...dummyCarSales]..sort(
-        (a, b) => a.priority.index.compareTo(b.priority.index),
-      );
+ @override
+Widget build(BuildContext context) {
+  final locale = Localizations.localeOf(context).languageCode;
 
-    return Scaffold(
+  final sortedCars = [...dummyCarSales]
+    ..sort((a, b) => a.priority.index.compareTo(b.priority.index));
+
+  return Directionality(
+    textDirection: locale == 'ar' ? TextDirection.rtl : TextDirection.ltr,
+    child: Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(4),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            GestureDetector(
-              onTap: () => context.pop(),
-              child: Row(
-                children: [
-                  const SizedBox(width: 18),
-                  const Icon(Icons.arrow_back_ios, color: KTextColor),
-                  Text(
-                    S.of(context).back,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: KTextColor,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10.h),
+
+              // زر الرجوع
+              GestureDetector(
+                onTap: () => context.pop(),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 18),
+                    const Icon(Icons.arrow_back_ios, color: KTextColor),
+                    Text(
+                      S.of(context).back,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        color: KTextColor,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 7),
-           Center(
-              child: Text(
-                S.of(context).carsales,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 24,
-                  color: KTextColor,
+                  ],
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                 SvgPicture.asset(
-                    'assets/icons/filter.svg',
-                    width: 22,
-                    height: 24,
-                    //color: Color(0xFF01547E),
-                  ),
-                  const SizedBox(width: 16),
 
-                  Expanded(
-                    child: Wrap(
-                      spacing: 8,
-                      // runSpacing: 8,
-                      children: [
-                        _buildFilterChip('Trim'),
-                        _buildFilterChip('Year'),
-                        _buildFilterChip('Km'),
-                        _buildFilterChip('Price'),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+              SizedBox(height: 7.h),
 
-            SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              children: [
-                // عدد الإعلانات
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    'ADS NO: 1000',
-                    style: TextStyle(
-                      fontSize: 9,
-                      color: KTextColor,
-                      fontWeight: FontWeight.w400,
-                    ),
+              // العنوان
+              Center(
+                child: Text(
+                  S.of(context).carsales,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24.sp,
+                    color: KTextColor,
                   ),
                 ),
-                //const SizedBox(height: 10),
+              ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Container(
-                    height: 50,
-                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFF08C2C9)),
-                      borderRadius: BorderRadius.circular(8),
+              SizedBox(height: 16.h),
+
+              // First Row: Filter Icon + Chips
+              Padding(
+                padding: EdgeInsetsDirectional.symmetric(horizontal: 18.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/icons/filter.svg',
+                      width: 25.w,
+                      height: 25.h,
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const SizedBox(width: 0),
-                        SvgPicture.asset(
-                          'assets/icons/locationicon.svg',
-                          width: 18,
-                          height: 18,
-                        ),
-                        const SizedBox(width: 6),
-                        Flexible(
-                          child: Text(
-                            'Sort By The Nearest',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(child: _buildFilterChip(S.of(context).trim)),
+                          SizedBox(width: 7.w),
+                          Expanded(child: _buildFilterChip(S.of(context).year)),
+                          SizedBox(width: 7.w),
+                          Expanded(child: _buildFilterChip(S.of(context).km)),
+                          SizedBox(width: 7.w),
+                          Expanded(child: _buildFilterChip(S.of(context).price)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 15.h),
+
+              // Second Row
+              Padding(
+                padding: EdgeInsetsDirectional.symmetric(horizontal: 18.w),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    bool isSmallScreen = MediaQuery.of(context).size.width <= 360;
+
+                    if (isSmallScreen) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 8.h),
+                            child: Text(
+                              '${S.of(context).ad} 1000',
+                              style: TextStyle(
+                                fontSize: 12.sp,
                                 color: KTextColor,
-                                fontSize: 10),
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
-                        ),
-                        // const SizedBox(width: 3),
-                        Transform.scale(
-                          scale: 0.75,                           child: Switch(
-                            value: true,
-                            activeColor: Colors.white,
-                            activeTrackColor: Color(0xFF08C2C9),
-                            onChanged: (val) {},
-                            materialTapTargetSize: MaterialTapTargetSize
-                                .shrinkWrap,                           ),
-                        ),
-                      ],
-                    ),
-                  ),
+                          Container(
+                            height: 45.h,
+                            padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: const Color(0xFF08C2C9)),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icons/locationicon.svg',
+                                  width: 18.w,
+                                  height: 18.h,
+                                ),
+                                SizedBox(width: 20.w),
+                                Expanded(
+                                  child: Text(
+                                    S.of(context).sort,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: KTextColor,
+                                      fontSize: 11.sp,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 4.w),
+                                SizedBox(
+                                  width: 35.w,
+                                  height: 20.h,
+                                  child: Switch(
+                                    value: true,
+                                    activeColor: Colors.white,
+                                    activeTrackColor: const Color(0xFF08C2C9),
+                                    inactiveThumbColor: Colors.grey,
+                                    inactiveTrackColor: Colors.grey.shade300,
+                                    onChanged: (val) {},
+                                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Row(
+                        children: [
+                          Text(
+                            'ADS NO: 1000',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: KTextColor,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(width: 15.w),
+                          Expanded(
+                            child: Container(
+                              height: 45.h,
+                              padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: const Color(0xFF08C2C9)),
+                                borderRadius: BorderRadius.circular(8.r),
+                              ),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    'assets/icons/locationicon.svg',
+                                    width: 18.w,
+                                    height: 18.h,
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  Expanded(
+                                    child: Text(
+                                      'Sort By The Nearest',
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: KTextColor,
+                                        fontSize: 11.sp,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  SizedBox(
+                                    width: 35.w,
+                                    height: 20.h,
+                                    child: Switch(
+                                      value: true,
+                                      activeColor: Colors.white,
+                                      activeTrackColor: const Color(0xFF08C2C9),
+                                      inactiveThumbColor: Colors.grey,
+                                      inactiveTrackColor: Colors.grey.shade300,
+                                      onChanged: (val) {},
+                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }
+                  },
                 ),
-              ],
-            ),
+              ),
 
-            const SizedBox(height: 16),
+              SizedBox(height: 10.h),
 
-            // عرض الكروت
-            Expanded(
-              child: ListView.builder(
+              ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 itemCount: sortedCars.length,
                 itemBuilder: (context, index) {
                   final item = sortedCars[index];
@@ -180,38 +258,46 @@ class _CarSalesScreenState extends State<CarSalesScreen> {
                   );
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    );
+    ),
+  );
+}
+
   }
 
   Widget _buildFilterChip(String label) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 10),
+      height: 40.h,
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
       decoration: BoxDecoration(
-        border: Border.all(color: Color(0xFF08C2C9)),
-        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFF08C2C9)),
+        borderRadius: BorderRadius.circular(8.r),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 3),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Text(
               label,
-              style: const TextStyle(
-                fontSize: 10,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 10.sp, // Smaller font to fit 4 chips
                 color: KTextColor,
+                fontWeight: FontWeight.w400,
               ),
             ),
-            const SizedBox(width: 7),
-            const Icon(Icons.keyboard_arrow_down, color: KTextColor, size: 18),
-          ],
-        ),
+          ),
+          SizedBox(width: 2.w),
+          Icon(
+            Icons.keyboard_arrow_down,
+            color: KTextColor,
+            size: 14.sp, // Smaller icon
+          ),
+        ],
       ),
     );
   }
-}
-

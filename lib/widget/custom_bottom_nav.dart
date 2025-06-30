@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:advertising_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -47,7 +48,7 @@ class CustomBottomNav extends StatelessWidget {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             "assets/icons/home.svg",
-               width: 26,
+               width: 26.w,
               height: 26,
                  ),
         label:S.of(context).home,
@@ -57,7 +58,7 @@ class CustomBottomNav extends StatelessWidget {
           label:S.of(context).favorites,
         ),
 
-        // 👇 Post Ads – شكل خاص زي الصورة
+       
         BottomNavigationBarItem(
           icon: Center(
             child: Container(

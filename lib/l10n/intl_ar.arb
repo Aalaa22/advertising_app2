@@ -43,12 +43,9 @@
    "optional":"اختياري",
   "phonesignup":"دخول برقم الهاتف",
   "premium": "مميز",
-  "price": "{price}",
-  "location": "{location}",
+  "price": "السعر",
   "placeName": "منارة موتورز",
-  "date": "{date}",
-  "priceOnly": "{price}",
-
+  
   "back":"رجوع",
 
   "forgetyourpass":"نسيت كلمة المرور؟",
@@ -82,7 +79,27 @@
   "home":"الرئيسية",
   "srtting":"الإعدادات",
   "manage":"الإدارة",
-  "post":"إضافةإعلان"
+  "post":"إضافةإعلان",
+
+"editprof4": "تعديل الملف الشخصي",
+"editing1": "جاري التعديل",
+"editit2": "هل تريد تعديل ملفك الشخصي؟",
+"edit3": "تعديل",
+
+"discover_best_cars_deals": "اكتشف أفضل عروض السيارات",
+  "choose_make": "اختر الماركة",
+  "choose_model": "اختر الطراز",
+  "search": "بحث",
+  "click_for_amazing_daily_cars_deals": "اضغط لرؤية عروض السيارات اليومية المميزة",
+  "top_premium_dealers": "أفضل الوكلاء المميزين",
+  "see_all_ads": "عرض كل الإعلانات",
+
+  "km": "كم",
+  "year": "السنة",
+  "trim": "الفئة",
+  "sort": "فرز حسب الأقرب",
+  "ads": "عدد الإعلانات"
   
+
   
 }

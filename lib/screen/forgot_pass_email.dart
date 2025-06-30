@@ -3,6 +3,7 @@ import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../router/local_notifier.dart';
@@ -25,10 +26,10 @@ class ForgotPassEmail extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.white,
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: ListView(
                 children: [
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32.h),
 
                   /// Back + Language
                   Row(
@@ -38,11 +39,11 @@ class ForgotPassEmail extends StatelessWidget {
                         child: Row(
                           children: [
                             const Icon(Icons.arrow_back_ios, color: KTextColor),
-                            const SizedBox(width: 4),
+                            SizedBox(width: 4.w),
                             Text(
                               S.of(context).back,
-                              style: const TextStyle(
-                                fontSize: 14,
+                              style: TextStyle(
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
                                 color: KTextColor,
                               ),
@@ -57,8 +58,8 @@ class ForgotPassEmail extends StatelessWidget {
                           locale.languageCode == 'ar'
                               ? S.of(context).engilsh
                               : S.of(context).arabic,
-                          style: const TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: KTextColor,
                           ),
@@ -67,55 +68,55 @@ class ForgotPassEmail extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   /// Logo
                   Center(
                     child: Image.asset(
                       'images/logo.png',
-                      height: 98,
-                      width: 125,
+                      height: 98.h,
+                      width: 125.w,
                       fit: BoxFit.contain,
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
 
                   /// Title
                   Text(
                     S.of(context).forgetyourpass,
                     textAlign: TextAlign.center,
                     textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 20,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w500,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
 
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
 
                   /// Label: Enter your email
                   Text(
                     S.of(context).enteremail,
                     textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
 
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
 
                   /// Email Field
                   CustomTextField(
                     hintText: 'Yourname@Example.com',
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   /// Send Code Button
                   CustomButton(

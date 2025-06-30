@@ -5,6 +5,7 @@ import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_elevated_button.dart';
 import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class EmailLoginScreen extends StatefulWidget {
@@ -24,97 +25,76 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
   Widget build(BuildContext context) {
     final locale = widget.notifier.locale;
     final isArabic = locale.languageCode == 'ar';
-    final screenWidth = MediaQuery.of(context).size.width;
 
     return Directionality(
       textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18),
+          padding: EdgeInsets.symmetric(horizontal: 18.w),
           child: ListView(
             children: [
-              const SizedBox(height: 24),
-
-              /// لغة التبديل
+              SizedBox(height: 24.h),
               Align(
                 alignment: isArabic ? Alignment.topLeft : Alignment.topRight,
                 child: GestureDetector(
                   onTap: widget.notifier.toggleLocale,
                   child: Text(
                     isArabic ? S.of(context).engilsh : S.of(context).arabic,
-                    style: const TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: KTextColor,
                     ),
                   ),
                 ),
               ),
-
-              const SizedBox(height: 12),
-
-              /// اللوجو
+              SizedBox(height: 12.h),
               Center(
                 child: Image.asset(
                   'images/logo.png',
-                  height:98,
-                  width: 125,
+                  height: 98.h,
+                  width: 125.w,
                 ),
               ),
-
-              const SizedBox(height: 10),
-
-              /// العنوان الرئيسي
+              SizedBox(height: 10.h),
               Text(
                 S.of(context).login,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: KTextColor,
-                  fontSize: 24,
+                  fontSize: 24.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-
-              const SizedBox(height: 18),
-
-              /// الإيميل
+              SizedBox(height: 18.h),
               Text(
                 S.of(context).emailLogin,
-                style: const TextStyle(
+                style: TextStyle(
                   color: KTextColor,
                   fontWeight: FontWeight.w500,
-                  fontSize:16,
+                  fontSize: 16.sp,
                 ),
               ),
-              CustomTextField(hintText:'YourName@Example.Com'),
-
-              const SizedBox(height: 8),
-
-              /// الباسورد
+              CustomTextField(hintText: 'YourName@Example.Com'),
+              SizedBox(height: 8.h),
               Text(
                 S.of(context).password,
-                style: const TextStyle(
+                style: TextStyle(
                   color: KTextColor,
                   fontWeight: FontWeight.w500,
-                  fontSize:16,
+                  fontSize: 16.sp,
                 ),
               ),
-              CustomTextField(hintText: '1234567',isPassword: true,),
-
-              const SizedBox(height: 20),
-
-              /// زرار الدخول
+              CustomTextField(hintText: '1234567', isPassword: true),
+              SizedBox(height: 20.h),
               CustomButton(
                 text: S.of(context).login,
                 ontap: () {
                   context.push('/home');
                 },
               ),
-
-              const SizedBox(height: 8),
-
-              /// نسيان الباسورد
+              SizedBox(height: 8.h),
               GestureDetector(
                 onTap: () {
                   context.push('/forgetpassemail');
@@ -122,31 +102,28 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                 child: Text(
                   S.of(context).forgotPassword,
                   textAlign: TextAlign.end,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     decoration: TextDecoration.underline,
                     decorationThickness: 1.5,
                     color: KTextColor,
                   ),
                 ),
               ),
-
-              const SizedBox(height: 8),
-
-              /// خط فاصل + كلمة OR
+              SizedBox(height: 8.h),
               Row(
                 children: [
                   const Expanded(
                       child: Divider(color: KTextColor, thickness: 2)),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
                     child: Text(
                       S.of(context).or,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: KTextColor,
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
@@ -154,10 +131,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                       child: Divider(color: KTextColor, thickness: 2)),
                 ],
               ),
-
-              const SizedBox(height: 16),
-
-              /// زرارين: الدخول برقم الهاتف و الدخول كزائر
+              SizedBox(height: 16.h),
               Row(
                 children: [
                   Expanded(
@@ -168,7 +142,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                       text: S.of(context).phoneLogin,
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16.w),
                   Expanded(
                     child: CustomElevatedButton(
                       onpress: () {},
@@ -177,19 +151,15 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                   ),
                 ],
               ),
-
-              const SizedBox(height: 16),
-
-              /// إنشاء حساب
+              SizedBox(height: 16.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     S.of(context).dontHaveAccount,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 12,
-                     // fontWeight: FontWeight.w500,
+                      fontSize: 12.sp,
                     ),
                   ),
                   GestureDetector(
@@ -198,20 +168,19 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                     },
                     child: Text(
                       S.of(context).createAccount,
-                      style: const TextStyle(
+                      style: TextStyle(
                         decoration: TextDecoration.underline,
                         decorationColor: KTextColor,
                         decorationThickness: 1.5,
                         color: KTextColor,
                         fontWeight: FontWeight.w500,
-                        fontSize: 11,
+                        fontSize: 11.sp,
                       ),
                     ),
                   ),
                 ],
               ),
-
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
             ],
           ),
         ),

@@ -1,152 +1,146 @@
 import 'package:advertising_app/constants.dart';
 import 'package:advertising_app/generated/l10n.dart';
+import 'package:advertising_app/router/local_notifier.dart';
 import 'package:advertising_app/widget/custom_button.dart';
+import 'package:advertising_app/widget/custom_phone_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../router/local_notifier.dart';
-
-class VerifyPhoneCode extends StatelessWidget {
+class ForgotPassPhone extends StatefulWidget {
   final LocaleChangeNotifier notifier;
 
-  const VerifyPhoneCode({super.key, required this.notifier});
+  const ForgotPassPhone({super.key, required this.notifier});
 
-  final String phoneNumber = "+971 5737357344";
+  @override
+  State<ForgotPassPhone> createState() => _ForgotPassPhoneState();
+}
+
+class _ForgotPassPhoneState extends State<ForgotPassPhone> {
+  bool showEmailField = false;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: notifier,
-      builder: (context, _) {
-        final locale = notifier.locale;
-        final isArabic = locale.languageCode == 'ar';
+        animation: widget.notifier,
+        builder: (context, _) {
+          final locale = widget.notifier.locale;
 
-        return Directionality(
-          textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
-          child: Scaffold(
+          return Scaffold(
             backgroundColor: Colors.white,
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: ListView(
                 children: [
-                  const SizedBox(height: 32),
-
-                  /// Back + Language in one row
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          context.pop();
-                        },
-                        child: Row(
-                          children: [
-                            const Icon(Icons.arrow_back_ios, color: KTextColor),
-                            const SizedBox(width: 4),
-                            Text(
-                              S.of(context).back,
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: KTextColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: notifier.toggleLocale,
-                        child: Text(
-                          locale.languageCode == 'ar'
-                              ? S.of(context).engilsh
-                              : S.of(context).arabic,
-                          style: const TextStyle(
-                            fontSize: 16,
+                  SizedBox(height: 32.h),
+                  GestureDetector(
+                    onTap: () {
+                      context.pop(); 
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.arrow_back_ios, color: KTextColor, size: 20.sp),
+                        SizedBox(width: 4.w),
+                        Text(
+                          S.of(context).back,
+                          style: TextStyle(
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             color: KTextColor,
                           ),
                         ),
-                      ),
-                    ],
+                        Spacer(),
+                        Align(
+                          alignment: locale.languageCode == 'ar'
+                              ? Alignment.topLeft
+                              : Alignment.topRight,
+                          child: GestureDetector(
+                            onTap: widget.notifier.toggleLocale,
+                            child: Text(
+                              locale.languageCode == 'ar'
+                                  ? S.of(context).engilsh
+                                  : S.of(context).arabic,
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
+                                color: KTextColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
 
-                  const SizedBox(height: 12),
-
-                  /// Logo
+                  SizedBox(height: 12.h),
                   Center(
                     child: Image.asset(
                       'images/logo.png',
-                      height: 98,
-                      width: 125,
                       fit: BoxFit.contain,
+                      height: 98.h,
+                      width: 125.w,
                     ),
                   ),
 
-                  const SizedBox(height: 10),
-
-                  /// Title
+                  SizedBox(height: 10.h),
                   Text(
-                    S.of(context).verifnum,
+                    S.of(context).forgetyourpass,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w500,
+                      overflow: TextOverflow.ellipsis,
                     ),
+                    maxLines: 1,
                   ),
 
-                  const SizedBox(height: 8),
+                  SizedBox(height: 15.h),
+                  Text(
+                    S.of(context).enterphone,
+                    style: TextStyle(
+                      color: KTextColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                  CustomPhoneField(
+                    onCountryChanged: (code) {
+                      setState(() {
+                        showEmailField = code != 'AE';
+                      });
+                    },
+                  ),
 
-                  /// Message
-                  Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: Text(
-                      "${S.of(context).phoneverify} $phoneNumber",
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: KTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                  if (showEmailField)
+                    Padding(
+                      padding: EdgeInsets.only(top: 10.h),
+                      child: TextField(
+                        style: TextStyle(fontSize: 14.sp),
+                        decoration: InputDecoration(
+                          labelText: S.of(context).email,
+                          labelStyle: TextStyle(fontSize: 14.sp),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: const Color.fromRGBO(8, 194, 201, 1),
+                            ),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
 
-                  const SizedBox(height: 24),
-
-                  /// Code Field
-                  PinCodeTextField(
-                    length: 4,
-                    appContext: context,
-                    onChanged: (value) {},
-                    pinTheme: PinTheme(
-                      shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(8),
-                      fieldHeight: 70,
-                      fieldWidth: 70,
-                      activeFillColor: Colors.white,
-                      selectedColor: Colors.blue,
-                      activeColor: const Color.fromRGBO(8, 194, 201, 1),
-                      inactiveColor: const Color.fromRGBO(8, 194, 201, 1),
-                    ),
-                    keyboardType: TextInputType.number,
-                  ),
-
-                  const SizedBox(height: 18),
-
-                  /// Button
+                  SizedBox(height: 20.h),
                   CustomButton(
                     ontap: () {
-                      context.push('/resetpass');
+                      context.push('/phonecode');
                     },
-                    text: S.of(context).verify,
+                    text: S.of(context).sendcode,
                   ),
                 ],
               ),
             ),
-          ),
-        );
-      },
-    );
+          );
+        });
   }
 }

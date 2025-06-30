@@ -46,7 +46,7 @@
   "optional":"optional",
 
   "premium": "Premium",
-  "price": "Price: {price}",
+  "price": "Price",
   "location": "Location: {location}",
   "placeName": "Al Manara Motors",
   "date": "Date: {date}",
@@ -85,5 +85,26 @@
   "home":"Home",
   "srtting":"Settings",
   "manage":"Manage",
-  "post":"Post Ads"
+  "post":"Post Ads",
+
+  "editprof4":"Edit my Profile",
+  "editing1":"Editing",
+  "editit2" :"Do you want to edit your profile",
+  "edit3": "Edit",
+
+  "discover_best_cars_deals": "Discover Best Cars Deals",
+  "choose_make": "Choose Make",
+  "choose_model": "Choose Model",
+  "search": "Search",
+  "click_for_amazing_daily_cars_deals": "Click For Amazing Daily Cars Deals",
+  "top_premium_dealers": "Top Premium Dealers",
+  "see_all_ads": "See All Ads",
+
+  "km": "Km",
+  "year": "Year",
+  "trim": "Trim",
+  "sort": "Sort By The Nearest",
+  "ad": "ADS NO: 1000"
+
+
 }

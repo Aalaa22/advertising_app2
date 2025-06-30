@@ -2,6 +2,7 @@ import 'package:advertising_app/constants.dart';
 import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -27,10 +28,10 @@ class VerifyEmailCode extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.white,
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: ListView(
                 children: [
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32.h),
 
                   /// Back + Language
                   Row(
@@ -40,11 +41,11 @@ class VerifyEmailCode extends StatelessWidget {
                         child: Row(
                           children: [
                             const Icon(Icons.arrow_back_ios, color: KTextColor),
-                            const SizedBox(width: 4),
+                            SizedBox(width: 4.w),
                             Text(
                               S.of(context).back,
-                              style: const TextStyle(
-                                fontSize: 14,
+                              style: TextStyle(
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
                                 color: KTextColor,
                               ),
@@ -59,8 +60,8 @@ class VerifyEmailCode extends StatelessWidget {
                           locale.languageCode == 'ar'
                               ? S.of(context).engilsh
                               : S.of(context).arabic,
-                          style: const TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: KTextColor,
                           ),
@@ -69,19 +70,19 @@ class VerifyEmailCode extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   /// Logo
                   Center(
                     child: Image.asset(
                       'images/logo.png',
-                      height: 98,
-                      width: 125,
+                      height: 98.h,
+                      width: 125.w,
                       fit: BoxFit.contain,
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
 
                   /// Title
                   Text(
@@ -89,14 +90,14 @@ class VerifyEmailCode extends StatelessWidget {
                     textAlign: TextAlign.center,
                     textDirection:
                         isArabic ? TextDirection.rtl : TextDirection.ltr,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
 
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
                   /// Sub Title
                   Text(
@@ -104,14 +105,14 @@ class VerifyEmailCode extends StatelessWidget {
                     textAlign: TextAlign.center,
                     textDirection:
                         isArabic ? TextDirection.rtl : TextDirection.ltr,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
 
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24.h),
 
                   /// Code Field
                   PinCodeTextField(
@@ -120,9 +121,9 @@ class VerifyEmailCode extends StatelessWidget {
                     onChanged: (value) {},
                     pinTheme: PinTheme(
                       shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(8),
-                      fieldHeight: 70,
-                      fieldWidth: 70,
+                      borderRadius: BorderRadius.circular(8.r),
+                      fieldHeight: 70.h,
+                      fieldWidth: 70.w,
                       activeFillColor: Colors.white,
                       selectedColor: Colors.blue,
                       activeColor: const Color.fromRGBO(8, 194, 201, 1),
@@ -131,7 +132,7 @@ class VerifyEmailCode extends StatelessWidget {
                     keyboardType: TextInputType.number,
                   ),
 
-                  const SizedBox(height: 18),
+                  SizedBox(height: 18.h),
 
                   /// Verify Button
                   CustomButton(

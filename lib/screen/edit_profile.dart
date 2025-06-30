@@ -140,8 +140,8 @@ class _EditProfileState extends State<EditProfile> {
                     onPressed: () {
                       context.push('/profile');
                     },
-                    child: const Text(
-                      "Edit my profile",
+                    child: Text(
+                      S.of(context).editprof4,
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
@@ -217,7 +217,7 @@ class _EditProfileState extends State<EditProfile> {
             Icon(Icons.edit, color: Color(0xFF01547E)),
             SizedBox(width: 8),
             Text(
-              "Editing",
+             S.of(context).editing1,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
@@ -227,7 +227,7 @@ class _EditProfileState extends State<EditProfile> {
           ],
         ),
         content: Text(
-          "Do you want edit it?",
+          S.of(context).editit2,
           style: TextStyle(fontSize: 16, color: KTextColor),
         ),
         actionsPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -235,7 +235,7 @@ class _EditProfileState extends State<EditProfile> {
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              "Cancel",
+              S.of(context).cancel,
               style: TextStyle(color: Colors.grey[700], fontSize: 14),
             ),
           ),
@@ -244,7 +244,7 @@ class _EditProfileState extends State<EditProfile> {
               Navigator.pop(context);
               onEdit();
             },
-            child: Text("Edit"),
+            child: Text(S.of(context).edit3),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF01547E),
               foregroundColor: Colors.white,

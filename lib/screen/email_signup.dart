@@ -5,6 +5,7 @@ import 'package:advertising_app/widget/custom_button.dart';
 import 'package:advertising_app/widget/custom_elevated_button.dart';
 import 'package:advertising_app/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class EmailSignUpScreen extends StatefulWidget {
@@ -37,11 +38,11 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
           backgroundColor: Colors.white,
           body: SafeArea(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: isTablet ? 40 : 18),
+              padding: EdgeInsets.symmetric(horizontal: isTablet ? 40.w : 18.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   Align(
                     alignment: locale.languageCode == 'ar'
                         ? Alignment.topLeft
@@ -52,8 +53,8 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                         locale.languageCode == 'ar'
                             ? S.of(context).engilsh
                             : S.of(context).arabic,
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style: TextStyle(
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           color: KTextColor,
                         ),
@@ -61,67 +62,65 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                     ),
                   ),
                   Image.asset(
-                      'images/logo.png',
-                      fit: BoxFit.contain,
-                      height: 98,
-                      width: 125,
-                    
+                    'images/logo.png',
+                    fit: BoxFit.contain,
+                    height: 98.h,
+                    width: 125.w,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Text(
                     S.of(context).signUp,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
-                      fontSize: 24,
+                      fontSize: 24.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 7),
+                  SizedBox(height: 7.h),
                   Text(
                     S.of(context).userName,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
                   CustomTextField(hintText: "Ralph Edwards"),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Text(
                     S.of(context).email,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
-                 CustomTextField(hintText: "Yourname@Example.Com",),
-                  const SizedBox(height: 5),
+                  CustomTextField(hintText: "Yourname@Example.Com"),
+                  SizedBox(height: 5.h),
                   Text(
                     S.of(context).password,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
-                 CustomTextField(
-              hintText: '1234567',
-              isPassword: true,
-              
-            ),
-                  const SizedBox(height: 5),
+                  CustomTextField(
+                    hintText: '1234567',
+                    isPassword: true,
+                  ),
+                  SizedBox(height: 5.h),
                   Text(
                     S.of(context).referralCode,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                   ),
                   CustomTextField(hintText: 'xxxxx'),
-                  const SizedBox(height: 2),
+                  SizedBox(height: 2.h),
                   Row(
                     children: [
                       Checkbox(
@@ -137,8 +136,8 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                       Expanded(
                         child: Text(
                           S.of(context).agreeTerms,
-                          style: const TextStyle(
-                            fontSize: 14,
+                          style: TextStyle(
+                            fontSize: 14.sp,
                             color: KTextColor,
                             fontWeight: FontWeight.w500,
                           ),
@@ -152,18 +151,18 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                     },
                     child: CustomButton(text: S.of(context).register),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4.h),
                   Center(
                     child: Text(
                       S.of(context).or,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: KTextColor,
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -175,7 +174,7 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                           text: S.of(context).phonesignup,
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16.w),
                       Flexible(
                         child: CustomElevatedButton(
                           onpress: () {
@@ -186,38 +185,37 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         S.of(context).haveAccount,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: KTextColor,
-                          fontSize: 14,
-                          //fontWeight: FontWeight.w500,
+                          fontSize: 14.sp,
                         ),
                       ),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 4.w),
                       GestureDetector(
                         onTap: () {
                           context.push('/login');
                         },
                         child: Text(
                           S.of(context).login,
-                          style: const TextStyle(
+                          style: TextStyle(
                             decoration: TextDecoration.underline,
                             decorationColor: KTextColor,
                             decorationThickness: 1.5,
                             color: KTextColor,
                             fontWeight: FontWeight.w500,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                 ],
               ),
             ),
@@ -227,4 +225,3 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
     );
   }
 }
-

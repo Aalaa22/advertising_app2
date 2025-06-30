@@ -33,12 +33,12 @@ GoRouter createRouter({
       //   path: '/',
       //   builder: (context, state) =>SplashGridScreen()
       // ),
-       GoRoute(
-        path: '/',
-        builder: (context, state) => HomeScreen(),
-      ),
+      //  GoRoute(
+      //   path: '/',
+      //   builder: (context, state) => HomeScreen(),
+      // ),
       GoRoute(
-        path: '/signup',
+        path: '/',
         builder: (context, state) => SignUpScreen(
           notifier: notifier,
         ),
@@ -70,12 +70,12 @@ GoRouter createRouter({
           notifier: notifier,
         ),
       ),
-      GoRoute(
-        path: '/passphonelogin',
-        builder: (context, state) => ForgotPassPhone(
-           notifier: notifier,
-        ),
-      ),
+      // GoRoute(
+      //   path: '/passphonelogin',
+      //   builder: (context, state) => ForgotPassPhone(
+      //      notifier: notifier,
+      //   ),
+      // ),
       GoRoute(
         path: '/forgetpassemail',
         builder: (context, state) => ForgotPassEmail(
@@ -83,12 +83,12 @@ GoRouter createRouter({
         ),
       ),
      
-      GoRoute(
-        path: '/phonecode',
-        builder: (context, state) => VerifyPhoneCode(
-          notifier: notifier,
-        ),
-      ),
+      // GoRoute(
+      //   path: '/phonecode',
+      //   builder: (context, state) => VerifyPhoneCode(
+      //     notifier: notifier,
+      //   ),
+      // ),
       GoRoute(
         path: '/emailcode',
         builder: (context, state) => VerifyEmailCode(
@@ -108,10 +108,10 @@ GoRouter createRouter({
            notifier: notifier,
         ),
       ),
-      // GoRoute(
-      //   path: '/home',
-      //   builder: (context, state) => HomeScreen(),
-      // ),
+      GoRoute(
+        path: '/home',
+        builder: (context, state) => HomeScreen(),
+      ),
       GoRoute(
         path: '/favorite',
         builder: (context, state) => FavoriteScreen(),

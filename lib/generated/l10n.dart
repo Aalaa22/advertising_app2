@@ -365,14 +365,9 @@ class S {
     return Intl.message('Premium', name: 'premium', desc: '', args: []);
   }
 
-  /// `Price: {price}`
-  String price(Object price) {
-    return Intl.message(
-      'Price: $price',
-      name: 'price',
-      desc: '',
-      args: [price],
-    );
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
   }
 
   /// `Location: {location}`
@@ -588,6 +583,121 @@ class S {
   /// `Post Ads`
   String get post {
     return Intl.message('Post Ads', name: 'post', desc: '', args: []);
+  }
+
+  /// `Edit my Profile`
+  String get editprof4 {
+    return Intl.message(
+      'Edit my Profile',
+      name: 'editprof4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Editing`
+  String get editing1 {
+    return Intl.message('Editing', name: 'editing1', desc: '', args: []);
+  }
+
+  /// `Do you want to edit your profile`
+  String get editit2 {
+    return Intl.message(
+      'Do you want to edit your profile',
+      name: 'editit2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit3 {
+    return Intl.message('Edit', name: 'edit3', desc: '', args: []);
+  }
+
+  /// `Discover Best Cars Deals`
+  String get discover_best_cars_deals {
+    return Intl.message(
+      'Discover Best Cars Deals',
+      name: 'discover_best_cars_deals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Make`
+  String get choose_make {
+    return Intl.message('Choose Make', name: 'choose_make', desc: '', args: []);
+  }
+
+  /// `Choose Model`
+  String get choose_model {
+    return Intl.message(
+      'Choose Model',
+      name: 'choose_model',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Click For Amazing Daily Cars Deals`
+  String get click_for_amazing_daily_cars_deals {
+    return Intl.message(
+      'Click For Amazing Daily Cars Deals',
+      name: 'click_for_amazing_daily_cars_deals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Premium Dealers`
+  String get top_premium_dealers {
+    return Intl.message(
+      'Top Premium Dealers',
+      name: 'top_premium_dealers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See All Ads`
+  String get see_all_ads {
+    return Intl.message('See All Ads', name: 'see_all_ads', desc: '', args: []);
+  }
+
+  /// `Km`
+  String get km {
+    return Intl.message('Km', name: 'km', desc: '', args: []);
+  }
+
+  /// `Year`
+  String get year {
+    return Intl.message('Year', name: 'year', desc: '', args: []);
+  }
+
+  /// `Trim`
+  String get trim {
+    return Intl.message('Trim', name: 'trim', desc: '', args: []);
+  }
+
+  /// `Sort By The Nearest`
+  String get sort {
+    return Intl.message(
+      'Sort By The Nearest',
+      name: 'sort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ADS NO: 1000`
+  String get ad {
+    return Intl.message('ADS NO: 1000', name: 'ad', desc: '', args: []);
   }
 }
 

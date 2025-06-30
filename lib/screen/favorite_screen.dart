@@ -6,7 +6,7 @@ import 'package:advertising_app/widget/custom_bottom_nav.dart';
 import 'package:advertising_app/widget/custom_card.dart';
 import 'package:advertising_app/widget/custom_category.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
@@ -14,7 +14,6 @@ class FavoriteScreen extends StatefulWidget {
   @override
   State<FavoriteScreen> createState() => _FavoriteScreenState();
 }
-
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
   int selectedCategory = 0;
@@ -61,7 +60,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         bottomNavigationBar: CustomBottomNav(currentIndex: 1),
         appBar: AppBar(
           title: Text(
-           S.of(context).favorites,
+            S.of(context).favorites,
             style: TextStyle(
               color: KTextColor,
               fontWeight: FontWeight.w500,
@@ -74,17 +73,29 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         ),
         body: Column(
           children: [
-            Expanded(
-              child: CustomCategory(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal:10 ),
+              child: CustomCategoryGrid(
                 categories: categories,
                 selectedIndex: selectedCategory,
-                onCategorySelected: (index) {
+                onTap: (index) {
                   setState(() {
                     selectedCategory = index;
                   });
                 },
               ),
             ),
+
+            //  CustomCategory(
+            //     categories: categories,
+            //     selectedIndex: selectedCategory,
+            //     onCategorySelected: (index) {
+            //       setState(() {
+            //         selectedCategory = index;
+            //       });
+            //     },
+            //   ),
+
             Expanded(
               child: selectedItems.isEmpty
                   ? Center(
@@ -92,7 +103,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                         'No items found.',
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 18.sp,
                         ),
                       ),
                     )

@@ -20,14 +20,6 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(date) => "${date}";
-
-  static String m1(location) => "${location}";
-
-  static String m2(price) => "${price}";
-
-  static String m3(price) => "${price}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
@@ -44,13 +36,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "carrent": MessageLookupByLibrary.simpleMessage("تأجير السيارات"),
     "carsales": MessageLookupByLibrary.simpleMessage("بيع السيارات"),
     "carservices": MessageLookupByLibrary.simpleMessage("خدمات السيارات"),
+    "choose_make": MessageLookupByLibrary.simpleMessage("اختر الماركة"),
+    "choose_model": MessageLookupByLibrary.simpleMessage("اختر الطراز"),
+    "click_for_amazing_daily_cars_deals": MessageLookupByLibrary.simpleMessage(
+      "اضغط لرؤية عروض السيارات اليومية المميزة",
+    ),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "confirmpass": MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
     "contactUs": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createAgentCode": MessageLookupByLibrary.simpleMessage("إنشاء كود الخصم"),
-    "date": m0,
+    "discover_best_cars_deals": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض السيارات",
+    ),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "edit3": MessageLookupByLibrary.simpleMessage("تعديل"),
+    "editing1": MessageLookupByLibrary.simpleMessage("جاري التعديل"),
+    "editit2": MessageLookupByLibrary.simpleMessage(
+      "هل تريد تعديل ملفك الشخصي؟",
+    ),
+    "editprof4": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "electronics": MessageLookupByLibrary.simpleMessage(
       "الإلكترونيات و \nالأجهزة المنزلية",
     ),
@@ -76,9 +81,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "haveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "jobs": MessageLookupByLibrary.simpleMessage("وظائف"),
+    "km": MessageLookupByLibrary.simpleMessage("كم"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "locateMe": MessageLookupByLibrary.simpleMessage("حدد موقعي"),
-    "location": m1,
     "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "manage": MessageLookupByLibrary.simpleMessage("الإدارة"),
@@ -99,8 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "placeName": MessageLookupByLibrary.simpleMessage("منارة موتورز"),
     "post": MessageLookupByLibrary.simpleMessage("إضافةإعلان"),
     "premium": MessageLookupByLibrary.simpleMessage("مميز"),
-    "price": m2,
-    "priceOnly": m3,
+    "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "privacySecurity": MessageLookupByLibrary.simpleMessage("الخصوصية والأمان"),
     "realestate": MessageLookupByLibrary.simpleMessage("العقارات"),
     "referralCode": MessageLookupByLibrary.simpleMessage("كودالخصم"),
@@ -110,17 +114,25 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "restaurants": MessageLookupByLibrary.simpleMessage("مطاعم"),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "see_all_ads": MessageLookupByLibrary.simpleMessage("عرض كل الإعلانات"),
     "sendcode": MessageLookupByLibrary.simpleMessage("ارسل الكود"),
     "signUp": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+    "sort": MessageLookupByLibrary.simpleMessage("فرز حسب الأقرب"),
     "srtting": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "supportCenter": MessageLookupByLibrary.simpleMessage("مركز الدعم"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام",
     ),
+    "top_premium_dealers": MessageLookupByLibrary.simpleMessage(
+      "أفضل الوكلاء المميزين",
+    ),
+    "trim": MessageLookupByLibrary.simpleMessage("الفئة"),
     "uploadYourLogo": MessageLookupByLibrary.simpleMessage("ارفع شعارك"),
     "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "verifnum": MessageLookupByLibrary.simpleMessage("تحقّق من رقمك"),
     "verify": MessageLookupByLibrary.simpleMessage("تحقّق"),
     "whatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
+    "year": MessageLookupByLibrary.simpleMessage("السنة"),
   };
 }

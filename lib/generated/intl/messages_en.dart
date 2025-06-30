@@ -24,12 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(location) => "Location: ${location}";
 
-  static String m2(price) => "Price: ${price}";
-
-  static String m3(price) => "${price}";
+  static String m2(price) => "${price}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "ad": MessageLookupByLibrary.simpleMessage("ADS NO: 1000"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "advertiserLocation": MessageLookupByLibrary.simpleMessage(
       "Advertiser Location",
@@ -46,6 +45,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "carrent": MessageLookupByLibrary.simpleMessage("Car Rent"),
     "carsales": MessageLookupByLibrary.simpleMessage("Car Sales"),
     "carservices": MessageLookupByLibrary.simpleMessage("Car Services"),
+    "choose_make": MessageLookupByLibrary.simpleMessage("Choose Make"),
+    "choose_model": MessageLookupByLibrary.simpleMessage("Choose Model"),
+    "click_for_amazing_daily_cars_deals": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Daily Cars Deals",
+    ),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "confirmpass": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
@@ -54,9 +58,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Create Agent Code",
     ),
     "date": m0,
+    "discover_best_cars_deals": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Cars Deals",
+    ),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t Have An Account?",
     ),
+    "edit3": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editing1": MessageLookupByLibrary.simpleMessage("Editing"),
+    "editit2": MessageLookupByLibrary.simpleMessage(
+      "Do you want to edit your profile",
+    ),
+    "editprof4": MessageLookupByLibrary.simpleMessage("Edit my Profile"),
     "electronics": MessageLookupByLibrary.simpleMessage(
       "Electronics & Home \n Appliances",
     ),
@@ -80,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "jobs": MessageLookupByLibrary.simpleMessage("Jobs"),
+    "km": MessageLookupByLibrary.simpleMessage("Km"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "locateMe": MessageLookupByLibrary.simpleMessage("Locate Me"),
     "location": m1,
@@ -103,8 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "placeName": MessageLookupByLibrary.simpleMessage("Al Manara Motors"),
     "post": MessageLookupByLibrary.simpleMessage("Post Ads"),
     "premium": MessageLookupByLibrary.simpleMessage("Premium"),
-    "price": m2,
-    "priceOnly": m3,
+    "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "priceOnly": m2,
     "privacySecurity": MessageLookupByLibrary.simpleMessage(
       "Privacy & Security",
     ),
@@ -114,17 +128,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetpass": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "restaurants": MessageLookupByLibrary.simpleMessage("Restaurants"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "see_all_ads": MessageLookupByLibrary.simpleMessage("See All Ads"),
     "sendcode": MessageLookupByLibrary.simpleMessage("Send Code"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "sort": MessageLookupByLibrary.simpleMessage("Sort By The Nearest"),
     "srtting": MessageLookupByLibrary.simpleMessage("Settings"),
     "supportCenter": MessageLookupByLibrary.simpleMessage("Support Center"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
     ),
+    "top_premium_dealers": MessageLookupByLibrary.simpleMessage(
+      "Top Premium Dealers",
+    ),
+    "trim": MessageLookupByLibrary.simpleMessage("Trim"),
     "uploadYourLogo": MessageLookupByLibrary.simpleMessage("Upload Your Logo"),
     "userName": MessageLookupByLibrary.simpleMessage("User Name"),
     "verifnum": MessageLookupByLibrary.simpleMessage("Verify Your Number"),
     "verify": MessageLookupByLibrary.simpleMessage("Verify"),
     "whatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
+    "year": MessageLookupByLibrary.simpleMessage("Year"),
   };
 }
