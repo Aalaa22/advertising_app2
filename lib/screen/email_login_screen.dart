@@ -111,7 +111,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 8.h),
+              SizedBox(height: 14.h),
               Row(
                 children: [
                   const Expanded(
@@ -159,7 +159,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                     S.of(context).dontHaveAccount,
                     style: TextStyle(
                       color: KTextColor,
-                      fontSize: 12.sp,
+                      fontSize: 13.sp,
                     ),
                   ),
                   GestureDetector(
@@ -174,7 +174,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                         decorationThickness: 1.5,
                         color: KTextColor,
                         fontWeight: FontWeight.w500,
-                        fontSize: 11.sp,
+                        fontSize: 13.sp,
                       ),
                     ),
                   ),

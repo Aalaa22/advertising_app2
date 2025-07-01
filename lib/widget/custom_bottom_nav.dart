@@ -28,19 +28,19 @@ class CustomBottomNav extends StatelessWidget {
       onTap: (index) {
         switch (index) {
           case 0:
-            context.push('/home');
+            context.go('/home');
             break;
           case 1:
-            context.push('/favorite');
+            context.go('/favorite');
             break;
           case 2:
-            context.push('/postad');
+            context.go('/postad');
             break;
           case 3:
-            context.push('/manage');
+            context.go('/manage');
             break;
           case 4:
-            context.push('/setting');
+            context.go('/setting');
             break;
         }
       },
@@ -50,6 +50,10 @@ class CustomBottomNav extends StatelessWidget {
             "assets/icons/home.svg",
                width: 26.w,
               height: 26,
+              color: currentIndex == 0
+        ? const Color(0xFF01547E) // لون المختار
+        : const Color.fromRGBO(5, 194, 201, 1), // لون غير المختار
+  
                  ),
         label:S.of(context).home,
         ),
@@ -92,6 +96,10 @@ class CustomBottomNav extends StatelessWidget {
             "assets/icons/manage.svg",
                width: 26,
               height: 26,
+              color: currentIndex == 3
+        ? const Color(0xFF01547E)
+        : const Color.fromRGBO(5, 194, 201, 1),
+  
                  ),
                  label:S.of(context).manage,
         ),

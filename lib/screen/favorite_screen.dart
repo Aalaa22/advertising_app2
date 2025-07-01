@@ -112,13 +112,16 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       itemCount: selectedItems.length,
                       itemBuilder: (context, index) {
                         final item = selectedItems[index];
-                        return FavoriteCard(
-                          item: item,
-                          onDelete: () {
-                            setState(() {
-                              selectedItems.removeAt(index);
-                            });
-                          },
+                        return Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: FavoriteCard(
+                            item: item,
+                            onDelete: () {
+                              setState(() {
+                                selectedItems.removeAt(index);
+                              });
+                            },
+                          ),
                         );
                       },
                     ),

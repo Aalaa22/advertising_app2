@@ -31,7 +31,7 @@ final List<CarSalesModel> dummyCarSales = [
   steeringSide: "Left",
     images: [
       'images/car.jpg',
-      'images/car_services.png',
+      'images/Audi S5 TSFIjpeg.jpeg',
       'images/car.jpg',
     ],
   ),
@@ -92,7 +92,7 @@ final List<CarSalesModel> dummyCarSales = [
   steeringSide: "Left",
     images: [
       'images/car.jpg',
-      'images/car_services.png',
+      'images/Audi S5 TSFIjpeg.jpeg',
       'images/car.jpg',
     ],
   ),
@@ -194,7 +194,7 @@ final List<CarRentModel> dummyCarRent = [
     priority: AdPriority.free,
     images: [
       'images/car.jpg',
-      'images/car_services.png',
+      'images/Audi S5 TSFIjpeg.jpeg',
       'images/car.jpg',
     ],
   ),
@@ -210,7 +210,7 @@ final List<CarRentModel> dummyCarRent = [
     priority: AdPriority.premium,
     images: [
       'images/car.jpg',
-      'images/car_services.png',
+      'images/Audi S5 TSFIjpeg.jpeg',
     ],
   ),
 ];
@@ -235,7 +235,7 @@ final List<CarRentModel> dummyCarRent = [
 //     isPremium: true,
 //     images: [
 //       'images/car.jpg',
-//       'images/car_services.png',
+//       'images/Audi S5 TSFIjpeg.jpeg',
 //       'images/car.jpg',
 //     ],
 //   ),
@@ -269,7 +269,7 @@ final List<CarRentModel> dummyCarRent = [
 //     isPremium: true,
 //     images: [
 //       'images/car.jpg',
-//       'images/car_services.png',
+//       'images/Audi S5 TSFIjpeg.jpeg',
 //       'images/car.jpg',
 //     ],
 //   ),
@@ -353,7 +353,7 @@ final List<CarRentModel> dummyCarRent = [
 // //     isPremium: false,
 // //     images: [
 // //       'images/car.jpg',
-// //       'images/car_services.png',
+// //       'images/Audi S5 TSFIjpeg.jpeg',
 // //       'images/car.jpg',
 // //     ],
 // //   ),

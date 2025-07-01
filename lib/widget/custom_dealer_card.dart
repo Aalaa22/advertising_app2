@@ -12,7 +12,6 @@ class DealerCarCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final cardSize = getCardSize(screenWidth);
-    final isArabic = Directionality.of(context) == TextDirection.rtl;
 
     return Container(
       width: cardSize.width.w,
@@ -41,11 +40,12 @@ class DealerCarCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 4.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   car.price,
@@ -55,6 +55,7 @@ class DealerCarCard extends StatelessWidget {
                     fontSize: 12.sp,
                   ),
                 ),
+                SizedBox(height: 2.h),
                 Text(
                   car.name,
                   style: TextStyle(
@@ -65,47 +66,27 @@ class DealerCarCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 3.h),
                 Row(
-                  children: isArabic
-                      ? [
-                          Text(
-                            "${car.km} KM",
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              color: const Color.fromRGBO(165, 164, 162, 1),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(width: 15.w),
-                          Text(
-                            "${car.year}",
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              color: const Color.fromRGBO(165, 164, 162, 1),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ]
-                      : [
-                          Text(
-                            "${car.year}",
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              color: const Color.fromRGBO(165, 164, 162, 1),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(width: 15.w),
-                          Text(
-                            "${car.km} KM",
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              color: const Color.fromRGBO(165, 164, 162, 1),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
+                  children: [
+                    Text(
+                      "${car.year}",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        color: const Color.fromRGBO(165, 164, 162, 1),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(width: 15.w),
+                    Text(
+                      "${car.km} KM",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        color: const Color.fromRGBO(165, 164, 162, 1),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

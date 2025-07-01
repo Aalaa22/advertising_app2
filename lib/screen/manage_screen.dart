@@ -8,7 +8,7 @@ class ManageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        backgroundColor: Colors.white,
-      bottomNavigationBar: CustomBottomNav(currentIndex: 0),
+      bottomNavigationBar: CustomBottomNav(currentIndex: 3),
       
       body: Center(child: Text("تحت الإنشاء",style: TextStyle(fontSize: 50),)),
     );

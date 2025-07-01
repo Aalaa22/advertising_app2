@@ -5,7 +5,7 @@
   "phoneNumberHint": "508236561",
   "password": "Password",
   "referralCode": "Referral Code",
-  "agreeTerms": "I agree terms & conditions",
+  "agreeTerms": "I Agree Aerms & Conditions",
   "register": "Register",
   "or": "Or",
   "guestLogin": "Guest Login",
@@ -47,7 +47,7 @@
 
   "premium": "Premium",
   "price": "Price",
-  "location": "Location: {location}",
+  "location": "Location",
   "placeName": "Al Manara Motors",
   "date": "Date: {date}",
   "priceOnly": "{price}",
@@ -99,12 +99,35 @@
   "click_for_amazing_daily_cars_deals": "Click For Amazing Daily Cars Deals",
   "top_premium_dealers": "Top Premium Dealers",
   "see_all_ads": "See All Ads",
+  "smart_search": "Smart Search",
 
   "km": "Km",
   "year": "Year",
   "trim": "Trim",
   "sort": "Sort By The Nearest",
-  "ad": "ADS NO: 1000"
+  "ad": "ADS NO:",
+
+  "car_details": "Car Details",
+  "car_type": "Car Type",
+  "trans_type": "Trans Type",
+  "color": "Color",
+  "interior_color": "Interior Color",
+  "fuel_type": "Fuel Type",
+  "warranty": "Warranty",
+  "doors_no": "Doors No",
+  "seats_no": "Seats No",
+  "engine_capacity": "Engine Capacity",
+  "cylinders": "Cylinders",
+  "horse_power": "Horse Power",
+  "steering_side": "Steering Side",
+  "description": "Description",
+
+ 
+"agent": "Agent",
+"view_all_ads": "View All Ads",
+"report_this_ad": "Report This Ad",
+"use_this_space_for_ads": "Click Here To Use This Space For Your Ads"
+
 
 
 }

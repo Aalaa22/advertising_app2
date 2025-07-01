@@ -109,7 +109,7 @@ class ForgotPassEmail extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 3.h),
 
                   /// Email Field
                   CustomTextField(

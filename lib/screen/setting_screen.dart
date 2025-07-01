@@ -55,7 +55,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 _buildTile(
                   context: context,
                   customLeading: SvgPicture.asset(
-                    'assets/icons/number.svg',
+                    'assets/icons/numder.svg',
                     width: 12,
                     height: 12,
                   ),

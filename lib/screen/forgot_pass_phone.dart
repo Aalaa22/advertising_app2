@@ -36,7 +36,7 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                   const SizedBox(height: 32),
                   GestureDetector(
                     onTap: () {
-                      context.pop(); 
+                      context.pop();
                     },
                     child: Row(
                       children: [
@@ -72,15 +72,12 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                       ],
                     ),
                   ),
-
-
                   const SizedBox(height: 12),
-                   Image.asset(
-                      'images/logo.png',
-                      fit: BoxFit.contain,
-                      height: 98,
-                      width: 125,
-                    
+                  Image.asset(
+                    'images/logo.png',
+                    fit: BoxFit.contain,
+                    height: 98,
+                    width: 125,
                   ),
                   SizedBox(height: 10),
                   Text(
@@ -100,8 +97,11 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                     style: const TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 14,
+                      fontSize: 16,
                     ),
+                  ),
+                  SizedBox(
+                    height: 3,
                   ),
                   CustomPhoneField(
                     onCountryChanged: (code) {

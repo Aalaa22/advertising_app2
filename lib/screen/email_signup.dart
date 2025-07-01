@@ -79,7 +79,7 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                   ),
                   SizedBox(height: 7.h),
                   Text(
-                    S.of(context).userName,
+                  " ${S.of(context).userName}*",
                     style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
@@ -89,7 +89,7 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                   CustomTextField(hintText: "Ralph Edwards"),
                   SizedBox(height: 5.h),
                   Text(
-                    S.of(context).email,
+                    "${S.of(context).email}*",
                     style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,
@@ -99,7 +99,7 @@ class _EmailSignUpScreenState extends State<EmailSignUpScreen> {
                   CustomTextField(hintText: "Yourname@Example.Com"),
                   SizedBox(height: 5.h),
                   Text(
-                    S.of(context).password,
+                    "${S.of(context).password}*",
                     style: TextStyle(
                       color: KTextColor,
                       fontWeight: FontWeight.w500,

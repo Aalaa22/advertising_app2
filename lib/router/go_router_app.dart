@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:advertising_app/model/car_sale_model.dart';
 import 'package:advertising_app/router/local_notifier.dart';
 import 'package:advertising_app/screen/car_details_screen.dart';
@@ -29,84 +28,45 @@ GoRouter createRouter({
   return GoRouter(
     refreshListenable: notifier,
     routes: [
-      // GoRoute(
-      //   path: '/',
-      //   builder: (context, state) =>SplashGridScreen()
-      // ),
-      //  GoRoute(
-      //   path: '/',
-      //   builder: (context, state) => HomeScreen(),
-      // ),
       GoRoute(
         path: '/',
-        builder: (context, state) => SignUpScreen(
-          notifier: notifier,
-        ),
+        builder: (context, state) => SignUpScreen(notifier: notifier),
       ),
       GoRoute(
         path: '/login',
-        builder: (context, state) => LoginScreen(
-          notifier: notifier,
-        ),
+        builder: (context, state) => LoginScreen(notifier: notifier),
       ),
-
       GoRoute(
         path: '/emaillogin',
-        builder: (context, state) => EmailLoginScreen(
-          notifier: notifier,
-        ),
+        builder: (context, state) => EmailLoginScreen(notifier: notifier),
       ),
-
-      GoRoute(
-        path: '/emaillogin',
-        builder: (context, state) => EmailLoginScreen(
-          notifier: notifier,
-        ),
-      ),
-
       GoRoute(
         path: '/emailsignup',
-        builder: (context, state) => EmailSignUpScreen(
-          notifier: notifier,
-        ),
+        builder: (context, state) => EmailSignUpScreen(notifier: notifier),
       ),
-      // GoRoute(
-      //   path: '/passphonelogin',
-      //   builder: (context, state) => ForgotPassPhone(
-      //      notifier: notifier,
-      //   ),
-      // ),
+      GoRoute(
+        path: '/passphonelogin',
+        builder: (context, state) => ForgotPassPhone(notifier: notifier),
+      ),
       GoRoute(
         path: '/forgetpassemail',
-        builder: (context, state) => ForgotPassEmail(
-           notifier: notifier,
-        ),
+        builder: (context, state) => ForgotPassEmail(notifier: notifier),
       ),
-     
-      // GoRoute(
-      //   path: '/phonecode',
-      //   builder: (context, state) => VerifyPhoneCode(
-      //     notifier: notifier,
-      //   ),
-      // ),
+      GoRoute(
+        path: '/phonecode',
+        builder: (context, state) => VerifyPhoneCode(notifier: notifier),
+      ),
       GoRoute(
         path: '/emailcode',
-        builder: (context, state) => VerifyEmailCode(
-          notifier: notifier,
-        ),
+        builder: (context, state) => VerifyEmailCode(notifier: notifier),
       ),
       GoRoute(
         path: '/resetpass',
-        builder: (context, state) => ResetPassword(
-          notifier: notifier,
-        ),
+        builder: (context, state) => ResetPassword(notifier: notifier),
       ),
-      
       GoRoute(
         path: '/setting',
-        builder: (context, state) => SettingScreen(
-           notifier: notifier,
-        ),
+        builder: (context, state) => SettingScreen(notifier: notifier),
       ),
       GoRoute(
         path: '/home',
@@ -133,17 +93,16 @@ GoRouter createRouter({
         builder: (context, state) => EditProfile(),
       ),
       GoRoute(
-  path: '/cars-sales',
-  builder: (context, state) => const CarSalesScreen(),
-),
-
-     GoRoute(
-  path: '/car-details',
-  builder: (context, state) {
-    final car = state.extra as CarSalesModel;
-    return CarDetailsScreen(car: car);
-  },
-),
+        path: '/cars-sales',
+        builder: (context, state) => const CarSalesScreen(),
+      ),
+      GoRoute(
+        path: '/car-details',
+        builder: (context, state) {
+          final car = state.extra as CarSalesModel;
+          return CarDetailsScreen(car: car);
+        },
+      ),
     ],
   );
 }

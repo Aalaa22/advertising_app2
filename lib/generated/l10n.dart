@@ -95,10 +95,10 @@ class S {
     );
   }
 
-  /// `I agree terms & conditions`
+  /// `I Agree Aerms & Conditions`
   String get agreeTerms {
     return Intl.message(
-      'I agree terms & conditions',
+      'I Agree Aerms & Conditions',
       name: 'agreeTerms',
       desc: '',
       args: [],
@@ -370,14 +370,9 @@ class S {
     return Intl.message('Price', name: 'price', desc: '', args: []);
   }
 
-  /// `Location: {location}`
-  String location(Object location) {
-    return Intl.message(
-      'Location: $location',
-      name: 'location',
-      desc: '',
-      args: [location],
-    );
+  /// `Location`
+  String get location {
+    return Intl.message('Location', name: 'location', desc: '', args: []);
   }
 
   /// `Al Manara Motors`
@@ -670,6 +665,16 @@ class S {
     return Intl.message('See All Ads', name: 'see_all_ads', desc: '', args: []);
   }
 
+  /// `Smart Search`
+  String get smart_search {
+    return Intl.message(
+      'Smart Search',
+      name: 'smart_search',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Km`
   String get km {
     return Intl.message('Km', name: 'km', desc: '', args: []);
@@ -695,9 +700,129 @@ class S {
     );
   }
 
-  /// `ADS NO: 1000`
+  /// `ADS NO:`
   String get ad {
-    return Intl.message('ADS NO: 1000', name: 'ad', desc: '', args: []);
+    return Intl.message('ADS NO:', name: 'ad', desc: '', args: []);
+  }
+
+  /// `Car Details`
+  String get car_details {
+    return Intl.message('Car Details', name: 'car_details', desc: '', args: []);
+  }
+
+  /// `Car Type`
+  String get car_type {
+    return Intl.message('Car Type', name: 'car_type', desc: '', args: []);
+  }
+
+  /// `Trans Type`
+  String get trans_type {
+    return Intl.message('Trans Type', name: 'trans_type', desc: '', args: []);
+  }
+
+  /// `Color`
+  String get color {
+    return Intl.message('Color', name: 'color', desc: '', args: []);
+  }
+
+  /// `Interior Color`
+  String get interior_color {
+    return Intl.message(
+      'Interior Color',
+      name: 'interior_color',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fuel Type`
+  String get fuel_type {
+    return Intl.message('Fuel Type', name: 'fuel_type', desc: '', args: []);
+  }
+
+  /// `Warranty`
+  String get warranty {
+    return Intl.message('Warranty', name: 'warranty', desc: '', args: []);
+  }
+
+  /// `Doors No`
+  String get doors_no {
+    return Intl.message('Doors No', name: 'doors_no', desc: '', args: []);
+  }
+
+  /// `Seats No`
+  String get seats_no {
+    return Intl.message('Seats No', name: 'seats_no', desc: '', args: []);
+  }
+
+  /// `Engine Capacity`
+  String get engine_capacity {
+    return Intl.message(
+      'Engine Capacity',
+      name: 'engine_capacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cylinders`
+  String get cylinders {
+    return Intl.message('Cylinders', name: 'cylinders', desc: '', args: []);
+  }
+
+  /// `Horse Power`
+  String get horse_power {
+    return Intl.message('Horse Power', name: 'horse_power', desc: '', args: []);
+  }
+
+  /// `Steering Side`
+  String get steering_side {
+    return Intl.message(
+      'Steering Side',
+      name: 'steering_side',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Agent`
+  String get agent {
+    return Intl.message('Agent', name: 'agent', desc: '', args: []);
+  }
+
+  /// `View All Ads`
+  String get view_all_ads {
+    return Intl.message(
+      'View All Ads',
+      name: 'view_all_ads',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report This Ad`
+  String get report_this_ad {
+    return Intl.message(
+      'Report This Ad',
+      name: 'report_this_ad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click Here To Use This Space For Your Ads`
+  String get use_this_space_for_ads {
+    return Intl.message(
+      'Click Here To Use This Space For Your Ads',
+      name: 'use_this_space_for_ads',
+      desc: '',
+      args: [],
+    );
   }
 }
 

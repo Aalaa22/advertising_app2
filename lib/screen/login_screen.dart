@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 14.h),
                 Row(
                   children: [
                     const Expanded(
@@ -192,7 +192,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       S.of(context).dontHaveAccount,
                       style: TextStyle(
                         color: KTextColor,
-                        fontSize: 11.sp,
+                        fontSize: 13.sp,
                       ),
                     ),
                     SizedBox(width: 4.w),
@@ -208,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           decorationThickness: 1.5,
                           color: KTextColor,
                           fontWeight: FontWeight.w500,
-                          fontSize: 11.sp,
+                          fontSize: 13.sp,
                         ),
                       ),
                     ),

@@ -34,7 +34,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
           hintText: widget.hintText,
           hintStyle: TextStyle(
             color: Color.fromRGBO(129, 126, 126, 1),
-            fontSize: 11,
+            fontSize: 14,
+            fontWeight: FontWeight.w500
             
           ),
           suffixIcon: widget.isPassword

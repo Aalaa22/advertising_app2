@@ -93,12 +93,38 @@
   "click_for_amazing_daily_cars_deals": "اضغط لرؤية عروض السيارات اليومية المميزة",
   "top_premium_dealers": "أفضل الوكلاء المميزين",
   "see_all_ads": "عرض كل الإعلانات",
+  "smart_search": "بحث ذكي",
+
 
   "km": "كم",
   "year": "السنة",
   "trim": "الفئة",
   "sort": "فرز حسب الأقرب",
-  "ads": "عدد الإعلانات"
+  "ad": "عدد الإعلانات",
+
+  "car_details": "تفاصيل السيارة",
+  "car_type": "نوع السيارة",
+  "trans_type": "نوع ناقل الحركة",
+  "color": "اللون",
+  "interior_color": "اللون الداخلي",
+  "fuel_type": "نوع الوقود",
+  "warranty": "الضمان",
+  "doors_no": "عدد الأبواب",
+  "seats_no": "عدد المقاعد",
+  "engine_capacity": "سعة المحرك",
+  "cylinders": "عدد الأسطوانات",
+  "horse_power": "قوة المحرك (حصان)",
+  "steering_side": "جهة المقود",
+  "description": "الوصف",
+
+"location": "الموقع",
+"agent": "الوكيل",
+"view_all_ads": "عرض جميع الإعلانات",
+"report_this_ad": "الإبلاغ عن هذا الإعلان",
+"use_this_space_for_ads": "اضغط هنا لاستخدام هذه المساحة لإعلاناتك"
+
+  
+
   
 
   
