@@ -1,10 +1,10 @@
 import 'package:advertising_app/constants.dart';
-import 'package:advertising_app/model/top_dealer_model.dart';
+import 'package:advertising_app/model/offer_box_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DealerCarCard extends StatelessWidget {
-  final DealerCarModel car;
+  final OfferBoxModel car;
 
   const DealerCarCard({super.key, required this.car});
 
@@ -15,7 +15,7 @@ class DealerCarCard extends StatelessWidget {
 
     return Container(
       width: cardSize.width.w,
-      height: cardSize.height.h,
+      // height: cardSize.height.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(4.r),
@@ -30,65 +30,68 @@ class DealerCarCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(4.r),
             child: Image.asset(
               car.image,
-              height: (cardSize.height * 0.6).h, // 60% من الطول
+              height: (cardSize.height * 0.6).h,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 4.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  car.price,
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12.sp,
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  car.name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12.sp,
-                    color: KTextColor,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 3.h),
-                Row(
-                  children: [
-                    Text(
-                      "${car.year}",
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: const Color.fromRGBO(165, 164, 162, 1),
-                        fontWeight: FontWeight.w600,
-                      ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 6.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween, // توزيع متساوٍ
+                children: [
+                  SizedBox(height:7,),
+                  Text(
+                    car.price,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
                     ),
-                    SizedBox(width: 15.w),
-                    Text(
-                      "${car.km} KM",
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: const Color.fromRGBO(165, 164, 162, 1),
-                        fontWeight: FontWeight.w600,
-                      ),
+                  ),
+                   SizedBox(height:7,),
+                  Text(
+                    car.title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
+                      color: KTextColor,
                     ),
-                  ],
-                ),
-              ],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                   SizedBox(height:7,),
+                  Row(
+                    children: [
+                      Text(
+                        "${car.year}",
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color.fromRGBO(165, 164, 162, 1),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        "${car.km} KM",
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color.fromRGBO(165, 164, 162, 1),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

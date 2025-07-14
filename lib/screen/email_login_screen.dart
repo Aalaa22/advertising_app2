@@ -40,7 +40,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                 child: GestureDetector(
                   onTap: widget.notifier.toggleLocale,
                   child: Text(
-                    isArabic ? S.of(context).engilsh : S.of(context).arabic,
+                    isArabic ? S.of(context).arabic : S.of(context).english,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,

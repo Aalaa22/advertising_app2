@@ -54,6 +54,15 @@ class _RootAppState extends State<RootApp> {
                   fontSizeFactor: 1.sp,
                 ),
               ),
+
+             builder: (context, child) {
+  return MediaQuery.withClampedTextScaling(
+    minScaleFactor: 1.0,
+    maxScaleFactor: 1.0,
+    child: child!,
+  );
+}
+
             );
           },
         );

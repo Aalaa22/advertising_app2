@@ -5,7 +5,6 @@ abstract class FavoriteItemInterface {
   String get location;
   String get price;
   String get line1;
-  String get line2;
   String get details;
   String get date;
   String get contact;

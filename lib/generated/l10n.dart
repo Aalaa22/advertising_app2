@@ -95,10 +95,10 @@ class S {
     );
   }
 
-  /// `I Agree Aerms & Conditions`
+  /// `I Agree Terms & Conditions`
   String get agreeTerms {
     return Intl.message(
-      'I Agree Aerms & Conditions',
+      'I Agree Terms & Conditions',
       name: 'agreeTerms',
       desc: '',
       args: [],
@@ -190,14 +190,14 @@ class S {
     );
   }
 
-  /// `Engilsh`
-  String get engilsh {
-    return Intl.message('Engilsh', name: 'engilsh', desc: '', args: []);
+  /// `عربي`
+  String get english {
+    return Intl.message('عربي', name: 'english', desc: '', args: []);
   }
 
-  /// `Arabic`
+  /// `English`
   String get arabic {
-    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+    return Intl.message('English', name: 'arabic', desc: '', args: []);
   }
 
   /// `Phone Login`
@@ -820,6 +820,346 @@ class S {
     return Intl.message(
       'Click Here To Use This Space For Your Ads',
       name: 'use_this_space_for_ads',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🌟 Top Premium Ads`
+  String get priority_first_premium {
+    return Intl.message(
+      '🌟 Top Premium Ads',
+      name: 'priority_first_premium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `💎 Premium Ads`
+  String get priority_premium {
+    return Intl.message(
+      '💎 Premium Ads',
+      name: 'priority_premium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🚀 Featured Ads`
+  String get priority_featured {
+    return Intl.message(
+      '🚀 Featured Ads',
+      name: 'priority_featured',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📢 Free Ads`
+  String get priority_free {
+    return Intl.message(
+      '📢 Free Ads',
+      name: 'priority_free',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Favorite`
+  String get add_to_favorite {
+    return Intl.message(
+      'Add to Favorite',
+      name: 'add_to_favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to add this item to favorites?`
+  String get confirm_add_to_favorite {
+    return Intl.message(
+      'Do you want to add this item to favorites?',
+      name: 'confirm_add_to_favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `Item added to favorites`
+  String get added_to_favorite {
+    return Intl.message(
+      'Item added to favorites',
+      name: 'added_to_favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `remove from favorite`
+  String get remove_from_favorite {
+    return Intl.message(
+      'remove from favorite',
+      name: 'remove_from_favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `confirm remove from favorite`
+  String get confirm_remove_from_favorite {
+    return Intl.message(
+      'confirm remove from favorite',
+      name: 'confirm_remove_from_favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When enabled, others won’t know that you viewed their ad or interacted with it.`
+  String get invisibleInfo {
+    return Intl.message(
+      'When enabled, others won’t know that you viewed their ad or interacted with it.',
+      name: 'invisibleInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invisible Browsing`
+  String get invisibleTitle {
+    return Intl.message(
+      'Invisible Browsing',
+      name: 'invisibleTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is Invisible?`
+  String get invisibleInfoTitle {
+    return Intl.message(
+      'What is Invisible?',
+      name: 'invisibleInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message('Ok', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Discover Best Rental Deals`
+  String get discover_deals {
+    return Intl.message(
+      'Discover Best Rental Deals',
+      name: 'discover_deals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Daily Rental Deals`
+  String get click_for_deals {
+    return Intl.message(
+      'Click For Amazing Daily Rental Deals',
+      name: 'click_for_deals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Properties Deals`
+  String get discover_real_estate {
+    return Intl.message(
+      'Discover Best Properties Deals',
+      name: 'discover_real_estate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Emirate`
+  String get emirate {
+    return Intl.message('Emirate', name: 'emirate', desc: '', args: []);
+  }
+
+  /// `District`
+  String get district {
+    return Intl.message('District', name: 'district', desc: '', args: []);
+  }
+
+  /// `Property Type`
+  String get property_type {
+    return Intl.message(
+      'Property Type',
+      name: 'property_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contract Type`
+  String get contract_type {
+    return Intl.message(
+      'Contract Type',
+      name: 'contract_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Properties Deals`
+  String get click_for_deals_real_estate {
+    return Intl.message(
+      'Click For Amazing Properties Deals',
+      name: 'click_for_deals_real_estate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Electronics & Appliances`
+  String get discover_elect {
+    return Intl.message(
+      'Discover Best Electronics & Appliances',
+      name: 'discover_elect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Section Type`
+  String get section_type {
+    return Intl.message(
+      'Section Type',
+      name: 'section_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Electronics & Home Appliances Deals`
+  String get click_for_deals_elect {
+    return Intl.message(
+      'Click For Amazing Electronics & Home Appliances Deals',
+      name: 'click_for_deals_elect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category Type`
+  String get category_type {
+    return Intl.message(
+      'Category Type',
+      name: 'category_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Job Offers`
+  String get click_for_deals_job {
+    return Intl.message(
+      'Click For Amazing Job Offers',
+      name: 'click_for_deals_job',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Job Offers`
+  String get discover_best_job {
+    return Intl.message(
+      'Discover Best Job Offers',
+      name: 'discover_best_job',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service Type`
+  String get service_type {
+    return Intl.message(
+      'Service Type',
+      name: 'service_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing  Cars Services Deals`
+  String get click_for_deals_car_service {
+    return Intl.message(
+      'Click For Amazing  Cars Services Deals',
+      name: 'click_for_deals_car_service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Cars Services Deals`
+  String get discover_car_service {
+    return Intl.message(
+      'Discover Best Cars Services Deals',
+      name: 'discover_car_service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `District`
+  String get district_choose {
+    return Intl.message(
+      'District',
+      name: 'district_choose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Daily Offers`
+  String get click_daily_offers {
+    return Intl.message(
+      'Click For Amazing Daily Offers',
+      name: 'click_daily_offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Restaurants Offers`
+  String get discover_restaurants_offers {
+    return Intl.message(
+      'Discover Best Restaurants Offers',
+      name: 'discover_restaurants_offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click For Amazing Services Offers`
+  String get click_daily_servir_offers {
+    return Intl.message(
+      'Click For Amazing Services Offers',
+      name: 'click_daily_servir_offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Best Services Offers`
+  String get discover_service_offers {
+    return Intl.message(
+      'Discover Best Services Offers',
+      name: 'discover_service_offers',
       desc: '',
       args: [],
     );

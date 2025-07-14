@@ -23,6 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "ad": MessageLookupByLibrary.simpleMessage("عدد الإعلانات"),
+    "add_to_favorite": MessageLookupByLibrary.simpleMessage(
+      "إضافة إلى المفضلة",
+    ),
+    "added_to_favorite": MessageLookupByLibrary.simpleMessage(
+      "تمت إضافة العنصر إلى المفضلة",
+    ),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "advertiserLocation": MessageLookupByLibrary.simpleMessage("موقع المُعلِن"),
     "advertiserLogo": MessageLookupByLibrary.simpleMessage("شعار المُعلِن"),
@@ -32,7 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "agreeTerms": MessageLookupByLibrary.simpleMessage(
       "أوافق على الشروط والأحكام",
     ),
-    "arabic": MessageLookupByLibrary.simpleMessage("عربي"),
+    "arabic": MessageLookupByLibrary.simpleMessage("English"),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
     "car_details": MessageLookupByLibrary.simpleMessage("تفاصيل السيارة"),
@@ -40,15 +46,44 @@ class MessageLookup extends MessageLookupByLibrary {
     "carrent": MessageLookupByLibrary.simpleMessage("تأجير السيارات"),
     "carsales": MessageLookupByLibrary.simpleMessage("بيع السيارات"),
     "carservices": MessageLookupByLibrary.simpleMessage("خدمات السيارات"),
+    "category_type": MessageLookupByLibrary.simpleMessage("نوع التصنيف"),
     "choose_make": MessageLookupByLibrary.simpleMessage("اختر الماركة"),
     "choose_model": MessageLookupByLibrary.simpleMessage("اختر الطراز"),
+    "click_daily_offers": MessageLookupByLibrary.simpleMessage(
+      "اضغط لرؤية العروض اليومية",
+    ),
+    "click_daily_servir_offers": MessageLookupByLibrary.simpleMessage(
+      "اضغط لرؤية عروض الخدمات المميزة",
+    ),
     "click_for_amazing_daily_cars_deals": MessageLookupByLibrary.simpleMessage(
       "اضغط لرؤية عروض السيارات اليومية المميزة",
     ),
+    "click_for_deals": MessageLookupByLibrary.simpleMessage(
+      "اضغط للحصول على عروض إيجار يومية رائعة",
+    ),
+    "click_for_deals_car_service": MessageLookupByLibrary.simpleMessage(
+      "اضغط لرؤية أفضل عروض خدمات السيارات",
+    ),
+    "click_for_deals_elect": MessageLookupByLibrary.simpleMessage(
+      "اضغط لاستعراض أفضل عروض الأجهزة الإلكترونية والأدوات المنزلية",
+    ),
+    "click_for_deals_job": MessageLookupByLibrary.simpleMessage(
+      "اضغط لرؤية عروض الوظائف المميزة",
+    ),
+    "click_for_deals_real_estate": MessageLookupByLibrary.simpleMessage(
+      "اضغط لاستعراض أفضل عروض العقارات",
+    ),
     "color": MessageLookupByLibrary.simpleMessage("اللون"),
     "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "confirm_add_to_favorite": MessageLookupByLibrary.simpleMessage(
+      "هل تريد إضافة هذا العنصر إلى المفضلة؟",
+    ),
+    "confirm_remove_from_favorite": MessageLookupByLibrary.simpleMessage(
+      "تأكيد الحذف من المفضلة",
+    ),
     "confirmpass": MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
     "contactUs": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
+    "contract_type": MessageLookupByLibrary.simpleMessage("نوع العقد"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "createAgentCode": MessageLookupByLibrary.simpleMessage("إنشاء كود الخصم"),
     "cylinders": MessageLookupByLibrary.simpleMessage("عدد الأسطوانات"),
@@ -56,6 +91,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "discover_best_cars_deals": MessageLookupByLibrary.simpleMessage(
       "اكتشف أفضل عروض السيارات",
     ),
+    "discover_best_job": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض الوظائف",
+    ),
+    "discover_car_service": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض خدمات السيارات",
+    ),
+    "discover_deals": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض الإيجار",
+    ),
+    "discover_elect": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض الإلكترونيات",
+    ),
+    "discover_real_estate": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض العقارات",
+    ),
+    "discover_restaurants_offers": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض المطاعم",
+    ),
+    "discover_service_offers": MessageLookupByLibrary.simpleMessage(
+      "اكتشف أفضل عروض الخدمات",
+    ),
+    "district": MessageLookupByLibrary.simpleMessage("منطقة"),
+    "district_choose": MessageLookupByLibrary.simpleMessage("اختر المنطقة"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "doors_no": MessageLookupByLibrary.simpleMessage("عدد الأبواب"),
     "edit3": MessageLookupByLibrary.simpleMessage("تعديل"),
@@ -75,8 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emilverify": MessageLookupByLibrary.simpleMessage(
       " yourname@example.Com أرسلنا بريدًا إلكترونيًا يحتوي على رمز التفعيل إلى بريدك",
     ),
-    "engilsh": MessageLookupByLibrary.simpleMessage("انجليزي"),
+    "emirate": MessageLookupByLibrary.simpleMessage("إمارة"),
     "engine_capacity": MessageLookupByLibrary.simpleMessage("سعة المحرك"),
+    "english": MessageLookupByLibrary.simpleMessage("عربي"),
     "enteremail": MessageLookupByLibrary.simpleMessage(
       "ادخل البريد الالكتروني",
     ),
@@ -92,6 +151,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "horse_power": MessageLookupByLibrary.simpleMessage("قوة المحرك (حصان)"),
     "interior_color": MessageLookupByLibrary.simpleMessage("اللون الداخلي"),
+    "invisibleInfo": MessageLookupByLibrary.simpleMessage(
+      "عند تفعيل هذا الخيار، لن يتمكن الآخرون من معرفة أنك شاهدت إعلانهم أو تفاعلت معه.",
+    ),
+    "invisibleInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "ما هو وضع التخفي؟",
+    ),
+    "invisibleTitle": MessageLookupByLibrary.simpleMessage("التصفح المخفي"),
     "jobs": MessageLookupByLibrary.simpleMessage("وظائف"),
     "km": MessageLookupByLibrary.simpleMessage("كم"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -103,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "myProfile": MessageLookupByLibrary.simpleMessage("ملفي الشخصي"),
     "newpass": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "ok": MessageLookupByLibrary.simpleMessage("تمام"),
     "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "otherservices": MessageLookupByLibrary.simpleMessage("خدمات أخرى"),
@@ -118,10 +185,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "post": MessageLookupByLibrary.simpleMessage("إضافةإعلان"),
     "premium": MessageLookupByLibrary.simpleMessage("مميز"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "priority_featured": MessageLookupByLibrary.simpleMessage(
+      "🚀 إعلانات Featured",
+    ),
+    "priority_first_premium": MessageLookupByLibrary.simpleMessage(
+      "🌟 إعلانات مميزة جدًا",
+    ),
+    "priority_free": MessageLookupByLibrary.simpleMessage("📢 إعلانات مجانية"),
+    "priority_premium": MessageLookupByLibrary.simpleMessage(
+      "💎 إعلانات Premium",
+    ),
     "privacySecurity": MessageLookupByLibrary.simpleMessage("الخصوصية والأمان"),
+    "property_type": MessageLookupByLibrary.simpleMessage("نوع العقار"),
     "realestate": MessageLookupByLibrary.simpleMessage("العقارات"),
     "referralCode": MessageLookupByLibrary.simpleMessage("كودالخصم"),
     "register": MessageLookupByLibrary.simpleMessage("انشاء"),
+    "remove_from_favorite": MessageLookupByLibrary.simpleMessage(
+      "حذف من المفضلة؟",
+    ),
     "report_this_ad": MessageLookupByLibrary.simpleMessage(
       "الإبلاغ عن هذا الإعلان",
     ),
@@ -132,8 +213,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "seats_no": MessageLookupByLibrary.simpleMessage("عدد المقاعد"),
+    "section_type": MessageLookupByLibrary.simpleMessage("نوع القسم"),
     "see_all_ads": MessageLookupByLibrary.simpleMessage("عرض كل الإعلانات"),
     "sendcode": MessageLookupByLibrary.simpleMessage("ارسل الكود"),
+    "service_type": MessageLookupByLibrary.simpleMessage("نوع الخدمة"),
     "signUp": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
     "smart_search": MessageLookupByLibrary.simpleMessage("بحث ذكي"),
     "sort": MessageLookupByLibrary.simpleMessage("فرز حسب الأقرب"),
@@ -159,5 +242,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "warranty": MessageLookupByLibrary.simpleMessage("الضمان"),
     "whatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
     "year": MessageLookupByLibrary.simpleMessage("السنة"),
+    "yes": MessageLookupByLibrary.simpleMessage("نعم"),
   };
 }

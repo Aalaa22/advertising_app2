@@ -56,9 +56,8 @@ class ForgotPassEmail extends StatelessWidget {
                         onTap: notifier.toggleLocale,
                         child: Text(
                           locale.languageCode == 'ar'
-                              ? S.of(context).engilsh
-                              : S.of(context).arabic,
-                          style: TextStyle(
+                              ? S.of(context).arabic : S.of(context).english,
+                              style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: KTextColor,

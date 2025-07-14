@@ -59,8 +59,7 @@ class _ForgotPassPhoneState extends State<ForgotPassPhone> {
                             onTap: widget.notifier.toggleLocale,
                             child: Text(
                               locale.languageCode == 'ar'
-                                  ? S.of(context).engilsh
-                                  : S.of(context).arabic,
+                                  ? S.of(context).arabic : S.of(context).english,
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,

@@ -93,7 +93,7 @@ class CustomBottomNav extends StatelessWidget {
 
          BottomNavigationBarItem(
           icon: SvgPicture.asset(
-            "assets/icons/manage.svg",
+            "assets/icons/folder_edit_icon.svg",
                width: 26,
               height: 26,
               color: currentIndex == 3

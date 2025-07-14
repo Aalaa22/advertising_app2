@@ -8,14 +8,18 @@ class CarSalesModel implements FavoriteItemInterface {
   final String km;
   final String specs;
   final String location;
+  final String contact;
   final String date;
   final String details;
-  final String contact;
+
+  final String image;
+  
+  
   final bool isPremium;
   final List<String> _images;
   final AdPriority priority;
   final String carType;
-final String transType;
+  final String transType;
 final String color;
 final String interiorColor;
 final String fuelType;
@@ -27,7 +31,11 @@ final String cylinders;
 final String horsePower;
 final String steeringSide;
 
-  CarSalesModel({
+
+  CarSalesModel(
+   
+    {
+  required  this.image ,
   required  this.carType,
   required  this.transType,
   required  this.color,
@@ -58,8 +66,7 @@ final String steeringSide;
   @override
   String get line1 => "Year: $year   Km: $km   Specs: $specs";
 
-  @override
-  String get line2 => details;
+ 
 
   @override
   List<String> get images => _images;

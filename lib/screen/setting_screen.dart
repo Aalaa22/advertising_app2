@@ -16,10 +16,34 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
+  bool _isInvisible = true;
+  bool _isNotificationsEnabled = true;
+
+  void _showToast(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+
+    final baseHeight = screenHeight < 700 ? screenHeight : 700;
+    final scaleFactor = screenHeight / baseHeight;
+
+    final logoHeight = 100.0 * scaleFactor;
+    final logoWidth = logoHeight * 2;
+    final tileHeight = 52.0 * scaleFactor;
+    final fontSize = 14.0 * scaleFactor;
+    final iconSize = 22.0 * scaleFactor;
 
     return AnimatedBuilder(
       animation: widget.notifier,
@@ -30,141 +54,291 @@ class _SettingScreenState extends State<SettingScreen> {
           backgroundColor: Colors.white,
           bottomNavigationBar: CustomBottomNav(currentIndex: 4),
           body: SafeArea(
-            child: ListView(
+            child: Column(
               children: [
-                const SizedBox(height: 24),
+                SizedBox(height: 10 * scaleFactor),
                 Center(
                   child: Image.asset(
                     'images/logo.png',
-                    height: 98,
-                    width: 125,
+                    height: logoHeight,
+                    width: logoWidth,
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: screenHeight * 0.02),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/profile.svg',
-                    width: 24,
-                    height: 24,
-                  ),
-                  title: S.of(context).myProfile,
-                  ontap: () => context.push('/editprofile'),
-                ),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/numder.svg',
-                    width: 12,
-                    height: 12,
-                  ),
-                  title: S.of(context).createAgentCode,
-                ),
-                _buildNotificationSwitch(context, screenWidth),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/language.svg',
-                    width: 20,
-                    height: 20,
-                  ),
-                  title: S.of(context).language,
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
+                SizedBox(height: 10 * scaleFactor),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                        onTap: widget.notifier.toggleLocale,
-                        child: Text(
-                          locale.languageCode == 'ar'
-                              ? S.of(context).engilsh
-                              : S.of(context).arabic,
-                          style: const TextStyle(
-                            color: Color.fromRGBO(8, 194, 201, 1),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                          ),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        customLeading: SvgPicture.asset(
+                          'assets/icons/profile.svg',
+                          width: iconSize,
+                          height: iconSize,
+                        ),
+                        title: S.of(context).myProfile,
+                        ontap: () => context.push('/editprofile'),
+                      ),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        customLeading: SvgPicture.asset(
+                          'assets/icons/numder.svg',
+                          width: iconSize * 0.6,
+                          height: iconSize * 0.6,
+                        ),
+                        title: S.of(context).createAgentCode,
+                      ),
+                      _buildNotificationSwitch(
+                          context, screenWidth, tileHeight, fontSize, iconSize),
+                      _buildInvisibleSwitch(
+                          context, screenWidth, tileHeight, fontSize, iconSize),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        customLeading: SvgPicture.asset(
+                          'assets/icons/language.svg',
+                          width: iconSize,
+                          height: iconSize,
+                        ),
+                        title: S.of(context).language,
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            GestureDetector(
+                              onTap: widget.notifier.toggleLocale,
+                              child: Text(
+                                locale.languageCode == 'ar'
+                                    ? S.of(context).arabic
+                                    : S.of(context).english,
+                                style: TextStyle(
+                                  color: const Color.fromRGBO(8, 194, 201, 1),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: fontSize,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: screenWidth * 0.02),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: fontSize + 2,
+                              color: KTextColor,
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      const Icon(Icons.arrow_forward_ios,
-                          size: 16, color: KTextColor),
-                    ],
-                  ),
-                ),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/contact-us.svg',
-                    width: 22,
-                    height: 22,
-                  ),title: S.of(context).contactUs,
-                ),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/terms.svg',
-                    width: 22,
-                    height: 22,
-                  ),
-                  title: S.of(context).termsAndConditions,
-                ),
-                _buildTile(
-                  context: context,
-                  customLeading: SvgPicture.asset(
-                    'assets/icons/support.svg',
-                    width: 22,
-                    height: 22,
-                  ),
-                  title: S.of(context).supportCenter,
-                ),
-                _buildTile(
-                  context: context,
-                  icon: Icons.lock_outline,
-                  title: S.of(context).privacySecurity,
-                ),
-                Container(
-                  height: 56,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.04,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFFE4F8F6), Color(0xFFC9F8FE)],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        offset: Offset(0, 2),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        customLeading: SvgPicture.asset(
+                          'assets/icons/terms.svg',
+                          width: iconSize,
+                          height: iconSize,
+                        ),
+                        title: S.of(context).termsAndConditions,
+                      ),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        customLeading: SvgPicture.asset(
+                          'assets/icons/contact-us.svg',
+                          width: iconSize,
+                          height: iconSize,
+                        ),
+                        title: S.of(context).contactUs,
+                      ),
+                      _buildTile(
+                        context: context,
+                        height: tileHeight,
+                        fontSize: fontSize,
+                        iconSize: iconSize,
+                        icon: Icons.lock_outline,
+                        title: S.of(context).privacySecurity,
+                      ),
+                      Container(
+                        height: tileHeight,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.04),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFE4F8F6), Color(0xFFC9F8FE)],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 4,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.04,
+                          ),
+                          leading: Icon(
+                            Icons.logout,
+                            color: Colors.red,
+                            size: iconSize,
+                          ),
+                          title: Text(
+                            S.of(context).logout,
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.w600,
+                              fontSize: fontSize,
+                            ),
+                          ),
+                          onTap: () => context.go("/login"),
+                        ),
                       ),
                     ],
                   ),
-                  child: ListTile(
-                    leading: const Icon(Icons.logout, color: Colors.red),
-                    title: Text(
-                      S.of(context).logout,
-                      style: const TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
-                      ),
-                    ),
-                    onTap: () {
-                      context.go("/login");
-                    },
-                  ),
                 ),
-                const SizedBox(height: 5),
               ],
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget _buildInvisibleSwitch(BuildContext context, double screenWidth,
+      double height, double fontSize, double iconSize) {
+       
+    return Container(
+      height: height,
+      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFE4F8F6), Color(0xFFC9F8FE)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+        
+        leading: Icon(
+          _isInvisible ? Icons.visibility_off : Icons.visibility,
+          color: const Color.fromRGBO(8, 194, 201, 1),
+          size: iconSize,
+        ),
+        title: Row(
+          children: [
+            Text(
+              S.of(context).invisibleTitle,
+              style: TextStyle(
+                color: KTextColor,
+                fontWeight: FontWeight.w500,
+                fontSize: fontSize,
+              ),
+            ),
+          ],
+        ),
+        trailing: Transform.scale(
+          scale: 0.8,
+          child: Switch(
+            value: _isInvisible,
+            onChanged: (val) {
+              setState(() => _isInvisible = val);
+              _showToast(
+                context,
+                val ?  'Invisible Mode Disabled':'Invisible Mode Enabled',
+              );
+            },
+            activeColor: Colors.white,
+            activeTrackColor: const Color.fromRGBO(8, 194, 201, 1),
+            inactiveThumbColor: Colors.white,
+            inactiveTrackColor: Colors.grey[300],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNotificationSwitch(
+    BuildContext context,
+    double screenWidth,
+    double height,
+    double fontSize,
+    double iconSize,
+  ) {
+    return Container(
+      height: height,
+      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        gradient: const LinearGradient(
+          colors: [Color(0xFFE4F8F6), Color(0xFFC9F8FE)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+        leading: Icon(
+          _isNotificationsEnabled
+              ? Icons.notifications_active
+              : Icons.notifications_off_outlined,
+          color: const Color.fromRGBO(8, 194, 201, 1),
+          size: iconSize + 4,
+        ),
+        title: Text(
+          S.of(context).notifications,
+          style: TextStyle(
+            color: KTextColor,
+            fontWeight: FontWeight.w500,
+            fontSize: fontSize,
+          ),
+        ),
+        trailing: Transform.scale(
+          scale: 0.8,
+          child: Switch(
+            value: _isNotificationsEnabled,
+            onChanged: (bool value) {
+              setState(() => _isNotificationsEnabled = value);
+              _showToast(
+                context,
+                value ? 'Notifications Enabled' : 'Notifications Disabled',
+              );
+            },
+            activeColor: Colors.white,
+            activeTrackColor: const Color.fromRGBO(8, 194, 201, 1),
+            inactiveThumbColor: Colors.white,
+            inactiveTrackColor: Colors.grey[300],
+          ),
+        ),
+      ),
     );
   }
 
@@ -176,15 +350,15 @@ class _SettingScreenState extends State<SettingScreen> {
     Widget? trailing,
     VoidCallback? ontap,
     Widget? customLeading,
+    required double height,
+    required double fontSize,
+    required double iconSize,
   }) {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      height: 58,
-      margin: EdgeInsets.symmetric(
-        horizontal: screenWidth * 0.04,
-        vertical: 4,
-      ),
+      height: height,
+      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         gradient: const LinearGradient(
@@ -201,80 +375,37 @@ class _SettingScreenState extends State<SettingScreen> {
         ],
       ),
       child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
         leading: customLeading ??
             Icon(
               icon,
               color: const Color.fromRGBO(8, 194, 201, 1),
-              weight: 16,
+              size: iconSize,
             ),
         title: Text(
           title,
-          style: const TextStyle(
+          style: TextStyle(
             color: KTextColor,
             fontWeight: FontWeight.w500,
-            fontSize: 14,
+            fontSize: fontSize,
           ),
         ),
         subtitle: subtitle != null
             ? Text(
                 subtitle,
-                style: const TextStyle(
-                  color: Color.fromRGBO(8, 194, 201, 1),
-                  fontSize: 15,
+                style: TextStyle(
+                  color: const Color.fromRGBO(8, 194, 201, 1),
+                  fontSize: fontSize,
                 ),
               )
             : null,
         trailing: trailing ??
-            const Icon(Icons.arrow_forward_ios, size: 16, color: KTextColor),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: fontSize + 2,
+              color: KTextColor,
+            ),
         onTap: ontap,
-      ),
-    );
-  }
-
-  Widget _buildNotificationSwitch(BuildContext context, double screenWidth) {
-    return Container(
-      height: 58,
-      margin: EdgeInsets.symmetric(
-        horizontal: screenWidth * 0.04,
-        vertical: 4,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        gradient: const LinearGradient(
-          colors: [Color(0xFFE4F8F6), Color(0xFFC9F8FE)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
-        ],
-      ),
-      child: ListTile(
-        leading: const Icon(
-          Icons.notifications_none,
-          color: Color.fromRGBO(8, 194, 201, 1),
-          size: 28,
-        ),
-        title: Text(
-          S.of(context).notifications,
-          style: const TextStyle(
-            color: KTextColor,
-            fontWeight: FontWeight.w500,
-            fontSize: 15,
-          ),
-        ),
-        trailing: Switch(
-          value: true,
-          onChanged: (bool value) {},
-          activeColor: Colors.white,
-          activeTrackColor: const Color.fromRGBO(8, 194, 201, 1),
-          inactiveThumbColor: Colors.white,
-          inactiveTrackColor: Colors.grey[300],
-        ),
       ),
     );
   }

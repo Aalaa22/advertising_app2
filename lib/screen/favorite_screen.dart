@@ -1,9 +1,11 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/data/car_sales_data_dummy.dart';
 import 'package:advertising_app/data/dummy_data.dart';
+import 'package:advertising_app/data/real_estate_dummy_data.dart';
 import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
 import 'package:advertising_app/widget/custom_bottom_nav.dart';
-import 'package:advertising_app/widget/custom_card.dart';
+import 'package:advertising_app/widget/custom_favorite_card.dart';
 import 'package:advertising_app/widget/custom_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,14 +26,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   void initState() {
     super.initState();
     allData = [
-      dummyCarSales,
-      dummyRealEstate,
-      dummyRealEstate,
-      dummyRealEstate,
-      dummyRealEstate,
-      dummyRealEstate,
-      dummyRealEstate,
-      dummyRealEstate,
+      CarSalesDummyData,
+      RealEstateDummyData,
     ];
   }
 
@@ -85,17 +81,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 },
               ),
             ),
-
-            //  CustomCategory(
-            //     categories: categories,
-            //     selectedIndex: selectedCategory,
-            //     onCategorySelected: (index) {
-            //       setState(() {
-            //         selectedCategory = index;
-            //       });
-            //     },
-            //   ),
-
             Expanded(
               child: selectedItems.isEmpty
                   ? Center(

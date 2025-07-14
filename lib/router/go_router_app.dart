@@ -2,21 +2,39 @@ import 'dart:ui';
 import 'package:advertising_app/model/car_sale_model.dart';
 import 'package:advertising_app/router/local_notifier.dart';
 import 'package:advertising_app/screen/car_details_screen.dart';
-import 'package:advertising_app/screen/car_sales_screen.dart';
+import 'package:advertising_app/screen/car_rent_offer_box.dart';
+import 'package:advertising_app/screen/car_rent_screen.dart';
+import 'package:advertising_app/screen/car_rent_search_screen.dart';
+import 'package:advertising_app/screen/car_sales_search_screen.dart';
+import 'package:advertising_app/screen/car_service.dart';
+import 'package:advertising_app/screen/car_service_offer_box.dart';
 import 'package:advertising_app/screen/edit_profile.dart';
+import 'package:advertising_app/screen/electronic_offer_box.dart';
+import 'package:advertising_app/screen/electronic_screen.dart';
+import 'package:advertising_app/screen/electronic_search_screen.dart';
 import 'package:advertising_app/screen/email_code.dart';
 import 'package:advertising_app/screen/email_login_screen.dart';
 import 'package:advertising_app/screen/email_signup.dart';
 import 'package:advertising_app/screen/favorite_screen.dart';
 import 'package:advertising_app/screen/forgot_pass_email.dart';
 import 'package:advertising_app/screen/forgot_pass_phone.dart';
-import 'package:advertising_app/screen/home_screen.dart';
+import 'package:advertising_app/screen/car_sales_screen.dart';
+import 'package:advertising_app/screen/job_offer_box.dart';
+import 'package:advertising_app/screen/job_screen.dart';
 import 'package:advertising_app/screen/login_screen.dart';
 import 'package:advertising_app/screen/manage_screen.dart';
+import 'package:advertising_app/screen/real_estate_offer_box.dart';
+import 'package:advertising_app/screen/car_sales_offers_box_screen.dart';
+import 'package:advertising_app/screen/other_service.dart';
+import 'package:advertising_app/screen/other_service_offer_box.dart';
 import 'package:advertising_app/screen/phone_code.dart';
 import 'package:advertising_app/screen/post_ad_screen.dart';
 import 'package:advertising_app/screen/profile_screen.dart';
+import 'package:advertising_app/screen/real_estate_screen.dart';
+import 'package:advertising_app/screen/real_estate_search_screen.dart';
 import 'package:advertising_app/screen/reset_pass.dart';
+import 'package:advertising_app/screen/restaurant_offer_box.dart';
+import 'package:advertising_app/screen/restaurants_screen.dart';
 import 'package:advertising_app/screen/setting_screen.dart';
 import 'package:advertising_app/screen/sinup_screen.dart';
 import 'package:advertising_app/screen/splash_screen.dart';
@@ -102,6 +120,99 @@ GoRouter createRouter({
           final car = state.extra as CarSalesModel;
           return CarDetailsScreen(car: car);
         },
+      ),
+
+       GoRoute(
+        path: '/offer_box',
+        builder: (context, state) => OffersBoxScreen(
+          ),
+      ),
+        GoRoute(
+        path: '/car_rent',
+        builder: (context, state) => CarRentScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/realEstate',
+        builder: (context, state) => RealEstateScreen(
+          ),
+      ),
+
+       GoRoute(
+        path: '/electronics',
+        builder: (context, state) => ElectronicScreen(
+          ),
+      ),
+
+       GoRoute(
+        path: '/jobs',
+        builder: (context, state) => JobScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/carServices',
+        builder: (context, state) => CarService(
+          ),
+      ),
+       GoRoute(
+        path: '/restaurants',
+        builder: (context, state) => RestaurantsScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/otherServices',
+        builder: (context, state) => OtherServiceScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/realestateofeerbox',
+        builder: (context, state) => RealEstateOfeerBOX(
+          ),
+      ),
+      GoRoute(
+        path: '/electronicofferbox',
+        builder: (context, state) => ElectronicOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/jobofferbox',
+        builder: (context, state) => JobOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/carrentofferbox',
+        builder: (context, state) => CarRentOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/carservicetofferbox',
+        builder: (context, state) => CarServiceOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/restaurant_offerbox',
+        builder: (context, state) => RestaurantOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/other_service_offer_box',
+        builder: (context, state) => OtherServiceOfferBox(
+          ),
+      ),
+      GoRoute(
+        path: '/real_estate_search',
+        builder: (context, state) => RealEstateSearchScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/electronic_search',
+        builder: (context, state) => ElectronicSearchScreen(
+          ),
+      ),
+      GoRoute(
+        path: '/car_rent_search',
+        builder: (context, state) => CarRentSearchScreen(
+          ),
       ),
     ],
   );

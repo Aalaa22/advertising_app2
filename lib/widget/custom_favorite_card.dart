@@ -1,4 +1,5 @@
 import 'package:advertising_app/constants.dart';
+import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/model/ad_priority.dart';
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,14 @@ class FavoriteCard extends StatefulWidget {
   final FavoriteItemInterface item;
   final VoidCallback onDelete;
   final bool showDelete;
+  final VoidCallback? onAddToFavorite; 
 
   const FavoriteCard({
     super.key,
     required this.item,
     required this.onDelete,
-     this.showDelete = true,
+    this.showDelete = true,
+    this.onAddToFavorite,
   });
 
   @override
@@ -44,7 +47,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
 
     return Card(
       color: Colors.white,
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +95,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Row(
-                     mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.min,
                     children: List.generate(item.images.length, (index) {
                       return Container(
                         margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -118,13 +121,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
               Positioned(
                 top: 8,
                 right: 8,
-                child: widget.showDelete
-    ? IconButton(
-        icon: const Icon(Icons.favorite, color: Colors.red),
-        onPressed: widget.onDelete,
-      )
-    : Icon(Icons.favorite_border, color: Colors.grey.shade300),
-              ),
+                child: _buildTopRightIcon(),  ),
             ],
           ),
           Padding(
@@ -142,7 +139,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                     SizedBox(width: 10.w),
                     Text(
                       item.price,
-                      style:  TextStyle(
+                      style: TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.w700,
                         fontSize: 16.sp,
@@ -151,8 +148,10 @@ class _FavoriteCardState extends State<FavoriteCard> {
                     const Spacer(),
                     Text(
                       item.date,
-                      style:
-                          TextStyle(color: Colors.grey, fontSize: 12.sp,fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -173,7 +172,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                       if (parts.length == 2) {
                         return TextSpan(
                           text: '${parts[0]}:',
-                          style:  TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: KTextColor,
                             fontSize: 14.sp,
@@ -181,7 +180,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                           children: [
                             TextSpan(
                               text: '${parts[1]}',
-                              style:  TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: KTextColor,
                                 fontSize: 16.sp,
@@ -203,14 +202,13 @@ class _FavoriteCardState extends State<FavoriteCard> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  item.line2,
-                  style:  TextStyle(
+                  item.details,
+                  style: TextStyle(
                     fontSize: 14.sp,
                     color: KTextColor,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 15,),
                 Row(
                   children: [
                     SvgPicture.asset(
@@ -218,28 +216,35 @@ class _FavoriteCardState extends State<FavoriteCard> {
                       width: 16.w,
                       height: 20.h,
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(width: 10),
                     Expanded(
                       child: Text(
                         item.location,
-                        style:  TextStyle(
-                            fontSize: 14.sp,
-                            color: KTextColor,
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          color: KTextColor,
+                          fontWeight: FontWeight.w500,
+                        ),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    
-                   widget.showDelete
-? IconButton(
-    onPressed: widget.onDelete,
-    icon: Image.asset('images/delet.png', width: 32.w,height: 32.h,),
-  )
-: const SizedBox.shrink(),
+                    SizedBox(
+                      width: 38.w,
+                      height: 38.h,
+                      child: Offstage(
+                        offstage: !widget.showDelete,
+                        child: IconButton(
+                          onPressed: widget.onDelete,
+                          icon: SvgPicture.asset(
+                            'assets/icons/deleted.svg',
+                            width: 23.w,
+                            height: 28.h,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                 SizedBox(height:  15.h,),
-                    
                 Row(
                   children: [
                     Text(
@@ -266,14 +271,14 @@ class _FavoriteCardState extends State<FavoriteCard> {
 
   Widget _buildActionIcon(IconData icon) {
     return Container(
-      height: 44,
-      width: 60,
+      height: 35.h,
+      width: 62.w,
       decoration: BoxDecoration(
         color: const Color(0xFF01547E),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Center(
-        child: Icon(icon, color: Colors.white, size: 20),
+        child: Icon(icon, color: Colors.white, size: 22),
       ),
     );
   }
@@ -327,4 +332,52 @@ class _FavoriteCardState extends State<FavoriteCard> {
       ),
     );
   }
+
+  Widget _buildTopRightIcon() {
+  if (widget.onAddToFavorite != null) {
+    return IconButton(
+      icon: const Icon(Icons.favorite_border, color: Colors.grey),
+      onPressed: _handleAddToFavorite,
+    );
+  } else if (widget.showDelete) {
+    return IconButton(
+      icon: const Icon(Icons.favorite, color: Colors.red),
+      onPressed: widget.onDelete,
+    );
+  } else {
+    return const SizedBox.shrink();
+  }
 }
+  
+  void _handleAddToFavorite() {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title:  Text(S.of(context).add_to_favorite,style: TextStyle(color: KTextColor,fontSize: 16)), // "إضافة إلى المفضلة"
+    content: Text(S.of(context).confirm_add_to_favorite,style: TextStyle(color: KTextColor,fontSize: 18),), // "هل تريد إضافة هذا العنصر إلى المفضلة؟"
+   actions: [
+        TextButton(
+          child:Text(S.of(context).cancel,style: TextStyle(color: KTextColor,fontSize: 20)),
+          onPressed: () => Navigator.pop(context),
+        ),
+        TextButton(
+          child:  Text(S.of(context).yes,style: TextStyle(color: KTextColor,fontSize: 20)),
+          onPressed: () {
+            Navigator.pop(context);
+            widget.onAddToFavorite?.call();
+          // ✅ Optional: عرض SnackBar تأكيد
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(S.of(context).added_to_favorite)),
+            );
+          },
+          
+        ),
+        
+      ],
+    ),
+  );
+}
+
+}
+
+

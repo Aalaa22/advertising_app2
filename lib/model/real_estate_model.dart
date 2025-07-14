@@ -4,7 +4,7 @@ import 'ad_priority.dart';
 class RealEstateModel implements FavoriteItemInterface {
   final String title;
   final String price;
-  final String size;
+  final String image;
   final String details;
   final String contact;
   final String location;
@@ -18,7 +18,7 @@ class RealEstateModel implements FavoriteItemInterface {
     required this.title,
     required this.contact,
     required this.price,
-    required this.size,
+    required this.image,
     required this.location,
     required this.date,
     required this.details,
@@ -29,10 +29,9 @@ class RealEstateModel implements FavoriteItemInterface {
 
 
   @override
-  String get line1 => "Size: $size";
+  String get line1 => "";
 
-  @override
-  String get line2 => details;
+
 
 @override
   List<String> get images => _images; 

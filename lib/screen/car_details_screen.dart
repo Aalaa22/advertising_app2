@@ -74,37 +74,28 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     ),
                     // Back button
                     Positioned(
-                      top: 25.h,
+                      top: 40.h,
                       left: isArabic ? null : 15.w,
                       right: isArabic ? 15.w : null,
                       child: GestureDetector(
                         onTap: () => context.pop(),
-                        child: Row(
-                          children: [
-                            IconButton(
-                              icon: Icon(
-                                isArabic
-                                    ? Icons.arrow_back_ios
-                                    : Icons.arrow_back_ios,
-                                color: Colors.white,
-                                size: 20.sp,
-                              ),
-                              onPressed: () => Navigator.pop(context),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text(
+                        child: GestureDetector(
+                          onTap: () => context.pop(),
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 18),
+                              const Icon(Icons.arrow_back_ios,
+                                  color: Colors.white),
+                              Text(
                                 S.of(context).back,
                                 style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
                                   color: Colors.white,
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -115,6 +106,17 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       right: isArabic ? null : 16.w,
                       child: Icon(
                         Icons.favorite_border,
+                        color: Colors.white,
+                        size: 30.sp,
+                      ),
+                    ),
+
+                    Positioned(
+                      top: 80.h,
+                      left: isArabic ? 16.w : null,
+                      right: isArabic ? null : 16.w,
+                      child: Icon(
+                        Icons.share,
                         color: Colors.white,
                         size: 30.sp,
                       ),
@@ -261,7 +263,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 10.h),
+                            SizedBox(height: 5.h),
                           ],
                         ),
                       ),
@@ -281,8 +283,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                         padding: EdgeInsets.zero,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisExtent: 75.h,
-                          crossAxisSpacing: 20.w,
+                          mainAxisExtent:
+                              MediaQuery.of(context).size.height * 0.1,
+                          crossAxisSpacing: 30.w,
                         ),
                         children: [
                           _buildDetailBox(
@@ -311,7 +314,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                               widget.car.steeringSide),
                         ],
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 1.h),
                       Divider(color: Color(0xFFB5A9B1), thickness: 1.h),
                       Text(
                         S.of(context).description,
@@ -406,7 +409,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             padding: EdgeInsets.only(top: 10.h),
                             child: Container(
                               height: 63.h,
-                              width: 71.w,
+                              width: 78.w,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey),
                                 borderRadius: BorderRadius.circular(8.r),
@@ -531,7 +534,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
         Container(
           padding: EdgeInsets.all(8.w),
           width: double.infinity,
-          height: 40.h,
+          height: 38.h,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             border: Border.all(color: Color(0xFF08C2C9)),

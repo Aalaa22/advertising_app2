@@ -27,6 +27,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "ad": MessageLookupByLibrary.simpleMessage("ADS NO:"),
+    "add_to_favorite": MessageLookupByLibrary.simpleMessage("Add to Favorite"),
+    "added_to_favorite": MessageLookupByLibrary.simpleMessage(
+      "Item added to favorites",
+    ),
     "address": MessageLookupByLibrary.simpleMessage("Address"),
     "advertiserLocation": MessageLookupByLibrary.simpleMessage(
       "Advertiser Location",
@@ -36,9 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "advertiserType": MessageLookupByLibrary.simpleMessage("Advertiser Type"),
     "agent": MessageLookupByLibrary.simpleMessage("Agent"),
     "agreeTerms": MessageLookupByLibrary.simpleMessage(
-      "I Agree Aerms & Conditions",
+      "I Agree Terms & Conditions",
     ),
-    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "arabic": MessageLookupByLibrary.simpleMessage("English"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "car_details": MessageLookupByLibrary.simpleMessage("Car Details"),
@@ -46,15 +50,44 @@ class MessageLookup extends MessageLookupByLibrary {
     "carrent": MessageLookupByLibrary.simpleMessage("Car Rent"),
     "carsales": MessageLookupByLibrary.simpleMessage("Car Sales"),
     "carservices": MessageLookupByLibrary.simpleMessage("Car Services"),
+    "category_type": MessageLookupByLibrary.simpleMessage("Category Type"),
     "choose_make": MessageLookupByLibrary.simpleMessage("Choose Make"),
     "choose_model": MessageLookupByLibrary.simpleMessage("Choose Model"),
+    "click_daily_offers": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Daily Offers",
+    ),
+    "click_daily_servir_offers": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Services Offers",
+    ),
     "click_for_amazing_daily_cars_deals": MessageLookupByLibrary.simpleMessage(
       "Click For Amazing Daily Cars Deals",
     ),
+    "click_for_deals": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Daily Rental Deals",
+    ),
+    "click_for_deals_car_service": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing  Cars Services Deals",
+    ),
+    "click_for_deals_elect": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Electronics & Home Appliances Deals",
+    ),
+    "click_for_deals_job": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Job Offers",
+    ),
+    "click_for_deals_real_estate": MessageLookupByLibrary.simpleMessage(
+      "Click For Amazing Properties Deals",
+    ),
     "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+    "confirm_add_to_favorite": MessageLookupByLibrary.simpleMessage(
+      "Do you want to add this item to favorites?",
+    ),
+    "confirm_remove_from_favorite": MessageLookupByLibrary.simpleMessage(
+      "confirm remove from favorite",
+    ),
     "confirmpass": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "contactUs": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "contract_type": MessageLookupByLibrary.simpleMessage("Contract Type"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "createAgentCode": MessageLookupByLibrary.simpleMessage(
       "Create Agent Code",
@@ -65,6 +98,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "discover_best_cars_deals": MessageLookupByLibrary.simpleMessage(
       "Discover Best Cars Deals",
     ),
+    "discover_best_job": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Job Offers",
+    ),
+    "discover_car_service": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Cars Services Deals",
+    ),
+    "discover_deals": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Rental Deals",
+    ),
+    "discover_elect": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Electronics & Appliances",
+    ),
+    "discover_real_estate": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Properties Deals",
+    ),
+    "discover_restaurants_offers": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Restaurants Offers",
+    ),
+    "discover_service_offers": MessageLookupByLibrary.simpleMessage(
+      "Discover Best Services Offers",
+    ),
+    "district": MessageLookupByLibrary.simpleMessage("District"),
+    "district_choose": MessageLookupByLibrary.simpleMessage("District"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t Have An Account?",
     ),
@@ -84,8 +140,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emilverify": MessageLookupByLibrary.simpleMessage(
       "We\'ve sent an Email with an activation code to your Email yourname@example.Com ",
     ),
-    "engilsh": MessageLookupByLibrary.simpleMessage("Engilsh"),
+    "emirate": MessageLookupByLibrary.simpleMessage("Emirate"),
     "engine_capacity": MessageLookupByLibrary.simpleMessage("Engine Capacity"),
+    "english": MessageLookupByLibrary.simpleMessage("عربي"),
     "enteremail": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
     "enterphone": MessageLookupByLibrary.simpleMessage("Enter Your phone"),
     "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
@@ -101,6 +158,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "horse_power": MessageLookupByLibrary.simpleMessage("Horse Power"),
     "interior_color": MessageLookupByLibrary.simpleMessage("Interior Color"),
+    "invisibleInfo": MessageLookupByLibrary.simpleMessage(
+      "When enabled, others won’t know that you viewed their ad or interacted with it.",
+    ),
+    "invisibleInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "What is Invisible?",
+    ),
+    "invisibleTitle": MessageLookupByLibrary.simpleMessage(
+      "Invisible Browsing",
+    ),
     "jobs": MessageLookupByLibrary.simpleMessage("Jobs"),
     "km": MessageLookupByLibrary.simpleMessage("Km"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -112,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "myProfile": MessageLookupByLibrary.simpleMessage("My Profile"),
     "newpass": MessageLookupByLibrary.simpleMessage("New password"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "ok": MessageLookupByLibrary.simpleMessage("Ok"),
     "optional": MessageLookupByLibrary.simpleMessage("optional"),
     "or": MessageLookupByLibrary.simpleMessage("Or"),
     "otherservices": MessageLookupByLibrary.simpleMessage("Other Services"),
@@ -128,20 +195,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "premium": MessageLookupByLibrary.simpleMessage("Premium"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "priceOnly": m1,
+    "priority_featured": MessageLookupByLibrary.simpleMessage(
+      "🚀 Featured Ads",
+    ),
+    "priority_first_premium": MessageLookupByLibrary.simpleMessage(
+      "🌟 Top Premium Ads",
+    ),
+    "priority_free": MessageLookupByLibrary.simpleMessage("📢 Free Ads"),
+    "priority_premium": MessageLookupByLibrary.simpleMessage("💎 Premium Ads"),
     "privacySecurity": MessageLookupByLibrary.simpleMessage(
       "Privacy & Security",
     ),
+    "property_type": MessageLookupByLibrary.simpleMessage("Property Type"),
     "realestate": MessageLookupByLibrary.simpleMessage("Real Estate"),
     "referralCode": MessageLookupByLibrary.simpleMessage("Referral Code"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "remove_from_favorite": MessageLookupByLibrary.simpleMessage(
+      "remove from favorite",
+    ),
     "report_this_ad": MessageLookupByLibrary.simpleMessage("Report This Ad"),
     "resetpass": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "restaurants": MessageLookupByLibrary.simpleMessage("Restaurants"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "seats_no": MessageLookupByLibrary.simpleMessage("Seats No"),
+    "section_type": MessageLookupByLibrary.simpleMessage("Section Type"),
     "see_all_ads": MessageLookupByLibrary.simpleMessage("See All Ads"),
     "sendcode": MessageLookupByLibrary.simpleMessage("Send Code"),
+    "service_type": MessageLookupByLibrary.simpleMessage("Service Type"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "smart_search": MessageLookupByLibrary.simpleMessage("Smart Search"),
     "sort": MessageLookupByLibrary.simpleMessage("Sort By The Nearest"),
@@ -167,5 +248,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "warranty": MessageLookupByLibrary.simpleMessage("Warranty"),
     "whatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
     "year": MessageLookupByLibrary.simpleMessage("Year"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
   };
 }

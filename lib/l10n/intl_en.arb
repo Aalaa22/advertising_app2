@@ -5,7 +5,7 @@
   "phoneNumberHint": "508236561",
   "password": "Password",
   "referralCode": "Referral Code",
-  "agreeTerms": "I Agree Aerms & Conditions",
+  "agreeTerms": "I Agree Terms & Conditions",
   "register": "Register",
   "or": "Or",
   "guestLogin": "Guest Login",
@@ -18,8 +18,8 @@
   "createAccount": "Create Account",
    "phonesignup":"phone sign Up",
    
-  "engilsh":"Engilsh",
-  "arabic":"Arabic",
+  "english":"عربي",
+  "arabic":"English",
   
   "phoneLogin":"Phone Login",
   "myProfile": "My Profile",
@@ -126,7 +126,68 @@
 "agent": "Agent",
 "view_all_ads": "View All Ads",
 "report_this_ad": "Report This Ad",
-"use_this_space_for_ads": "Click Here To Use This Space For Your Ads"
+"use_this_space_for_ads": "Click Here To Use This Space For Your Ads",
+
+
+"priority_first_premium": "🌟 Top Premium Ads",
+"priority_premium": "💎 Premium Ads",
+"priority_featured": "🚀 Featured Ads",
+"priority_free": "📢 Free Ads",
+
+"add_to_favorite": "Add to Favorite",
+"confirm_add_to_favorite": "Do you want to add this item to favorites?",
+"yes": "Yes",
+"added_to_favorite": "Item added to favorites",
+"remove_from_favorite":"remove from favorite",
+"confirm_remove_from_favorite":"confirm remove from favorite",
+
+"invisibleInfo": "When enabled, others won’t know that you viewed their ad or interacted with it.",
+"invisibleTitle": "Invisible Browsing",
+"invisibleInfoTitle": "What is Invisible?",
+"ok":"Ok",
+
+"discover_deals": "Discover Best Rental Deals",
+"click_for_deals": "Click For Amazing Daily Rental Deals",
+
+
+"discover_real_estate": "Discover Best Properties Deals",
+  "emirate": "Emirate",
+  "district": "District",
+  "property_type": "Property Type",
+  "contract_type": "Contract Type",
+ "click_for_deals_real_estate": "Click For Amazing Properties Deals",
+
+
+  "discover_elect": "Discover Best Electronics & Appliances",
+  "section_type": "Section Type",
+  "click_for_deals_elect": "Click For Amazing Electronics & Home Appliances Deals",
+
+  "category_type": "Category Type",
+  "click_for_deals_job": "Click For Amazing Job Offers",
+  "discover_best_job":"Discover Best Job Offers",
+
+  "service_type": "Service Type",
+  "click_for_deals_car_service": "Click For Amazing  Cars Services Deals",
+  "discover_car_service":"Discover Best Cars Services Deals",
+
+
+  "district_choose": "District",
+ 
+  "click_daily_offers": "Click For Amazing Daily Offers",
+  "discover_restaurants_offers":"Discover Best Restaurants Offers",
+
+
+   "click_daily_servir_offers": "Click For Amazing Services Offers",
+  "discover_service_offers":"Discover Best Services Offers"
+
+
+
+
+
+
+
+
+
 
 
 
