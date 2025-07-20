@@ -1,7 +1,7 @@
 import 'package:advertising_app/model/favorite_item_interface_model.dart';
 import 'ad_priority.dart';
 
-class JobModel implements FavoriteItemInterface {
+class RestaurantModel implements FavoriteItemInterface {
   final String title;
   final String price;
   final String image;
@@ -12,9 +12,9 @@ class JobModel implements FavoriteItemInterface {
   final bool isPremium;
   final List<String> _images;
   final AdPriority priority;
-  final String requirment;
 
-  JobModel({
+
+  RestaurantModel({
     required this.title,
     required this.contact,
     required this.price,
@@ -23,14 +23,16 @@ class JobModel implements FavoriteItemInterface {
     required this.date,
     required this.details,
     required this.isPremium,
-    required List<String> images,
+    required List<String> images, 
     required this.priority,
-    required this.requirment
   }) : _images = images;
 
-  @override
-  String get line1 => requirment;
 
   @override
-  List<String> get images => _images;
+  String get line1 => "";
+
+
+
+@override
+  List<String> get images => _images; 
 }

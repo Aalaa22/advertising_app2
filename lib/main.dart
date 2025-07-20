@@ -20,6 +20,7 @@ class RootApp extends StatefulWidget {
 class _RootAppState extends State<RootApp> {
   final LocaleChangeNotifier _localeNotifier = LocaleChangeNotifier();
   late final GoRouter _router;
+  
 
   @override
   void initState() {

@@ -815,10 +815,10 @@ class S {
     );
   }
 
-  /// `Click Here To Use This Space For Your Ads`
+  /// `Contact us To Use This Space For Your Ads`
   String get use_this_space_for_ads {
     return Intl.message(
-      'Click Here To Use This Space For Your Ads',
+      'Contact us To Use This Space For Your Ads',
       name: 'use_this_space_for_ads',
       desc: '',
       args: [],
@@ -1043,6 +1043,56 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Section `
+  String get section {
+    return Intl.message('Section ', name: 'section', desc: '', args: []);
+  }
+
+  /// `Product`
+  String get product {
+    return Intl.message('Product', name: 'product', desc: '', args: []);
+  }
+
+  /// `Electronics &`
+  String get electronics2 {
+    return Intl.message(
+      'Electronics &',
+      name: 'electronics2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home  Appliances`
+  String get electronics3 {
+    return Intl.message(
+      'Home  Appliances',
+      name: 'electronics3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category `
+  String get category {
+    return Intl.message('Category ', name: 'category', desc: '', args: []);
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message('Type', name: 'type', desc: '', args: []);
+  }
+
+  /// `Contract`
+  String get contract {
+    return Intl.message('Contract', name: 'contract', desc: '', args: []);
+  }
+
+  /// `Service`
+  String get service {
+    return Intl.message('Service', name: 'service', desc: '', args: []);
   }
 
   /// `Click For Amazing Electronics & Home Appliances Deals`

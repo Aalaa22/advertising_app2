@@ -20,6 +20,23 @@ final List<RealEstateModel> RealEstateDummyData = [
       'images/vila.png',
     ],
   ),
+  RealEstateModel(
+    image: 'images/house.png',
+    price: 'AED 75000',
+    title: 'Luxury Villa For Monthly Rent',
+    location: 'Dubai Jumeira',
+    contact: "dubai investment",
+    date: "2024/6/1",
+    details: "villa rent",
+    isPremium: true,
+    priority: AdPriority.featured,
+    
+    images: [
+      'images/vila.png',
+      'images/vila.png',
+      'images/vila.png',
+    ],
+  ),
 RealEstateModel(
     image: 'images/house.png',
     price: 'AED 2000',

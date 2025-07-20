@@ -90,15 +90,12 @@ class _JobOfferBoxState extends State<JobOfferBox> {
                                 children: [
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).year)),
+                                          _buildFilterChip(S.of(context).category)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).km)),
-                                  SizedBox(width: 7.w),
-                                  Expanded(
-                                      child: _buildFilterChip(
-                                          S.of(context).price)),
+                                          _buildFilterChip(S.of(context).section)),
+                                 
                                 ],
                               ),
                             ),
@@ -271,7 +268,7 @@ class _JobOfferBoxState extends State<JobOfferBox> {
                     child: GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: JobData.length,
+                      itemCount: JobDataDummy.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
@@ -280,7 +277,7 @@ class _JobOfferBoxState extends State<JobOfferBox> {
                         childAspectRatio: .89,
                       ),
                       itemBuilder: (context, index) {
-                        final car = JobData[index];
+                        final car = JobDataDummy[index];
 
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 3),
@@ -431,7 +428,7 @@ Widget _buildFilterChip(String label) {
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: 10.5.sp,
+              fontSize: 12.sp,
               color: KTextColor,
               fontWeight: FontWeight.w400,
             ),

@@ -27,7 +27,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     super.initState();
     allData = [
       CarSalesDummyData,
-      RealEstateDummyData,
+     // RealEstateDummyData,
     ];
   }
 

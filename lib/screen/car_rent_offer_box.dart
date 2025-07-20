@@ -93,10 +93,7 @@ class _CarRentOfferBoxState extends State<CarRentOfferBox> {
                                       child:
                                           _buildFilterChip(S.of(context).year)),
                                   SizedBox(width: 7.w),
-                                  Expanded(
-                                      child:
-                                          _buildFilterChip(S.of(context).km)),
-                                  SizedBox(width: 7.w),
+                                 
                                   Expanded(
                                       child: _buildFilterChip(
                                           S.of(context).price)),
@@ -432,7 +429,7 @@ Widget _buildFilterChip(String label) {
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: 10.5.sp,
+              fontSize: 11.sp,
               color: KTextColor,
               fontWeight: FontWeight.w400,
             ),

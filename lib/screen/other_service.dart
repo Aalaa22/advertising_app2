@@ -165,7 +165,7 @@ class _OtherServiceScreenState extends State<OtherServiceScreen> {
                         padding:
                             EdgeInsetsDirectional.symmetric(horizontal: 8.w),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () =>context.push('/other_service_search'),
                           child: Container(
                             decoration: BoxDecoration(
                               color: const Color.fromRGBO(1, 84, 126, 1),
@@ -286,14 +286,14 @@ class _OtherServiceScreenState extends State<OtherServiceScreen> {
                                 width: double.infinity,
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: OtherService.length,
+                                  itemCount: OtherServiceDammyData.length,
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 5.w),
                                   itemBuilder: (context, index) {
-                                    final ad = OtherService[index];
+                                    final ad = OtherServiceDammyData[index];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.only(
-                                        end: index == OtherService.length - 1
+                                        end: index == OtherServiceDammyData.length - 1
                                             ? 0
                                             : 4.w, // بس للي قبل الأخير
                                       ),

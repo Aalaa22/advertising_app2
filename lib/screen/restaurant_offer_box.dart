@@ -91,15 +91,15 @@ class _RestaurantOfferBoxState extends State<RestaurantOfferBox> {
                                 children: [
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).year)),
+                                          _buildFilterChip(S.of(context).district)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).km)),
+                                          _buildFilterChip(S.of(context).price)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child: _buildFilterChip(
-                                          S.of(context).price)),
+                                          S.of(context).category)),
                                 ],
                               ),
                             ),

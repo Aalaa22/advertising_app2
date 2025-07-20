@@ -217,12 +217,15 @@ class _SearchCardState extends State<SearchCard> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                SizedBox(
+                  height: 8,
+                ),
                 Row(
                   children: [
                     SvgPicture.asset(
                       'assets/icons/locationicon.svg',
                       width: 16.w,
-                      height: 20.h,
+                      height: 18.h,
                     ),
                     const SizedBox(width: 10),
                     Expanded(
@@ -234,21 +237,6 @@ class _SearchCardState extends State<SearchCard> {
                           fontWeight: FontWeight.w500,
                         ),
                         overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 38.w,
-                      height: 38.h,
-                      child: Offstage(
-                        offstage: !widget.showDelete,
-                        child: IconButton(
-                          onPressed: widget.onDelete,
-                          icon: SvgPicture.asset(
-                            'assets/icons/deleted.svg',
-                            width: 23.w,
-                            height: 28.h,
-                          ),
-                        ),
                       ),
                     ),
                   ],
@@ -312,7 +300,9 @@ class _SearchCardState extends State<SearchCard> {
     }
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      height: 20.h,
+     // width: 82.w,
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [Color(0xFFC9F8FE), Color(0xFF08C2C9)],
@@ -333,7 +323,7 @@ class _SearchCardState extends State<SearchCard> {
             ),
           ),
           if (icon != null) ...[
-            const SizedBox(width: 2),
+            const SizedBox(width: 3),
             icon,
           ],
         ],

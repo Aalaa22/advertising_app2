@@ -121,7 +121,7 @@
 "agent": "الوكيل",
 "view_all_ads": "عرض جميع الإعلانات",
 "report_this_ad": "الإبلاغ عن هذا الإعلان",
-"use_this_space_for_ads": "اضغط هنا لاستخدام هذه المساحة لإعلاناتك",
+"use_this_space_for_ads": "تواصل معنا لاستخدام هذه المساحة لإعلاناتك",
 
 
 
@@ -155,7 +155,6 @@
  "click_for_deals_real_estate": "اضغط لاستعراض أفضل عروض العقارات",
 
   "discover_elect": "اكتشف أفضل عروض الإلكترونيات",
-
   "section_type": "نوع القسم",
   "click_for_deals_elect": "اضغط لاستعراض أفضل عروض الأجهزة الإلكترونية والأدوات المنزلية",
 
@@ -173,7 +172,18 @@
 "discover_restaurants_offers": "اكتشف أفضل عروض المطاعم",
 
 "click_daily_servir_offers": "اضغط لرؤية عروض الخدمات المميزة",
-"discover_service_offers": "اكتشف أفضل عروض الخدمات"
+"discover_service_offers": "اكتشف أفضل عروض الخدمات",
+
+
+"section": "القسم",
+"product": "المنتج",
+"electronics2": "الإلكترونيات و",
+"electronics3": "الأجهزة المنزلية",
+"category": "الفئة",
+"type": "النوع",
+"contract": "العقد",
+"service": "الخدمة"
+
 
 
 

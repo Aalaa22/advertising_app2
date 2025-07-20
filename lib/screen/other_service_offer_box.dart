@@ -91,11 +91,11 @@ class _OtherServiceOfferBoxState extends State<OtherServiceOfferBox> {
                                 children: [
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).year)),
+                                          _buildFilterChip(S.of(context).section)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).km)),
+                                          _buildFilterChip(S.of(context).service)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child: _buildFilterChip(
@@ -272,7 +272,7 @@ class _OtherServiceOfferBoxState extends State<OtherServiceOfferBox> {
                     child: GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: OtherService.length,
+                      itemCount: OtherServiceDammyData.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
@@ -281,7 +281,7 @@ class _OtherServiceOfferBoxState extends State<OtherServiceOfferBox> {
                         childAspectRatio: .89,
                       ),
                       itemBuilder: (context, index) {
-                        final car = OtherService[index];
+                        final car = OtherServiceDammyData[index];
 
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 3),

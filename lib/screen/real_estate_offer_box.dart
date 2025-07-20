@@ -84,18 +84,23 @@ class _RealEstateOfeerBOXState extends State<RealEstateOfeerBOX> {
                               width: 25.w,
                               height: 25.h,
                             ),
-                            SizedBox(width: 12.w),
+                            SizedBox(width: 10.w),
                             Expanded(
                               child: Row(
                                 children: [
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).year)),
-                                  SizedBox(width: 7.w),
+                                          _buildFilterChip(S.of(context).type)),
+                                  SizedBox(width: 5.w),
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).km)),
-                                  SizedBox(width: 7.w),
+                                          _buildFilterChip(S.of(context).district)),
+                                  SizedBox(width: 5.w),
+                                   Expanded(
+                                      child:
+                                          _buildFilterChip(S.of(context).contract)),
+                                  SizedBox(width: 5.w),
+                                  
                                   Expanded(
                                       child: _buildFilterChip(
                                           S.of(context).price)),
@@ -414,7 +419,7 @@ Size getCardSize(double screenWidth) {
 
 Widget _buildFilterChip(String label) {
   return Container(
-    height: 32.h,
+    height: 33.h,
     padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 8.h),
     decoration: BoxDecoration(
       border: Border.all(
@@ -431,7 +436,7 @@ Widget _buildFilterChip(String label) {
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: 10.5.sp,
+              fontSize: 9.5.sp,
               color: KTextColor,
               fontWeight: FontWeight.w400,
             ),

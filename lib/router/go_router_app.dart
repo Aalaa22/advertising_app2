@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:advertising_app/model/car_sale_model.dart';
+import 'package:advertising_app/model/real_estate_model.dart';
 import 'package:advertising_app/router/local_notifier.dart';
 import 'package:advertising_app/screen/car_details_screen.dart';
 import 'package:advertising_app/screen/car_rent_offer_box.dart';
@@ -8,6 +9,7 @@ import 'package:advertising_app/screen/car_rent_search_screen.dart';
 import 'package:advertising_app/screen/car_sales_search_screen.dart';
 import 'package:advertising_app/screen/car_service.dart';
 import 'package:advertising_app/screen/car_service_offer_box.dart';
+import 'package:advertising_app/screen/car_service_search_screen.dart';
 import 'package:advertising_app/screen/edit_profile.dart';
 import 'package:advertising_app/screen/electronic_offer_box.dart';
 import 'package:advertising_app/screen/electronic_screen.dart';
@@ -21,8 +23,11 @@ import 'package:advertising_app/screen/forgot_pass_phone.dart';
 import 'package:advertising_app/screen/car_sales_screen.dart';
 import 'package:advertising_app/screen/job_offer_box.dart';
 import 'package:advertising_app/screen/job_screen.dart';
+import 'package:advertising_app/screen/job_search_screen.dart';
 import 'package:advertising_app/screen/login_screen.dart';
 import 'package:advertising_app/screen/manage_screen.dart';
+import 'package:advertising_app/screen/other_service_search_screen.dart';
+import 'package:advertising_app/screen/real_estate_details_screen.dart';
 import 'package:advertising_app/screen/real_estate_offer_box.dart';
 import 'package:advertising_app/screen/car_sales_offers_box_screen.dart';
 import 'package:advertising_app/screen/other_service.dart';
@@ -34,6 +39,7 @@ import 'package:advertising_app/screen/real_estate_screen.dart';
 import 'package:advertising_app/screen/real_estate_search_screen.dart';
 import 'package:advertising_app/screen/reset_pass.dart';
 import 'package:advertising_app/screen/restaurant_offer_box.dart';
+import 'package:advertising_app/screen/restaurant_search_screen.dart';
 import 'package:advertising_app/screen/restaurants_screen.dart';
 import 'package:advertising_app/screen/setting_screen.dart';
 import 'package:advertising_app/screen/sinup_screen.dart';
@@ -121,6 +127,15 @@ GoRouter createRouter({
           return CarDetailsScreen(car: car);
         },
       ),
+
+       GoRoute(
+        path: '/real-details',
+        builder: (context, state) {
+          final RealEstate = state.extra as RealEstateModel;
+          return RealEstateDetailsScreen(real_estate: RealEstate );
+        },
+      ),
+
 
        GoRoute(
         path: '/offer_box',
@@ -211,7 +226,27 @@ GoRouter createRouter({
       ),
       GoRoute(
         path: '/car_rent_search',
-        builder: (context, state) => CarRentSearchScreen(
+        builder: (context, state) => CarRentSearchScreen()
+      ),
+      GoRoute(
+        path: '/car_service_search',
+        builder: (context, state) => CarServiceSearchScreen(
+          ),
+      ),
+     
+       GoRoute(
+        path: '/restaurant_search',
+        builder: (context, state) => RestaurantSearchScreen(
+          ),
+      ),
+      GoRoute(
+        path: '/other_service_search',
+        builder: (context, state) => OtherServiceSearchScreen(
+          ),
+      ),
+       GoRoute(
+        path: '/job_search',
+        builder: (context, state) => JobSearchScreen(
           ),
       ),
     ],

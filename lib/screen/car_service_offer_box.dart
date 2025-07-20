@@ -91,11 +91,11 @@ class _CarServiceOfferBoxState extends State<CarServiceOfferBox> {
                                 children: [
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).year)),
+                                          _buildFilterChip(S.of(context).service_type)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child:
-                                          _buildFilterChip(S.of(context).km)),
+                                          _buildFilterChip(S.of(context).district)),
                                   SizedBox(width: 7.w),
                                   Expanded(
                                       child: _buildFilterChip(

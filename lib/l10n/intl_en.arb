@@ -126,7 +126,7 @@
 "agent": "Agent",
 "view_all_ads": "View All Ads",
 "report_this_ad": "Report This Ad",
-"use_this_space_for_ads": "Click Here To Use This Space For Your Ads",
+"use_this_space_for_ads": "Contact us To Use This Space For Your Ads",
 
 
 "priority_first_premium": "🌟 Top Premium Ads",
@@ -160,6 +160,16 @@
 
   "discover_elect": "Discover Best Electronics & Appliances",
   "section_type": "Section Type",
+
+  "section": "Section ",
+  "product":"Product",
+  "electronics2": "Electronics &",
+   "electronics3": "Home  Appliances",
+   "category": "Category ",
+    "type":"Type",
+    "contract": "Contract",
+    "service":"Service",
+
   "click_for_deals_elect": "Click For Amazing Electronics & Home Appliances Deals",
 
   "category_type": "Category Type",
@@ -172,7 +182,7 @@
 
 
   "district_choose": "District",
- 
+  
   "click_daily_offers": "Click For Amazing Daily Offers",
   "discover_restaurants_offers":"Discover Best Restaurants Offers",
 

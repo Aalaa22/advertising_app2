@@ -172,7 +172,7 @@ class _CarServiceState extends State<CarService> {
                           padding:
                               EdgeInsetsDirectional.symmetric(horizontal: 8.w),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () => context.push('/car_service_search'),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Color.fromRGBO(1, 84, 126, 1),

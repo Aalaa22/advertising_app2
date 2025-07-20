@@ -1,7 +1,7 @@
 import 'package:advertising_app/generated/l10n.dart';
+import 'package:advertising_app/model/real_estate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:advertising_app/constants.dart';
-import 'package:advertising_app/model/car_sale_model.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,16 +9,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:readmore/readmore.dart';
 
-class CarDetailsScreen extends StatefulWidget {
-  final CarSalesModel car;
-
-  const CarDetailsScreen({super.key, required this.car });
+class RealEstateDetailsScreen extends StatefulWidget {
+  final RealEstateModel real_estate;
+  const RealEstateDetailsScreen({super.key, required this.real_estate});
 
   @override
-  State<CarDetailsScreen> createState() => _CarDetailsScreenState();
+  State<RealEstateDetailsScreen> createState() =>
+      _RealEstateDetailsScreenState();
 }
 
-class _CarDetailsScreenState extends State<CarDetailsScreen> {
+class _RealEstateDetailsScreenState extends State<RealEstateDetailsScreen> {
   int _currentPage = 0;
   late PageController _pageController;
 
@@ -41,7 +41,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.light,
     ));
-    final car = widget.car;
+    final RealEstate = widget.real_estate;
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
 
     return Directionality(
@@ -63,11 +63,11 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                       width: double.infinity,
                       child: PageView.builder(
                         controller: _pageController,
-                        itemCount: car.images.length,
+                        itemCount:  RealEstate.images.length,
                         onPageChanged: (index) =>
                             setState(() => _currentPage = index),
                         itemBuilder: (context, index) => Image.asset(
-                          car.images[index],
+                           RealEstate.images[index],
                           fit: BoxFit.cover,
                           width: double.infinity,
                         ),
@@ -132,9 +132,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                     Positioned(
                       bottom: 12.h,
                       left: MediaQuery.of(context).size.width / 2 -
-                          (car.images.length * 10.w / 2),
+                          ( RealEstate.images.length * 10.w / 2),
                       child: Row(
-                        children: List.generate(car.images.length, (index) {
+                        children: List.generate( RealEstate.images.length, (index) {
                           return Container(
                             margin: EdgeInsets.symmetric(horizontal: 2.w),
                             width: 7.w,
@@ -162,7 +162,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Text(
-                          '${_currentPage + 1}/${car.images.length}',
+                          '${_currentPage + 1}/${ RealEstate.images.length}',
                           style:
                               TextStyle(color: Colors.white, fontSize: 12.sp),
                         ),
@@ -190,7 +190,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 ),
                                 SizedBox(width: 6.w),
                                 Text(
-                                  widget.car.price,
+                                  widget.real_estate.price,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16.sp,
@@ -199,7 +199,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 ),
                                 Spacer(),
                                 Text(
-                                  widget.car.date,
+                                  widget.real_estate.date,
                                   style: TextStyle(
                                       color: Colors.grey, fontSize: 10.sp),
                                 ),
@@ -207,52 +207,52 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             ),
                             SizedBox(height: 6.h),
                             Text(
-                              widget.car.title,
+                              widget.real_estate.title,
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w600,
                                 color: KTextColor,
                               ),
                             ),
-                            SizedBox(height: 6.h),
-                            RichText(
-                              text: TextSpan(
-                                children: car.line1.split(' ').map((word) {
-                                  final parts = word.split(':');
-                                  if (parts.length == 2) {
-                                    return TextSpan(
-                                      text: '${parts[0]}:',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        color: KTextColor,
-                                        fontSize: 14.sp,
-                                      ),
-                                      children: [
-                                        TextSpan(
-                                          text: '${parts[1]}',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            color: KTextColor,
-                                            fontSize: 16.sp,
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  } else {
-                                    return TextSpan(
-                                      text: '$word ',
-                                      style: const TextStyle(
-                                        color: KTextColor,
-                                        fontSize: 16,
-                                      ),
-                                    );
-                                  }
-                                }).toList(),
-                              ),
-                            ),
+                            // SizedBox(height: 6.h),
+                            // RichText(
+                            //   text: TextSpan(
+                            //     children:  RealEstate.line1.split(' ').map((word) {
+                            //       final parts = word.split(':');
+                            //       if (parts.length == 2) {
+                            //         return TextSpan(
+                            //           text: '${parts[0]}:',
+                            //           style: TextStyle(
+                            //             fontWeight: FontWeight.w600,
+                            //             color: KTextColor,
+                            //             fontSize: 14.sp,
+                            //           ),
+                            //           children: [
+                            //             TextSpan(
+                            //               text: '${parts[1]}',
+                            //               style: TextStyle(
+                            //                 fontWeight: FontWeight.w600,
+                            //                 color: KTextColor,
+                            //                 fontSize: 16.sp,
+                            //               ),
+                            //             ),
+                            //           ],
+                            //         );
+                            //       } else {
+                            //         return TextSpan(
+                            //           text: '$word ',
+                            //           style: const TextStyle(
+                            //             color: KTextColor,
+                            //             fontSize: 16,
+                            //           ),
+                            //         );
+                            //       }
+                            //     }).toList(),
+                            //   ),
+                            // ),
                             SizedBox(height: 6.h),
                             Text(
-                              widget.car.details,
+                              widget.real_estate.details,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: KTextColor,
@@ -270,7 +270,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 SizedBox(width: 6.w),
                                 Expanded(
                                   child: Text(
-                                    widget.car.location,
+                                    widget.real_estate.location,
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       color: KTextColor,
@@ -284,53 +284,53 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           ],
                         ),
                       ),
-                      Divider(color: Color(0xFFB5A9B1), thickness: 1.h),
-                      Text(
-                        S.of(context).car_details,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                          color: KTextColor,
-                        ),
-                      ),
-                      SizedBox(height: 5.h),
-                      GridView(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.zero,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisExtent:
-                              MediaQuery.of(context).size.height * 0.1,
-                          crossAxisSpacing: 30.w,
-                        ),
-                        children: [
-                          _buildDetailBox(
-                              S.of(context).car_type, widget.car.carType),
-                          _buildDetailBox(
-                              S.of(context).trans_type, widget.car.transType),
-                          _buildDetailBox(
-                              S.of(context).color, widget.car.color),
-                          _buildDetailBox(S.of(context).interior_color,
-                              widget.car.interiorColor),
-                          _buildDetailBox(
-                              S.of(context).fuel_type, widget.car.fuelType),
-                          _buildDetailBox(
-                              S.of(context).warranty, widget.car.warranty),
-                          _buildDetailBox(S.of(context).doors_no,
-                              widget.car.doors.toString()),
-                          _buildDetailBox(S.of(context).seats_no,
-                              widget.car.seats.toString()),
-                          _buildDetailBox(S.of(context).engine_capacity,
-                              widget.car.engineCapacity),
-                          _buildDetailBox(S.of(context).cylinders,
-                              widget.car.cylinders.toString()),
-                          _buildDetailBox(
-                              S.of(context).horse_power, widget.car.horsePower),
-                          _buildDetailBox(S.of(context).steering_side,
-                              widget.car.steeringSide),
-                        ],
-                      ),
+                      // Divider(color: Color(0xFFB5A9B1), thickness: 1.h),
+                      // Text(
+                      //   S.of(context).car_details,
+                      //   style: TextStyle(
+                      //     fontSize: 16.sp,
+                      //     fontWeight: FontWeight.w600,
+                      //     color: KTextColor,
+                      //   ),
+                      // ),
+                      // SizedBox(height: 5.h),
+                      // GridView(
+                      //   shrinkWrap: true,
+                      //   physics: NeverScrollableScrollPhysics(),
+                      //   padding: EdgeInsets.zero,
+                      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      //     crossAxisCount: 2,
+                      //     mainAxisExtent:
+                      //         MediaQuery.of(context).size.height * 0.1,
+                      //     crossAxisSpacing: 30.w,
+                      //   ),
+                      //   children: [
+                      //     _buildDetailBox(
+                      //         S.of(context).car_type, widget.real_estate.carType),
+                      //     _buildDetailBox(
+                      //         S.of(context).trans_type, widget.real_estate.transType),
+                      //     _buildDetailBox(
+                      //         S.of(context).color, widget.real_estate.color),
+                      //     _buildDetailBox(S.of(context).interior_color,
+                      //         widget.real_estate.interiorColor),
+                      //     _buildDetailBox(
+                      //         S.of(context).fuel_type, widget.real_estate.fuelType),
+                      //     _buildDetailBox(
+                      //         S.of(context).warranty, widget.real_estate.warranty),
+                      //     _buildDetailBox(S.of(context).doors_no,
+                      //         widget.real_estate.doors.toString()),
+                      //     _buildDetailBox(S.of(context).seats_no,
+                      //         widget.real_estate.seats.toString()),
+                      //     _buildDetailBox(S.of(context).engine_capacity,
+                      //         widget.real_estate.engineCapacity),
+                      //     _buildDetailBox(S.of(context).cylinders,
+                      //         widget.real_estate.cylinders.toString()),
+                      //     _buildDetailBox(
+                      //         S.of(context).horse_power, widget.real_estate.horsePower),
+                      //     _buildDetailBox(S.of(context).steering_side,
+                      //         widget.real_estate.steeringSide),
+                      //   ],
+                      // ),
                       // SizedBox(height: 1.h),
                       Divider(color: Color(0xFFB5A9B1), thickness: 1.h),
                       Text(
@@ -348,7 +348,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                           children: [
                             Expanded(
                               child: ReadMoreText(
-                                "20 % Down Payment With Insurance\n Registration And Delivery To \n Client Without Fees",
+                                "Amazing villa with luxury viewing",
                                 trimLines: 2,
                                 colorClickableText:
                                     Color.fromARGB(255, 9, 37, 108),
@@ -408,7 +408,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             SizedBox(width: 8.w),
                             Expanded(
                               child: Text(
-                                widget.car.location,
+                                widget.real_estate.location,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: KTextColor,
@@ -460,7 +460,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                               ),
                             ),
                           ),
-                           SizedBox(width: 15.w),
+                          SizedBox(width: 15.w),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -475,7 +475,8 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 ),
                                 SizedBox(height: 2.h),
                                 Text(
-                                  "Al Manara Motors",
+                                   
+                                  "Dubai investment",
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: KTextColor,

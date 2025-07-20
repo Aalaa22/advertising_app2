@@ -1,23 +1,23 @@
 import 'package:advertising_app/constants.dart';
-import 'package:advertising_app/data/electronic_dummy_data.dart';
+import 'package:advertising_app/data/job_data_dummy.dart';
 import 'package:advertising_app/generated/l10n.dart';
 import 'package:advertising_app/model/ad_priority.dart';
+import 'package:advertising_app/model/job_model.dart';
 import 'package:advertising_app/widget/custom_search_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:advertising_app/model/favorite_item_interface_model.dart';
 
-class ElectronicSearchScreen extends StatefulWidget {
-  const ElectronicSearchScreen({super.key});
+class JobSearchScreen extends StatefulWidget {
+  const JobSearchScreen({super.key});
 
   @override
-  State<ElectronicSearchScreen> createState() => _ElectronicSearchScreenState();
+  State<JobSearchScreen> createState() => _JobSearchScreenState();
 }
 
-class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
+class _JobSearchScreenState extends State<JobSearchScreen> {
   final ScrollController _scrollController = ScrollController();
   bool _showOverlayBar = false;
   double _lastOffset = 0;
@@ -64,8 +64,8 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
             child: Column(
               children: [
                 GestureDetector(
-                        onTap: () => context.pop(),
-                        child: Row(
+                  onTap: () => context.pop(),
+                  child:  Row(
                       children: [
                         Icon(Icons.arrow_back_ios,
                             color: KTextColor, size: 17.sp),
@@ -82,27 +82,27 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
                         ),
                       ],
                     ),
-                      ),
-                    SizedBox(height: 5.h),  
-                
+                ),
+                SizedBox(height: 5.h),
                 Row(
                   children: [
-                    SvgPicture.asset('assets/icons/filter.svg', width: 25.w, height: 25.h),
+                    SvgPicture.asset('assets/icons/filter.svg',
+                        width: 25.w, height: 25.h),
                     SizedBox(width: 12.w),
                     Expanded(
                       child: Row(
                         children: [
-                          Expanded(child: _buildFilterChip(S.of(context).price)),
-                          SizedBox(width: 7.w),
-                          Expanded(child: _buildFilterChip(S.of(context).section)),
-                          SizedBox(width: 7.w),
-                          Expanded(child: _buildFilterChip(S.of(context).product)),
+                          Expanded(
+                              child: _buildFilterChip(S.of(context).category)),
+                          SizedBox(width: 5.w),
+                          Expanded(
+                              child: _buildFilterChip(S.of(context).section)),
                         ],
                       ),
                     ),
                   ],
                 ),
-                 SizedBox(height: 8.h),
+                SizedBox(height: 8.h),
                 LayoutBuilder(
                   builder: (context, constraints) {
                     bool isSmallScreen =
@@ -276,12 +276,12 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
 
     final locale = Localizations.localeOf(context).languageCode;
 
-    final List<FavoriteItemInterface> firstPremiumCars = [];
-    final List<FavoriteItemInterface> premiumCars = [];
-    final List<FavoriteItemInterface> featuredCars = [];
-    final List<FavoriteItemInterface> freeCars = [];
+    final List<JobModel> firstPremiumCars = [];
+    final List<JobModel> premiumCars = [];
+    final List<JobModel> featuredCars = [];
+    final List<JobModel> freeCars = [];
 
-    for (var car in ElectronicDummyData) {
+    for (var car in JobDataDummy) {
       switch (car.priority) {
         case AdPriority.PremiumStar:
           firstPremiumCars.add(car);
@@ -337,210 +337,68 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
                     ),
                     SizedBox(height: 3.h),
                     Center(
-                      child: Column(
-                        children: [
-                          Text(
-                            S.of(context).electronics2,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 24.sp,
-                              color: KTextColor,
-                            ),
-                          ),
-                          Text(
-                            S.of(context).electronics3,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 24.sp,
-                              color: KTextColor,
-                            ),
-                          ),
-                        ],
+                      child: Text(
+                        S.of(context).jobs,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24.sp,
+                          color: KTextColor,
+                        ),
                       ),
                     ),
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 10.h),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 18.w),
+                      padding:
+                          EdgeInsetsDirectional.symmetric(horizontal: 18.w),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('assets/icons/filter.svg', width: 25.w, height: 25.h),
-                          SizedBox(width: 12.w),
+                          SvgPicture.asset('assets/icons/filter.svg',
+                              width: 25.w, height: 25.h),
+                          SizedBox(width: 10.w),
                           Expanded(
                             child: Row(
                               children: [
-                                Expanded(child: _buildFilterChip(S.of(context).price)),
+                                Expanded(
+                                    child: _buildFilterChip(
+                                        S.of(context).category)),
                                 SizedBox(width: 7.w),
-                                Expanded(child: _buildFilterChip(S.of(context).section)),
-                                SizedBox(width: 7.w),
-                                Expanded(child: _buildFilterChip(S.of(context).product)),
+                                Expanded(
+                                    child: _buildFilterChip(
+                                        S.of(context).section)),
                               ],
                             ),
                           ),
                         ],
                       ),
                     ),
-                     SizedBox(height: 8.h),
-                Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 18.w),
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      bool isSmallScreen =
-                          MediaQuery.of(context).size.width <= 370;
-
-                      if (isSmallScreen) {
-                        return Row(
-                          children: [
-                            Text(
-                              '${S.of(context).ad} 1000',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: KTextColor,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 35.w),
-                            Expanded(
-                              child: Container(
-                                height: 37.h,
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    horizontal: 8.w),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: const Color(0xFF08C2C9)),
-                                  borderRadius: BorderRadius.circular(8.r),
-                                ),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/icons/locationicon.svg',
-                                      width: 18.w,
-                                      height: 18.h,
-                                    ),
-                                    SizedBox(width: 8.w),
-                                    Expanded(
-                                      child: Text(
-                                        S.of(context).sort,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          color: KTextColor,
-                                          fontSize: 12.sp,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(width: 1.w),
-                                    SizedBox(
-                                      width: 35.w,
-                                      child: Transform.scale(
-                                        scale: 0.8,
-                                        child: Switch(
-                                          value: true,
-                                          onChanged: (val) {
-                                            // setState(() => _isInvisible = val);
-                                            // _showToast(
-                                            //   context,
-                                            //   val ?  'Invisible Mode Disabled':'Invisible Mode Enabled',
-                                            // );
-                                          },
-                                          activeColor: Colors.white,
-                                          activeTrackColor:
-                                              const Color.fromRGBO(
-                                                  8, 194, 201, 1),
-                                          inactiveThumbColor: Colors.white,
-                                          inactiveTrackColor: Colors.grey[300],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      } else {
-                        return Row(
-                          children: [
-                            Text(
-                              '${S.of(context).ad} 1000',
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                color: KTextColor,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 28.w),
-                            Expanded(
-                              child: Container(
-                                height: 37.h,
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    horizontal: 12.w),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: const Color(0xFF08C2C9)),
-                                  borderRadius: BorderRadius.circular(8.r),
-                                ),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      'assets/icons/locationicon.svg',
-                                      width: 18.w,
-                                      height: 18.h,
-                                    ),
-                                    SizedBox(width: 15.w),
-                                    Expanded(
-                                      child: Text(
-                                        S.of(context).sort,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          color: KTextColor,
-                                          fontSize: 12.sp,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 32.w,
-                                      child: Transform.scale(
-                                        scale: .9,
-                                        child: Switch(
-                                          value: true,
-                                          activeColor: Colors.white,
-                                          activeTrackColor:
-                                              const Color(0xFF08C2C9),
-                                          inactiveThumbColor: Colors.grey,
-                                          inactiveTrackColor:
-                                              Colors.grey.shade300,
-                                          onChanged: (val) {},
-                                          materialTapTargetSize:
-                                              MaterialTapTargetSize.shrinkWrap,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      }
-                    },
-                  ),
-                ),
+                    SizedBox(height: 7.h),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.symmetric(horizontal: 17.w),
+                      child: _buildAdsAndSwitchRow(),
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (firstPremiumCars.isNotEmpty) ...[
-                          _buildSectionTitle(S.of(context).priority_first_premium),
-                          ...firstPremiumCars.map((item) => _buildCard(item)).toList(),
+                          _buildSectionTitle(
+                              S.of(context).priority_first_premium),
+                          ...firstPremiumCars
+                              .map((item) => _buildCard(item))
+                              .toList(),
                         ],
                         if (premiumCars.isNotEmpty) ...[
                           _buildSectionTitle(S.of(context).priority_premium),
-                          ...premiumCars.map((item) => _buildCard(item)).toList(),
+                          ...premiumCars
+                              .map((item) => _buildCard(item))
+                              .toList(),
                         ],
                         if (featuredCars.isNotEmpty) ...[
                           _buildSectionTitle(S.of(context).priority_featured),
-                          ...featuredCars.map((item) => _buildCard(item)).toList(),
+                          ...featuredCars
+                              .map((item) => _buildCard(item))
+                              .toList(),
                         ],
                         if (freeCars.isNotEmpty) ...[
                           _buildSectionTitle(S.of(context).priority_free),
@@ -558,6 +416,144 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
     );
   }
 
+  Widget _buildAdsAndSwitchRow() {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isSmallScreen = MediaQuery.of(context).size.width <= 370;
+    
+        if (isSmallScreen) {
+          return Row(
+            children: [
+              Text(
+                '${S.of(context).ad} 1000',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  color: KTextColor,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(width: 35.w),
+              Expanded(
+                child: Container(
+                  height: 37.h,
+                  padding: EdgeInsetsDirectional.symmetric(horizontal: 8.w),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xFF08C2C9)),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/icons/locationicon.svg',
+                        width: 18.w,
+                        height: 18.h,
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Text(
+                          S.of(context).sort,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: KTextColor,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 1.w),
+                      SizedBox(
+                        width: 35.w,
+                        child: Transform.scale(
+                          scale: 0.8,
+                          child: Switch(
+                            value: true,
+                            onChanged: (val) {
+                              // setState(() => _isInvisible = val);
+                              // _showToast(
+                              //   context,
+                              //   val ?  'Invisible Mode Disabled':'Invisible Mode Enabled',
+                              // );
+                            },
+                            activeColor: Colors.white,
+                            activeTrackColor:
+                                const Color.fromRGBO(8, 194, 201, 1),
+                            inactiveThumbColor: Colors.white,
+                            inactiveTrackColor: Colors.grey[300],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        } else {
+          return Row(
+            children: [
+              Text(
+                '${S.of(context).ad} 1000',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  color: KTextColor,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(width: 28.w),
+              Expanded(
+                child: Container(
+                  height: 37.h,
+                  padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xFF08C2C9)),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/icons/locationicon.svg',
+                        width: 18.w,
+                        height: 18.h,
+                      ),
+                      SizedBox(width: 15.w),
+                      Expanded(
+                        child: Text(
+                          S.of(context).sort,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: KTextColor,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 32.w,
+                        child: Transform.scale(
+                          scale: .9,
+                          child: Switch(
+                            value: true,
+                            activeColor: Colors.white,
+                            activeTrackColor: const Color(0xFF08C2C9),
+                            inactiveThumbColor: Colors.grey,
+                            inactiveTrackColor: Colors.grey.shade300,
+                            onChanged: (val) {},
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+      },
+    );
+  }
+
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
@@ -572,19 +568,33 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
     );
   }
 
-  Widget _buildCard(FavoriteItemInterface item) {
+  Widget _buildCard(JobModel item) {
     return GestureDetector(
       onTap: () {},
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SearchCard(
-          showLine1: false,
+          showLine1: true,
+          customLine1Span: TextSpan(
+            children: [
+              WidgetSpan(
+                child: Text(
+                  item.requirment,
+                  style: TextStyle(
+                    color: Color.fromRGBO(0, 30, 90, 1),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
           item: item,
           showDelete: false,
           onAddToFavorite: () {},
           onDelete: () {
             setState(() {
-              ElectronicDummyData.remove(item);
+              JobDataDummy.remove(item);
             });
           },
         ),
@@ -609,14 +619,14 @@ class _ElectronicSearchScreenState extends State<ElectronicSearchScreen> {
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: 10.5.sp,
+                fontSize: 12.sp,
                 color: KTextColor,
                 fontWeight: FontWeight.w400,
               ),
             ),
           ),
           SizedBox(width: 2.w),
-          Icon(Icons.keyboard_arrow_down, color: KTextColor, size: 14.sp),
+          Icon(Icons.keyboard_arrow_down, color: KTextColor, size: 18.sp),
         ],
       ),
     );

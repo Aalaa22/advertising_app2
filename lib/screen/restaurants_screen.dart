@@ -167,7 +167,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
                         padding:
                             EdgeInsetsDirectional.symmetric(horizontal: 8.w),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () => context.push('/restaurant_search'),
                           child: Container(
                             decoration: BoxDecoration(
                               color: const Color.fromRGBO(1, 84, 126, 1),

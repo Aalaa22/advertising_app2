@@ -165,7 +165,7 @@ class _JobScreenState extends State<JobScreen> {
                         padding:
                             EdgeInsetsDirectional.symmetric(horizontal: 8.w),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () => context.push('/job_search'),
                           child: Container(
                             decoration: BoxDecoration(
                               color: const Color.fromRGBO(1, 84, 126, 1),
@@ -285,14 +285,14 @@ class _JobScreenState extends State<JobScreen> {
                                 width: double.infinity,
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: JobData.length,
+                                  itemCount: JobDataDummy.length,
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 5.w),
                                   itemBuilder: (context, index) {
-                                    final ad = JobData[index];
+                                    final ad = JobDataDummy[index];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.only(
-                                        end: index == JobData.length - 1
+                                        end: index == JobDataDummy.length - 1
                                             ? 0
                                             : 4.w, // بس للي قبل الأخير
                                       ),
