@@ -1,10 +1,10 @@
-import 'package:advertising_app/model/ad_priority.dart';
-import 'package:advertising_app/model/job_model.dart';
-import 'package:advertising_app/model/offer_box_model.dart';
+import 'package:advertising_app/data/model/ad_priority.dart';
+import 'package:advertising_app/data/model/job_model.dart';
+import 'package:advertising_app/data/model/offer_box_model.dart';
 
 final List<JobModel> JobDataDummy = [
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -17,13 +17,13 @@ final List<JobModel> JobDataDummy = [
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
 JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -36,13 +36,13 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -55,13 +55,13 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -74,13 +74,13 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -93,13 +93,13 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -112,13 +112,13 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
   JobModel(
-    image: 'images/job.png',
+    image: 'assets/images/job.png',
     price: 'AED 2000',
     title: 'Cleaner',
     location: 'Dubai Stawa',
@@ -131,9 +131,9 @@ JobModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/job.png',
-      'images/job.png',
-      'images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
+      'assets/images/job.png',
     ],
   ),
 ];

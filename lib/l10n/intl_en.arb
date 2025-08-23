@@ -85,7 +85,7 @@
   "home":"Home",
   "srtting":"Settings",
   "manage":"Manage",
-  "post":"Post Ads",
+  "post":"Place An Ad",
 
   "editprof4":"Edit my Profile",
   "editing1":"Editing",
@@ -176,7 +176,7 @@
   "click_for_deals_job": "Click For Amazing Job Offers",
   "discover_best_job":"Discover Best Job Offers",
 
-  "service_type": "Service Type",
+  "service_type": "Service name",
   "click_for_deals_car_service": "Click For Amazing  Cars Services Deals",
   "discover_car_service":"Discover Best Cars Services Deals",
 
@@ -188,17 +188,144 @@
 
 
    "click_daily_servir_offers": "Click For Amazing Services Offers",
-  "discover_service_offers":"Discover Best Services Offers"
+  "discover_service_offers":"Discover Best Services Offers",
 
 
 
 
+  
+  "place_an_ad": "Place An Ad",
+  "featured": "Featured",
+  "free": "Free",
+  "appearance_top": "Appearance On Top Of Search List",
+  "appearance_nearest": "Appearance For The Nearest Viewers",
+  "appearance_after_star": "Appearance After Premium",
+  "appearance_after_premium": "Appearance After Premium Ads",
+  "appearance_after_featured": "Appearance After Featured Ads",
+  "daily_refresh": "Enabled Daily Refresh",
+  "cost": "Cost",
+  "for_days": "For [{days}] Days",
+  "submit": "Submit",
+  "top_of_day_note": "Top Of The Day Comes First On The Search List",
 
 
 
+  "appTitle": "Cars Sales Ads",
+  "toggleLang": "العربية",
+  "make": "Make",
+  "model": "Model",
+ 
+  "specs": "Specs",
+  "title": "Title",
+  "carType": "Car Type",
+  "transType": "Trans Type",
+  "fuelType": "Fuel Type",
+  
+  "interiorColor": "Interior Color",
+ 
+  "engineCapacity": "Engine Capacity",
+ 
+  "horsePower": "Horse Power",
+  "doorsNo": "Doors No",
+  "seatsNo": "Seats No",
+  "steeringSide": "Steering Side", 
+  "add": "Add",
+  "phoneNumber": "Phone Number",
+ 
+  "area": "Area",
+  "describeYourCar": "Describe Your Car",
+  "translate": "Translate",
+  "addMainImage": "Add Main Image",
+  "add14Images": "Add 14 Images",
+  
+  "next": "Next",
+
+  "carsServicesAds": "Cars Services Ads",
+   
+    "serviceType": "Service Type",
+    "serviceName": "Service Name",
+    "add3Images": "Add 3 Images",
+   
 
 
 
+    "realEstateAds": "Real Estate Ads",
+    "contractType": "Contract Type",
+    "propertyType": "Property Type",
+    "add9Images": "Add 9 Images",
 
+    "electronicsAndHomeAppliancesAds": "Electronics & Home Appliances Ads",
+    "productName": "Product Name",
+    "sectionType": "Section Type",
+    "add4Images": "Add 4 Images",
+
+    "carsRentAds": "Cars Rent Ads",
+    "dayRent": "Day Rent",
+    "monthRent": "Month Rent",
+    "add10Images": "Add 10 Images",
+
+    "restaurantsAds": "Restaurants Ads",
+    "otherServicesAds": "Other Services Ads",
+
+    "jobsAds": "Jobs Ads",
+    "categoryType": "Category Type",
+    "jobName": "Job Name",
+    "salary": "Salary",
+
+
+    "valid": "Valid",
+    "pending": "Pending",
+    "expired": "Expired",
+    "rejected": "Rejected",
+    "postDate": "Post Date",
+    "expiresIn": "Expires In",
+    "views": "Search & Views",
+    "refresh": "Refresh",
+    "edit": "Edit",
+    "renew": "Renew",
+    "upgrade": "Upgrade",
+    "adsType": "ADS Type",
+    "totalAds": "Total ADS",
+    "manageAds": "Manage Ads",
+    "all": "All", 
+    "balance": "Balance",  
+    "contractExpire": "Contract Expire (use Ads before) Date",
+    "amount": "Amount",
+    "days": "Days", 
+    "activeOffersBox": "Active Offers Box",
+    "pay":"Pay",
+
+    "payment": "Payment",
+    "total": "Total",
+    "payWithCreditCard": "Pay With Credit Card",
+    "cardNumber": "Card Number",
+    "expireDate": "Expire Date",
+    "cvv": "CVV",
+    "cardHolderName": "Card Holder Name",
+    "payNow": "Pay Now",
+    
+
+   "Optional":"Optional",
+
+  "noResultsFound":"No Results Found",
+  "addNew":"Add New",
+
+   "to":"To",
+   "any":"Any",
+   "apply":"Apply",
+   "from":"From",
+   "reset":"Reset",
+   "chooseAnOption":"Choose An Option",
+   "passwordTooShort":"Password Too Short",
+   "passwordsDoNotMatch":"Passwords Don`t Match",
+   "accountCreatedSuccessfully":"Account Created Successfully",
+   "agreeTermsValidation":"Agree Terms Validation",
+   "unknownError":"unknown Error",
+   "pleaseEnterValidEmail":"please Enter Valid Email",
+   "pleaseEnterPhone":"please Enter Phone",
+   "pleaseEnterUsername":"please Enter Username",
+   "searchCountry":"search Country",
+   "pleaseConfirmPassword":"please Confirm Password",
+   "no":"no"
 
 }

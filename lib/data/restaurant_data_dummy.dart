@@ -1,11 +1,11 @@
-import 'package:advertising_app/model/ad_priority.dart';
-import 'package:advertising_app/model/offer_box_model.dart';
-import 'package:advertising_app/model/restaurant_model.dart';
+import 'package:advertising_app/data/model/ad_priority.dart';
+import 'package:advertising_app/data/model/offer_box_model.dart';
+import 'package:advertising_app/data/model/restaurant_model.dart';
 
 final List<RestaurantModel> RestaurantDataDammy = [
 
    RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -17,13 +17,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.featured,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -35,13 +35,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.PremiumStar,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -53,13 +53,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.premium,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -71,13 +71,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.free,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -89,13 +89,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.featured,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -107,13 +107,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.PremiumStar,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -125,13 +125,13 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.premium,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
   RestaurantModel(
-    image: 'images/food.png',
+    image: 'assets/images/food.png',
     price: 'AED 2000',
     title: 'biryani chicken..',
     location: 'dubai alqouz',
@@ -143,9 +143,9 @@ final List<RestaurantModel> RestaurantDataDammy = [
     priority: AdPriority.free,
     
     images: [
-      'images/food.png',
-      'images/food.png',
-      'images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
+      'assets/images/food.png',
     ],
   ),
 

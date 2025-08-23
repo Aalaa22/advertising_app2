@@ -79,7 +79,7 @@
   "home":"الرئيسية",
   "srtting":"الإعدادات",
   "manage":"الإدارة",
-  "post":"إضافةإعلان",
+  "post":" مكان إضافةإعلان",
 
 "editprof4": "تعديل الملف الشخصي",
 "editing1": "جاري التعديل",
@@ -162,7 +162,7 @@
 "click_for_deals_job": "اضغط لرؤية عروض الوظائف المميزة",
 "discover_best_job": "اكتشف أفضل عروض الوظائف",
 
-"service_type": "نوع الخدمة",
+"service_type": "اسم الخدمة",
 "click_for_deals_car_service": "اضغط لرؤية أفضل عروض خدمات السيارات",
 "discover_car_service": "اكتشف أفضل عروض خدمات السيارات",
 
@@ -182,7 +182,115 @@
 "category": "الفئة",
 "type": "النوع",
 "contract": "العقد",
-"service": "الخدمة"
+"service": "الخدمة",
+
+
+  "place_an_ad": "أضف إعلانًا",
+  "featured": "مُفضل",
+  "free": "مجاني",
+  "appearance_top": "الظهور في أعلى نتائج البحث",
+  "appearance_nearest": "الظهور للمستخدمين الأقرب",
+  "appearance_after_star": "الظهور بعد إعلان مميز ⭐",
+  "appearance_after_premium": "الظهور بعد الإعلانات المميزة",
+  "appearance_after_featured": "الظهور بعد الإعلانات المُفضلة",
+  "daily_refresh": "تحديث يومي مفعّل",
+  "cost": "السعر",
+  "for_days": "لمدة [{days}] يومًا",
+  "submit": "إرسال",
+  "top_of_day_note": "يظهر إعلان اليوم أولًا في نتائج البحث",
+
+
+  "appTitle": "إعلانات بيع السيارات",
+  "toggleLang": "English",
+  "make": "النوع (الماركة)",
+  "model": "الموديل",
+  "specs": "المواصفات",
+  "title": "العنوان",
+  "carType": "نوع السيارة",
+  "transType": "نوع الجير",
+  "fuelType": "نوع الوقود",
+  "interiorColor": "اللون الداخلي",
+  "engineCapacity": "سعة المحرك",
+  "horsePower": "قوة الحصان",
+  "doorsNo": "عدد الأبواب",
+  "seatsNo": "عدد المقاعد",
+  "steeringSide": "جهة المقود",
+  "add": "إضافة",
+  "phoneNumber": "رقم الهاتف",
+  
+  "area": "المنطقة",
+  "describeYourCar": "صف سيارتك",
+  "translate": "ترجمة",
+  "addMainImage": "إضافة الصورة الرئيسية",
+  "add14Images": "إضافة 14 صورة",
+  "next": "التالي",
+
+  "carsServicesAds": "إعلانات خدمات السيارات",
+    "serviceType": "نوع الخدمة",
+    "serviceName": "اسم الخدمة",
+    "add3Images": "إضافة 3 صور",
+
+     "realEstateAds": "إعلانات العقارات",
+    "contractType": "نوع العقد",
+    "propertyType": "نوع العقار",
+    "add9Images": "إضافة 9 صور",
+
+     "electronicsAndHomeAppliancesAds": "إعلانات الإلكترونيات والأجهزة المنزلية",
+    "productName": "اسم المنتج",
+    "sectionType": "نوع القسم",
+    "add4Images": "إضافة 4 صور",
+
+    "carsRentAds": "إعلانات تأجير السيارات",
+    "dayRent": "الإيجار اليومي",
+    "monthRent": "الإيجار الشهري",
+    "add10Images": "إضافة 10 صور",
+
+    "restaurantsAds": "إعلانات المطاعم",
+     "otherServicesAds": "إعلانات الخدمات الأخرى",
+
+     "jobsAds": "إعلانات الوظائف",
+    "categoryType": "نوع الفئة",
+    "jobName": "اسم الوظيفة",
+    "salary": "الراتب",
+
+
+    "manageAds": "إدارة الإعلانات",
+    "all": "الكل",
+    "valid": "صالح",
+    "pending": "قيد المراجعة",
+    "expired": "منتهي",
+    "rejected": "مرفوض",
+    "postDate": "تاريخ النشر",
+    "expiresIn": "ينتهي خلال",
+    "views": "بحث و مشاهدات",
+    "refresh": "تحديث",
+    "edit": "تعديل",
+    "renew": "تجديد",
+    "upgrade": "ترقية",
+    "adsType": "نوع الإعلان",
+    "totalAds": "مجموع الإعلانات",
+    "balance": "الرصيد", 
+    "contractExpire": "تاريخ انتهاء العقد (استخدم الإعلانات قبل)",
+
+    "amount": "المبلغ",
+    "days": "أيام",
+    "activeTopOfDay": "تفعيل أعلى اليوم",
+    "pay":"دفع",
+    "payment": "الدفع",
+    "total": "المجموع",
+    "payWithCreditCard": "الدفع بالبطاقة الإئتمانية",
+    "cardNumber": "رقم البطاقة",
+    "expireDate": "تاريخ الإنتهاء",
+    "cvv": "CVV",
+    "cardHolderName": "اسم حامل البطاقة",
+    "payNow": "ادفع الآن",
+     
+
+    "Optional":"اختيارى",
+
+    "noResultsFound":"لا توجد نتائج",
+    "to":"الى"
+
 
 
 

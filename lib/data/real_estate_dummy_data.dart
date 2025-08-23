@@ -1,10 +1,10 @@
-import 'package:advertising_app/model/ad_priority.dart';
-import 'package:advertising_app/model/offer_box_model.dart';
-import 'package:advertising_app/model/real_estate_model.dart';
+import 'package:advertising_app/data/model/ad_priority.dart';
+import 'package:advertising_app/data/model/offer_box_model.dart';
+import 'package:advertising_app/data/model/real_estate_model.dart';
 
 final List<RealEstateModel> RealEstateDummyData = [
   RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -15,13 +15,13 @@ final List<RealEstateModel> RealEstateDummyData = [
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
   RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 75000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -32,13 +32,13 @@ final List<RealEstateModel> RealEstateDummyData = [
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
 RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -49,14 +49,14 @@ RealEstateModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
 
   RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -67,14 +67,14 @@ RealEstateModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
   
   RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -85,13 +85,13 @@ RealEstateModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
 RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -102,14 +102,14 @@ RealEstateModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
 
   RealEstateModel(
-    image: 'images/house.png',
+    image: 'assets/images/house.png',
     price: 'AED 2000',
     title: 'Luxury Villa For Monthly Rent',
     location: 'Dubai Jumeira',
@@ -120,9 +120,9 @@ RealEstateModel(
     priority: AdPriority.featured,
     
     images: [
-      'images/vila.png',
-      'images/vila.png',
-      'images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
+      'assets/images/vila.png',
     ],
   ),
   

@@ -1,13 +1,40 @@
+import 'package:advertising_app/data/repository/auth_repository.dart';
+import 'package:advertising_app/data/repository/car_sales_ad_repository.dart';
+import 'package:advertising_app/data/web_services/api_service.dart';
+import 'package:advertising_app/generated/l10n.dart';
+import 'package:advertising_app/presentation/providers/auth_repository.dart';
+import 'package:advertising_app/presentation/providers/car_sales_ad_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:advertising_app/generated/l10n.dart';
-import 'router/go_router_app.dart';
-import 'router/local_notifier.dart';
-import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:advertising_app/router/go_router_app.dart';
+import 'package:advertising_app/router/local_notifier.dart';
+
 
 void main() {
-  runApp(const RootApp());
+  // 1. تهيئة جميع الخدمات والـ Repositories في مكان واحد
+  final ApiService apiService = ApiService();
+  final AuthRepository authRepository = AuthRepository(apiService);
+  final CarAdRepository carAdRepository = CarAdRepository(apiService); // <-- تم تعريفه هنا
+
+  runApp(
+    // 2. استخدام MultiProvider لتوفير جميع الـ Providers
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => AuthProvider(authRepository),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CarAdProvider(carAdRepository), // <-- الآن يعمل بشكل صحيح
+        ),
+        // يمكنك إضافة أي providers مستقبلية هنا
+      ],
+      child: const RootApp(),
+    ),
+  );
 }
 
 class RootApp extends StatefulWidget {
@@ -20,7 +47,6 @@ class RootApp extends StatefulWidget {
 class _RootAppState extends State<RootApp> {
   final LocaleChangeNotifier _localeNotifier = LocaleChangeNotifier();
   late final GoRouter _router;
-  
 
   @override
   void initState() {
@@ -38,6 +64,11 @@ class _RootAppState extends State<RootApp> {
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (context, child) {
+            final baseTextTheme = Typography.englishLike2018.apply(fontSizeFactor: 1.sp);
+            final theme = _localeNotifier.locale.languageCode == 'ar'
+                ? ThemeData(textTheme: GoogleFonts.cairoTextTheme(baseTextTheme))
+                : ThemeData(fontFamily: 'Montserrat', textTheme: baseTextTheme);
+
             return MaterialApp.router(
               locale: _localeNotifier.locale,
               routerConfig: _router,
@@ -49,21 +80,12 @@ class _RootAppState extends State<RootApp> {
                 GlobalCupertinoLocalizations.delegate,
               ],
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                fontFamily: 'Montserrat',
-                textTheme: Typography.englishLike2018.apply(
-                  fontSizeFactor: 1.sp,
-                ),
-              ),
-
-             builder: (context, child) {
-  return MediaQuery.withClampedTextScaling(
-    minScaleFactor: 1.0,
-    maxScaleFactor: 1.0,
-    child: child!,
-  );
-}
-
+              theme: theme,
+              builder: (context, child) {
+                return MediaQuery.withClampedTextScaling(
+                  minScaleFactor: 1.0, maxScaleFactor: 1.0, child: child!,
+                );
+              }
             );
           },
         );

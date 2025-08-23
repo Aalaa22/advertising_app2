@@ -1,10 +1,10 @@
-import 'package:advertising_app/model/ad_priority.dart';
-import 'package:advertising_app/model/car_sale_model.dart';
+import 'package:advertising_app/data/model/ad_priority.dart';
+import 'package:advertising_app/data/model/car_sale_model.dart';
 
 
 final List<CarSalesModel> CarSalesDummyData = [
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -29,14 +29,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -61,14 +61,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -93,14 +93,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -125,14 +125,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -157,14 +157,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -189,14 +189,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -221,14 +221,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -253,14 +253,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -285,14 +285,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -317,14 +317,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -349,14 +349,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -381,14 +381,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -413,14 +413,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -445,14 +445,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -477,14 +477,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -509,14 +509,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
  CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -541,14 +541,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -573,14 +573,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -605,14 +605,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -637,14 +637,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -669,14 +669,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -701,14 +701,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -733,14 +733,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -765,14 +765,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
  CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -797,14 +797,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -829,14 +829,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -861,14 +861,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -893,14 +893,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -925,14 +925,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -957,14 +957,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -989,14 +989,14 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
 CarSalesModel(
-  image: 'images/car.jpg',
+  image: 'assets/images/car.jpg',
   title: 'Toyota Camry',
   price: 'AED 120,000',
   year: '2021',
@@ -1021,9 +1021,9 @@ CarSalesModel(
   horsePower: "3300",
   steeringSide: "Left",
     images: [
-      'images/car.jpg',
-      'images/Audi S5 TSFIjpeg.jpeg',
-      'images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
+      'assets/images/car.jpg',
     ],
 ),
 
